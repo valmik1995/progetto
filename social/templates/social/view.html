@@ -1,0 +1,187 @@
+{% extends 'social/base.html' %}
+{% load static %}
+{% load my_tags %}
+{% block title %}Social{% endblock %}
+
+{% block social_content %}
+
+{% if not search_term %}
+<form action="{% url 'social:search_results' %}" method="get">
+    <div class="form-row">
+    <div class="col-md-3 form-group form-inline">
+        <input name="d" type="text" class="form-control" placeholder="AAAA"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+    </div>
+    <div class="col-md-3 form-group form-inline">
+        <input name="q" type="text" class="form-control" placeholder="Termine">
+    </div>
+            <div class="col-md-3 form-group form-inline" style="display: none;">
+                <input name="r" type="text" class="form-control" placeholder="Termine" value="published_date">
+            </div>
+    <div class="col-md-3 form-group form-inline">
+    <button type="submit" class="btn btn-primary">Cerca</button>
+    </div>
+</div>
+</form>
+{% endif %}
+
+{% if not search_term %}
+{% comment %} nessuno risultato {% endcomment %}
+
+
+{% else %}
+<div class='row title-row my-2'>
+    <div class='col-12 py-0'>
+        <h4 class='my-0 py-0'>Il termine <b style="color:#4F4747;text-decoration: underline;
+            ">{{ search_term }}</b> è presente in <b
+                style="color:#4F4747;text-decoration: underline;">{{ count }}</b> Tweet</h4>
+    </div>
+</div>
+{% endif %}
+
+<table cellspacing="0" class="table table-bordered table-hover table-inverse table-striped"
+    id="ordina" width="100%">
+    <thead class="thead-light">
+        <tr>
+            <tr>
+                <th scope="col">Text</th>
+                <th scope="col">Date{% if search_term %}<a href="?q={{ search_term|blank_space }}&r=-published_date"><i
+                            class="fa fa-fw fa-sort"></i>{% endif %}</th>
+                <th scope="col">Media</th>
+                <th scope="col">Link</th>
+                <th scope="col">Like{% if search_term %}<a href="?q={{ search_term|blank_space }}&r=-like"><i
+                            class="fa fa-fw fa-sort"></i></a>{% endif %}</th>
+                <th scope="col">Retweet{% if search_term %}<a href="?q={{ search_term|blank_space }}&r=-retweet"><i
+                            class="fa fa-fw fa-sort"></i>{% endif %}</th>
+            </tr>
+        </tr>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+
+        <tr>
+        {% if not search_term %}
+        {% comment %} lista completa {% endcomment %}
+        <td scope="row">{{ object.tweet_text }}</th>
+        {% else %}
+            <td scope="row">{% autoescape off %}{{ object.tweet_text|grassetto:search_term }}{% endautoescape %}</th>
+        {% endif %}
+            <td style="white-space:nowrap;">{{ object.published_date }}</td>
+            {% if object.media_url != 'none' %}
+            <td style="white-space:nowrap;"><a href="{{ object.media_url }}" download rel="noopener noreferrer"
+                    target="_blank" target="_blank">Media</a></td>
+            {% elif object.media_url == 'none' %}
+            <td style="white-space:nowrap;"></td>
+            {% endif %}
+            {% if object.url != 'none' %}
+            <td style="white-space:nowrap;"><a href="{{ object.url }}" target="_blank">Link</a></td>
+            {% elif object.url == 'none' %}
+            <td style="white-space:nowrap;"></td>
+            {% endif %}
+            <td style="white-space:nowrap;">{{ object.like }}</td>
+            <td style="white-space:nowrap;">{{ object.retweet }}</td>
+
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% if is_paginated %}
+<hr>
+<!--Pagination-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% comment %} PREVIOUS {% endcomment %}
+        {% if page_obj.has_previous %}
+        {% if not search_term %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link"
+                href="{% url 'social:twitter_search' %}?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.previous_page_number }}"
+                tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+
+        {% endif %}
+        {% comment %} END PREVIOUS {% endcomment %}
+
+        {% if page_obj.number|add:'-4' > 1 %}
+        {% if not search_term %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link"
+                href="?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+        {% endif %}
+
+
+
+        {% endif %}
+
+        {% for i in page_obj.paginator.page_range %}
+        {% if page_obj.number == i %}
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(current)</span>
+            </span>
+        </li>
+        {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+        {% if not search_term %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+
+
+        {% endif %}
+        {% endfor %}
+
+        {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+        {% if not search_term %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link"
+                href="?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+        {% endif %}
+
+
+
+        {% endif %}
+
+
+        {% comment %} NEXT {% endcomment %}
+        {% if page_obj.has_next %}
+        {% if not search_term %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link"
+                href="{% url 'social:twitter_search' %}?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+        {% endif %}
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+        </li>
+        {% endif %}
+        {% comment %} END NEXT {% endcomment %}
+    </ul>
+</nav>
+<!--end of Pagination-->
+{% endif %}
+
+
+
+{% endblock social_content %}

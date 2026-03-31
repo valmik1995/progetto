@@ -1,0 +1,150 @@
+{% extends 'watermarks/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Upload Watermarks{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block watermarks_content %}
+{% include "watermarks/sidebar.html" %}
+<div class="col-lg-9">
+<style>
+  .wm-upload-card {
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    border-radius: 14px;
+    background: #fff;
+  }
+  .wm-progress-wrap {
+    background: linear-gradient(120deg, #fff7ed 0%, #f8fafc 55%, #eef2ff 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: .85rem;
+  }
+  .wm-gallery-title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .wm-thumb {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform .2s ease;
+  }
+  .wm-thumb-frame {
+    height: 148px;
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid rgba(30, 41, 59, 0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .35rem;
+  }
+  .wm-thumb:hover {
+    transform: translateY(-3px);
+  }
+</style>
+
+<div class="wm-upload-card p-3 p-md-4 mb-4">
+  <div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+    <div>
+      <h3 class="mb-1">Upload immagini</h3>
+      <p class="text-muted mb-0">Carica file JPG/PNG/HEIC e genera i watermark.</p>
+    </div>
+  </div>
+
+  <form method="post" enctype="multipart/form-data" id="uploadForm">
+    {% crispy form %}
+    <div class="wm-progress-wrap mt-3" id="uploadProgress" style="display: none;">
+      <div class="progress" style="height: 26px;">
+      <div id="uploadProgressBar" class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+           role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+      </div>
+    </div>
+  </form>
+
+  <div id="imagePreview" class="mt-3"></div>
+
+  <script src="{% static 'js/file-preview.js' %}"></script>
+  <script>
+    bindImagePreview('id_file', 'imagePreview');
+
+    (function () {
+      var form = document.getElementById('uploadForm');
+      var progressBar = document.getElementById('uploadProgress');
+      var bar = document.getElementById('uploadProgressBar');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function () {
+        progressBar.style.display = 'block';
+        bar.style.width = '0%';
+        bar.setAttribute('aria-valuenow', '0');
+        bar.textContent = '0%';
+      });
+
+      // Simula progress per upload sincrono (non abbiamo XHR progress)
+      var fakeProgress = 0;
+      var interval = setInterval(function () {
+        fakeProgress += 15;
+        if (fakeProgress > 90) fakeProgress = 90;
+        bar.style.width = fakeProgress + '%';
+        bar.setAttribute('aria-valuenow', String(fakeProgress));
+        bar.textContent = fakeProgress + '%';
+        if (fakeProgress >= 90) clearInterval(interval);
+      }, 200);
+    })();
+  </script>
+</div>
+
+<div class="wm-upload-card p-3 p-md-4 mb-4" id="watermark">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h4 class="wm-gallery-title mb-0">Watermarks</h4>
+    <span class="text-muted small">File elaborati</span>
+  </div>
+  <div class="row text-left text-lg-left" id="master">
+
+    {% for photo in photos %}
+    {% if photo.file_watermark %}
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="{{ photo.file_watermark.url }}" class="d-block mb-4 h-100" download>
+        <div class="wm-thumb-frame">
+          <img class="img-fluid wm-thumb" src="{{ photo.file_watermark.url }}" alt="">
+        </div>
+      </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+</div>
+
+<!-- Gallery -->
+<div class="wm-upload-card p-3 p-md-4" id="gallery">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h4 class="wm-gallery-title mb-0">Originali</h4>
+    <span class="text-muted small">File caricati</span>
+  </div>
+  <div class="row text-left text-lg-left" id="master">
+
+    {% for photo in photos %}
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="{{ photo.file.url }}" class="d-block mb-4 h-100" download>
+        <div class="wm-thumb-frame">
+          <img class="img-fluid wm-thumb" src="{{ photo.file.url }}" alt="">
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,749 @@
+ffmpeg version 4.2.7-0ubuntu0.1 Copyright (c) 2000-2022 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+Routing option strict to both codec and muxer layer
+[h264 @ 0x5567df7c2080] Reinit context to 640x352, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/IMG_3908.MOV':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2022-06-24T18:41:43.000000Z
+  Duration: 00:00:27.34, start: 0.000000, bitrate: 2118 kb/s
+    Stream #0:0(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 192 kb/s (default)
+    Metadata:
+      creation_time   : 2022-06-24T18:41:43.000000Z
+      handler_name    : Core Media Audio
+    Stream #0:1(und): Video: h264 (Constrained Baseline), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive, left), 640x352, 1921 kb/s, 59.72 fps, 59 tbr, 90k tbn, 180k tbc (default)
+    Metadata:
+      creation_time   : 2022-06-24T18:41:43.000000Z
+      handler_name    : Core Media Video
+      encoder         : 'avc1'
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[Parsed_scale_0 @ 0x5567df7ce400] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x5567df81b3c0] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:1 (h264) -> scale (graph 0)
+  Stream #1:0 (png) -> scale (graph 0)
+  overlay (graph 0) -> Stream #0:0 (libx264)
+  Stream #0:0 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[graph_1_in_0_0 @ 0x5567dfbdb800] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[h264 @ 0x5567df817c80] Reinit context to 640x352, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x5567df908e40] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x5567df829480] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:1 @ 0x5567dfde5c80] w:640 h:352 pixfmt:yuv420p tb:1/90000 fr:59/1 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x5567dfde6cc0] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[Parsed_scale_0 @ 0x5567df908e40] w:640 h:352 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_setsar_1 @ 0x5567df8fe8c0] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x5567df829480] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x5567dfde4300] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_4 @ 0x5567dfde4f00] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_4 @ 0x5567dfde4f00] [framesync @ 0x5567dfde5068] Selected 1/90000 time base
+[Parsed_overlay_4 @ 0x5567dfde4f00] [framesync @ 0x5567dfde5068] Sync level 2
+[libx264 @ 0x5567df88b080] using SAR=1/1
+[libx264 @ 0x5567df88b080] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x5567df88b080] profile High, level 3.2
+[libx264 @ 0x5567df88b080] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/IMG_3908.mp4':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 59 fps, 15104 tbn, 59 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      creation_time   : 2022-06-24T18:41:43.000000Z
+      handler_name    : Core Media Audio
+      encoder         : Lavc58.54.100 aac
+Past duration 0.605705 too large
+Past duration 0.617775 too large
+Past duration 0.629860 too large
+Past duration 0.641930 too large
+Past duration 0.654015 too large
+Past duration 0.666100 too large
+Past duration 0.678169 too large
+Past duration 0.690254 too large
+Past duration 0.702324 too large
+Past duration 0.714409 too large
+Past duration 0.726479 too large
+Past duration 0.738564 too large
+Past duration 0.750633 too large
+Past duration 0.762718 too large
+Past duration 0.774788 too large
+Past duration 0.786873 too large
+Past duration 0.798943 too large
+Past duration 0.811028 too large
+Past duration 0.823097 too large
+Past duration 0.835182 too large
+Past duration 0.847252 too large
+Past duration 0.859337 too large
+Past duration 0.871422 too large
+Past duration 0.883492 too large
+Past duration 0.895576 too large
+Past duration 0.917488 too large
+Past duration 0.929558 too large
+Past duration 0.941643 too large
+Past duration 0.953712 too large
+Past duration 0.976936 too large
+Past duration 0.989677 too large
+Past duration 0.620064 too large
+*** dropping frame 146 from stream 0 at ts 144
+Past duration 0.632133 too large
+Past duration 0.644218 too large
+Past duration 0.656288 too large
+Past duration 0.668373 too large
+Past duration 0.680443 too large
+Past duration 0.692528 too large
+Past duration 0.704597 too large
+Past duration 0.716682 too large
+Past duration 0.728752 too large
+Past duration 0.740837 too large
+Past duration 0.752922 too large
+Past duration 0.755165 too large
+Past duration 0.767891 too large
+Past duration 0.780632 too large
+Past duration 0.793358 too large
+Past duration 0.806099 too large
+Past duration 0.818825 too large
+Past duration 0.831566 too large
+Past duration 0.844292 too large
+Past duration 0.857033 too large
+Past duration 0.869759 too large
+Past duration 0.882500 too large
+Past duration 0.888664 too large
+Past duration 0.901405 too large
+Past duration 0.914131 too large
+Past duration 0.926872 too large
+Past duration 0.939598 too large
+Past duration 0.952339 too large
+Past duration 0.965065 too large
+Past duration 0.977806 too large
+Past duration 0.990532 too large
+Past duration 0.616615 too large
+*** dropping frame 228 from stream 0 at ts 226
+Past duration 0.628685 too large
+Past duration 0.640770 too large
+Past duration 0.652855 too large
+Past duration 0.664925 too large
+Past duration 0.677010 too large
+Past duration 0.689079 too large
+Past duration 0.701164 too large
+Past duration 0.713234 too large
+Past duration 0.725319 too large
+Past duration 0.737389 too large
+Past duration 0.749474 too large
+Past duration 0.761543 too large
+Past duration 0.773628 too large
+Past duration 0.785698 too large
+Past duration 0.797783 too large
+Past duration 0.815758 too large
+Past duration 0.833733 too large
+Past duration 0.839912 too large
+Past duration 0.851997 too large
+Past duration 0.864067 too large
+Past duration 0.876152 too large
+Past duration 0.878395 too large
+Past duration 0.890465 too large
+Past duration 0.902550 too large
+Past duration 0.914619 too large
+Past duration 0.926704 too large
+Past duration 0.938774 too large
+Past duration 0.950859 too large
+Past duration 0.962944 too large
+Past duration 0.975014 too large
+Past duration 0.987099 too large
+Past duration 0.999168 too large
+Past duration 0.622063 too large
+*** dropping frame 309 from stream 0 at ts 307
+Past duration 0.634804 too large
+Past duration 0.647530 too large
+Past duration 0.660271 too large
+Past duration 0.672997 too large
+Past duration 0.685738 too large
+Past duration 0.698463 too large
+Past duration 0.704643 too large
+Past duration 0.717384 too large
+Past duration 0.730110 too large
+Past duration 0.742851 too large
+Past duration 0.755577 too large
+Past duration 0.768318 too large
+Past duration 0.781044 too large
+Past duration 0.793785 too large
+Past duration 0.806511 too large
+Past duration 0.819252 too large
+Past duration 0.831978 too large
+Past duration 0.844719 too large
+Past duration 0.857445 too large
+Past duration 0.863625 too large
+Past duration 0.876366 too large
+Past duration 0.889091 too large
+Past duration 0.901833 too large
+Past duration 0.914558 too large
+Past duration 0.927299 too large
+Past duration 0.933464 too large
+Past duration 0.945549 too large
+Past duration 0.957619 too large
+Past duration 0.969704 too large
+Past duration 0.981789 too large
+Past duration 0.993858 too large
+Past duration 0.615074 too large
+*** dropping frame 390 from stream 0 at ts 388
+Past duration 0.627800 too large
+Past duration 0.640541 too large
+Past duration 0.653267 too large
+Past duration 0.666008 too large
+Past duration 0.678734 too large
+Past duration 0.691475 too large
+Past duration 0.704201 too large
+Past duration 0.710381 too large
+Past duration 0.722466 too large
+Past duration 0.734535 too large
+Past duration 0.746620 too large
+Past duration 0.758690 too large
+Past duration 0.770775 too large
+Past duration 0.782845 too large
+Past duration 0.794930 too large
+Past duration 0.806999 too large
+Past duration 0.819084 too large
+Past duration 0.831154 too large
+Past duration 0.843239 too large
+Past duration 0.855309 too large
+Past duration 0.867393 too large
+Past duration 0.879463 too large
+Past duration 0.891548 too large
+Past duration 0.903633 too large
+Past duration 0.915703 too large
+Past duration 0.927788 too large
+Past duration 0.939857 too large
+Past duration 0.951942 too large
+Past duration 0.964012 too large
+Past duration 0.976097 too large
+Past duration 0.988167 too large
+Past duration 0.622108 too large
+*** dropping frame 472 from stream 0 at ts 470
+Past duration 0.634193 too large
+Past duration 0.646263 too large
+Past duration 0.658348 too large
+Past duration 0.670433 too large
+Past duration 0.682503 too large
+Past duration 0.694588 too large
+Past duration 0.706657 too large
+Past duration 0.718742 too large
+Past duration 0.730812 too large
+Past duration 0.742897 too large
+Past duration 0.754967 too large
+Past duration 0.767052 too large
+Past duration 0.779121 too large
+Past duration 0.791206 too large
+Past duration 0.803276 too large
+Past duration 0.815361 too large
+Past duration 0.827431 too large
+Past duration 0.839516 too large
+Past duration 0.851585 too large
+Past duration 0.863670 too large
+Past duration 0.875755 too large
+Past duration 0.887825 too large
+Past duration 0.899910 too large
+Past duration 0.911980 too large
+Past duration 0.924065 too large
+Past duration 0.936134 too large
+Past duration 0.948219 too large
+Past duration 0.960289 too large
+Past duration 0.978264 too large
+Past duration 0.996254 too large
+Past duration 0.612221 too large
+*** dropping frame 552 from stream 0 at ts 550
+Past duration 0.633476 too large
+Past duration 0.645546 too large
+Past duration 0.657631 too large
+Past duration 0.669701 too large
+Past duration 0.681786 too large
+Past duration 0.693855 too large
+Past duration 0.705940 too large
+Past duration 0.718010 too large
+Past duration 0.730095 too large
+Past duration 0.742165 too large
+Past duration 0.754250 too large
+Past duration 0.766319 too large
+Past duration 0.778404 too large
+Past duration 0.790474 too large
+Past duration 0.802559 too large
+Past duration 0.814644 too large
+Past duration 0.826714 too large
+Past duration 0.838799 too large
+Past duration 0.850868 too large
+Past duration 0.862953 too large
+Past duration 0.880928 too large
+Past duration 0.898903 too large
+Past duration 0.905083 too large
+Past duration 0.917152 too large
+Past duration 0.929237 too large
+Past duration 0.941307 too large
+Past duration 0.953392 too large
+Past duration 0.965477 too large
+Past duration 0.977547 too large
+Past duration 0.989632 too large
+Past duration 0.617668 too large
+*** dropping frame 633 from stream 0 at ts 631
+Past duration 0.629753 too large
+Past duration 0.641823 too large
+Past duration 0.653908 too large
+Past duration 0.665977 too large
+Past duration 0.678062 too large
+Past duration 0.690132 too large
+Past duration 0.702217 too large
+Past duration 0.714287 too large
+Past duration 0.726372 too large
+Past duration 0.738441 too large
+Past duration 0.750526 too large
+Past duration 0.762596 too large
+Past duration 0.774681 too large
+Past duration 0.786766 too large
+Past duration 0.798836 too large
+Past duration 0.810921 too large
+Past duration 0.822990 too large
+Past duration 0.835075 too large
+Past duration 0.847145 too large
+Past duration 0.859230 too large
+Past duration 0.871300 too large
+Past duration 0.883385 too large
+Past duration 0.895454 too large
+Past duration 0.907539 too large
+Past duration 0.919609 too large
+Past duration 0.931694 too large
+Past duration 0.943764 too large
+Past duration 0.955849 too large
+Past duration 0.967918 too large
+Past duration 0.980003 too large
+Past duration 0.992088 too large
+Past duration 0.613945 too large
+*** dropping frame 714 from stream 0 at ts 712
+Past duration 0.626030 too large
+Past duration 0.638100 too large
+Past duration 0.650185 too large
+Past duration 0.662254 too large
+Past duration 0.674339 too large
+Past duration 0.686409 too large
+Past duration 0.698494 too large
+Past duration 0.710564 too large
+Past duration 0.722649 too large
+Past duration 0.734718 too large
+Past duration 0.746803 too large
+Past duration 0.758888 too large
+Past duration 0.770958 too large
+Past duration 0.783043 too large
+Past duration 0.795113 too large
+Past duration 0.807198 too large
+Past duration 0.819267 too large
+Past duration 0.831352 too large
+Past duration 0.843422 too large
+Past duration 0.855507 too large
+Past duration 0.867577 too large
+Past duration 0.879662 too large
+Past duration 0.891731 too large
+Past duration 0.903816 too large
+Past duration 0.915886 too large
+Past duration 0.927971 too large
+Past duration 0.940041 too large
+Past duration 0.952126 too large
+Past duration 0.964211 too large
+Past duration 0.976280 too large
+Past duration 0.988365 too large
+Past duration 0.620064 too large
+*** dropping frame 795 from stream 0 at ts 793
+Past duration 0.632133 too large
+Past duration 0.644218 too large
+Past duration 0.656288 too large
+Past duration 0.668373 too large
+Past duration 0.680443 too large
+Past duration 0.692528 too large
+Past duration 0.704597 too large
+Past duration 0.716682 too large
+Past duration 0.728752 too large
+Past duration 0.740837 too large
+Past duration 0.752922 too large
+Past duration 0.770897 too large
+Past duration 0.788872 too large
+Past duration 0.795052 too large
+Past duration 0.807121 too large
+Past duration 0.819206 too large
+Past duration 0.831276 too large
+Past duration 0.843361 too large
+Past duration 0.855431 too large
+Past duration 0.867516 too large
+Past duration 0.879585 too large
+Past duration 0.891670 too large
+Past duration 0.903755 too large
+Past duration 0.921730 too large
+Past duration 0.939705 too large
+Past duration 0.946541 too large
+Past duration 0.961235 too large
+Past duration 0.975929 too large
+Past duration 0.990639 too large
+Past duration 0.997475 too large
+Past duration 0.619987 too large
+*** dropping frame 875 from stream 0 at ts 873
+Past duration 0.632072 too large
+Past duration 0.644142 too large
+Past duration 0.656227 too large
+Past duration 0.668297 too large
+Past duration 0.680382 too large
+Past duration 0.692451 too large
+Past duration 0.704536 too large
+Past duration 0.716621 too large
+Past duration 0.728691 too large
+Past duration 0.740776 too large
+Past duration 0.752846 too large
+Past duration 0.764931 too large
+Past duration 0.777000 too large
+Past duration 0.789085 too large
+Past duration 0.801155 too large
+Past duration 0.813240 too large
+Past duration 0.839729 too large
+Past duration 0.851814 too large
+Past duration 0.863899 too large
+Past duration 0.875969 too large
+Past duration 0.888054 too large
+Past duration 0.900124 too large
+Past duration 0.912209 too large
+Past duration 0.924278 too large
+Past duration 0.936363 too large
+Past duration 0.948433 too large
+Past duration 0.960518 too large
+Past duration 0.972588 too large
+Past duration 0.984673 too large
+Past duration 0.996742 too large
+Past duration 0.612434 too large
+*** dropping frame 954 from stream 0 at ts 952
+Past duration 0.624519 too large
+Past duration 0.636589 too large
+Past duration 0.648674 too large
+Past duration 0.660744 too large
+Past duration 0.672829 too large
+Past duration 0.684898 too large
+Past duration 0.696983 too large
+Past duration 0.709053 too large
+Past duration 0.721138 too large
+Past duration 0.733208 too large
+Past duration 0.745293 too large
+Past duration 0.757378 too large
+Past duration 0.769447 too large
+Past duration 0.781532 too large
+Past duration 0.793602 too large
+Past duration 0.805687 too large
+Past duration 0.817757 too large
+Past duration 0.829842 too large
+Past duration 0.841911 too large
+Past duration 0.853996 too large
+Past duration 0.866066 too large
+Past duration 0.878151 too large
+Past duration 0.890221 too large
+Past duration 0.902306 too large
+Past duration 0.914375 too large
+Past duration 0.926460 too large
+Past duration 0.938530 too large
+Past duration 0.950615 too large
+Past duration 0.962700 too large
+Past duration 0.974770 too large
+Past duration 0.986855 too large
+Past duration 0.998924 too large
+Past duration 0.612373 too large
+*** dropping frame 1034 from stream 0 at ts 1032
+Past duration 0.621178 too large
+Past duration 0.636528 too large
+Past duration 0.651878 too large
+Past duration 0.667244 too large
+Past duration 0.673409 too large
+Past duration 0.685493 too large
+Past duration 0.697563 too large
+Past duration 0.709648 too large
+Past duration 0.721733 too large
+Past duration 0.733803 too large
+Past duration 0.745888 too large
+Past duration 0.757957 too large
+Past duration 0.770042 too large
+Past duration 0.782112 too large
+Past duration 0.794197 too large
+Past duration 0.806267 too large
+Past duration 0.818352 too large
+Past duration 0.830421 too large
+Past duration 0.842506 too large
+Past duration 0.854576 too large
+Past duration 0.866661 too large
+Past duration 0.878731 too large
+Past duration 0.890816 too large
+Past duration 0.902885 too large
+Past duration 0.920876 too large
+Past duration 0.938850 too large
+Past duration 0.945030 too large
+Past duration 0.957100 too large
+Past duration 0.969185 too large
+Past duration 0.981255 too large
+Past duration 0.993340 too large
+Past duration 0.615196 too large
+*** dropping frame 1115 from stream 0 at ts 1113
+Past duration 0.627281 too large
+Past duration 0.639366 too large
+Past duration 0.651436 too large
+Past duration 0.663521 too large
+Past duration 0.675591 too large
+Past duration 0.687675 too large
+Past duration 0.699745 too large
+Past duration 0.711830 too large
+Past duration 0.723900 too large
+Past duration 0.735985 too large
+Past duration 0.748055 too large
+Past duration 0.760139 too large
+Past duration 0.772209 too large
+Past duration 0.784294 too large
+Past duration 0.802269 too large
+Past duration 0.820244 too large
+Past duration 0.826424 too large
+Past duration 0.838509 too large
+Past duration 0.850578 too large
+Past duration 0.862663 too large
+Past duration 0.874733 too large
+Past duration 0.886818 too large
+Past duration 0.898888 too large
+Past duration 0.910973 too large
+Past duration 0.923042 too large
+Past duration 0.935127 too large
+Past duration 0.947197 too large
+Past duration 0.959282 too large
+Past duration 0.971352 too large
+Past duration 0.983437 too large
+Past duration 0.995522 too large
+Past duration 0.625343 too large
+*** dropping frame 1194 from stream 0 at ts 1192
+Past duration 0.634148 too large
+Past duration 0.642952 too large
+Past duration 0.658302 too large
+Past duration 0.673653 too large
+Past duration 0.689018 too large
+Past duration 0.695854 too large
+Past duration 0.702675 too large
+Past duration 0.720009 too large
+Past duration 0.737328 too large
+Past duration 0.745476 too large
+Past duration 0.753609 too large
+Past duration 0.769630 too large
+Past duration 0.785637 too large
+Past duration 0.794441 too large
+Past duration 0.803230 too large
+Past duration 0.818596 too large
+Past duration 0.833946 too large
+Past duration 0.842751 too large
+Past duration 0.851555 too large
+Past duration 0.867561 too large
+Past duration 0.883568 too large
+Past duration 0.891716 too large
+Past duration 0.899864 too large
+Past duration 0.916527 too large
+Past duration 0.933189 too large
+Past duration 0.940681 too large
+Past duration 0.948174 too large
+Past duration 0.965492 too large
+Past duration 0.982811 too large
+Past duration 0.989647 too large
+Past duration 0.996483 too large
+Past duration 0.615074 too large
+*** dropping frame 1275 from stream 0 at ts 1273
+Past duration 0.627144 too large
+Past duration 0.639229 too large
+Past duration 0.651299 too large
+Past duration 0.663383 too large
+Past duration 0.675453 too large
+Past duration 0.687538 too large
+Past duration 0.699608 too large
+Past duration 0.711693 too large
+Past duration 0.723778 too large
+Past duration 0.735847 too large
+Past duration 0.747932 too large
+Past duration 0.760002 too large
+Past duration 0.772087 too large
+Past duration 0.784157 too large
+Past duration 0.796242 too large
+Past duration 0.808311 too large
+Past duration 0.820396 too large
+Past duration 0.832466 too large
+Past duration 0.844551 too large
+Past duration 0.856621 too large
+Past duration 0.868706 too large
+Past duration 0.880775 too large
+Past duration 0.892860 too large
+Past duration 0.904930 too large
+Past duration 0.917015 too large
+Past duration 0.929085 too large
+Past duration 0.941170 too large
+Past duration 0.953255 too large
+Past duration 0.965324 too large
+Past duration 0.977409 too large
+Past duration 0.989479 too large
+Past duration 0.617241 too large
+*** dropping frame 1356 from stream 0 at ts 1354
+Past duration 0.629326 too large
+Past duration 0.641411 too large
+Past duration 0.653481 too large
+Past duration 0.665565 too large
+Past duration 0.677635 too large
+Past duration 0.689720 too large
+Past duration 0.701790 too large
+Past duration 0.713875 too large
+Past duration 0.725945 too large
+Past duration 0.738029 too large
+Past duration 0.750099 too large
+Past duration 0.762184 too large
+Past duration 0.774254 too large
+Past duration 0.786339 too large
+Past duration 0.798409 too large
+Past duration 0.810493 too large
+Past duration 0.822563 too large
+Past duration 0.834648 too large
+Past duration 0.846733 too large
+Past duration 0.858803 too large
+Past duration 0.870888 too large
+Past duration 0.882957 too large
+Past duration 0.895042 too large
+Past duration 0.907112 too large
+Past duration 0.919197 too large
+Past duration 0.931267 too large
+Past duration 0.943352 too large
+Past duration 0.955421 too large
+Past duration 0.967506 too large
+Past duration 0.979576 too large
+Past duration 0.997566 too large
+Past duration 0.619423 too large
+*** dropping frame 1437 from stream 0 at ts 1435
+Past duration 0.631508 too large
+Past duration 0.643578 too large
+Past duration 0.655663 too large
+Past duration 0.667732 too large
+Past duration 0.679817 too large
+Past duration 0.691887 too large
+Past duration 0.703972 too large
+Past duration 0.716042 too large
+Past duration 0.728127 too large
+Past duration 0.740196 too large
+Past duration 0.752281 too large
+Past duration 0.764366 too large
+Past duration 0.776436 too large
+Past duration 0.788521 too large
+Past duration 0.800591 too large
+Past duration 0.812675 too large
+Past duration 0.824745 too large
+Past duration 0.836830 too large
+Past duration 0.848900 too large
+Past duration 0.860985 too large
+Past duration 0.878960 too large
+Past duration 0.896935 too large
+Past duration 0.903114 too large
+Past duration 0.915199 too large
+Past duration 0.927269 too large
+Past duration 0.939354 too large
+Past duration 0.951424 too large
+Past duration 0.963509 too large
+Past duration 0.975578 too large
+Past duration 0.987663 too large
+Past duration 0.999733 too large
+Past duration 0.615700 too large
+*** dropping frame 1518 from stream 0 at ts 1516
+Past duration 0.627785 too large
+Past duration 0.639854 too large
+Past duration 0.651939 too large
+Past duration 0.664009 too large
+Past duration 0.676094 too large
+Past duration 0.688164 too large
+Past duration 0.700249 too large
+Past duration 0.712318 too large
+Past duration 0.724403 too large
+Past duration 0.736488 too large
+Past duration 0.748558 too large
+Past duration 0.760643 too large
+Past duration 0.772713 too large
+Past duration 0.784798 too large
+Past duration 0.796867 too large
+Past duration 0.808952 too large
+Past duration 0.821022 too large
+Past duration 0.833107 too large
+Past duration 0.845177 too large
+Past duration 0.857262 too large
+Past duration 0.869331 too large
+Past duration 0.887321 too large
+Past duration 0.905296 too large
+Past duration 0.911476 too large
+Past duration 0.923546 too large
+Past duration 0.935631 too large
+Past duration 0.947701 too large
+Past duration 0.959785 too large
+Past duration 0.971855 too large
+Past duration 0.983940 too large
+Past duration 0.996010 too large
+Past duration 0.615639 too large
+*** dropping frame 1598 from stream 0 at ts 1596
+Past duration 0.628365 too large
+Past duration 0.641106 too large
+Past duration 0.653831 too large
+Past duration 0.666573 too large
+Past duration 0.679298 too large
+Past duration 0.685478 too large
+Past duration 0.697563 too large
+Past duration 0.709633 too large
+Past duration 0.721718 too large
+Past duration 0.733788 too large
+Past duration 0.745872 too large
+Past duration 0.757942 too large
+Past duration 0.770027 too large
+Past duration 0.782097 too large
+Past duration 0.794182 too large
+[Parsed_overlay_4 @ 0x5567dfde4f00] [framesync @ 0x5567dfde5068] Sync level 0
+No more output streams to write to, finishing.
+frame= 1614 fps=267 q=-1.0 Lsize=    7169kB time=00:00:27.31 bitrate=2149.9kbits/s dup=0 drop=19 speed=4.52x    
+[AVIOContext @ 0x5567df7bd0c0] Statistics: 0 seeks, 12 writeouts
+video:6698kB audio:428kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.601963%
+Input file #0 (/var/www/html/project/media/video/original/IMG_3908.MOV):
+  Input stream #0:0 (audio): 1280 packets read (656242 bytes); 1280 frames decoded (1310720 samples); 
+  Input stream #0:1 (video): 1633 packets read (6566283 bytes); 1633 frames decoded; 
+  Total: 2913 packets (7222525 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/IMG_3908.mp4):
+  Output stream #0:0 (video): 1614 frames encoded; 1614 packets muxed (6858748 bytes); 
+  Output stream #0:1 (audio): 1280 frames encoded (1310720 samples); 1281 packets muxed (438049 bytes); 
+  Total: 2895 packets (7296797 bytes) muxed
+[AVIOContext @ 0x5567df81b8c0] Statistics: 2 seeks, 31 writeouts
+[libx264 @ 0x5567df88b080] frame I:7     Avg QP:16.07  size: 34775
+[libx264 @ 0x5567df88b080] frame P:420   Avg QP:18.65  size:  9970
+[libx264 @ 0x5567df88b080] frame B:1187  Avg QP:19.95  size:  2045
+[libx264 @ 0x5567df88b080] consecutive B-frames:  1.0%  1.2%  4.8% 92.9%
+[libx264 @ 0x5567df88b080] mb I  I16..4: 23.0% 55.7% 21.2%
+[libx264 @ 0x5567df88b080] mb P  I16..4: 15.5% 21.0%  0.2%  P16..4: 29.2% 11.1%  3.1%  0.0%  0.0%    skip:19.8%
+[libx264 @ 0x5567df88b080] mb B  I16..4:  1.2%  0.5%  0.0%  B16..8: 14.9%  2.9%  0.0%  direct: 9.2%  skip:71.2%  L0:44.9% L1:52.3% BI: 2.8%
+[libx264 @ 0x5567df88b080] 8x8 transform intra:54.2% inter:31.5%
+[libx264 @ 0x5567df88b080] coded y,uvDC,uvAC intra: 31.0% 48.3% 2.3% inter: 1.6% 18.1% 0.0%
+[libx264 @ 0x5567df88b080] i16 v,h,dc,p: 21% 43% 17% 20%
+[libx264 @ 0x5567df88b080] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 10% 43% 26%  3%  3%  2%  6%  2%  5%
+[libx264 @ 0x5567df88b080] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 29% 18%  5%  6%  4%  6%  3%  5%
+[libx264 @ 0x5567df88b080] i8c dc,h,v,p: 48% 34% 13%  5%
+[libx264 @ 0x5567df88b080] Weighted P-Frames: Y:12.9% UV:8.1%
+[libx264 @ 0x5567df88b080] kb/s:2005.58
+[aac @ 0x5567df837100] Qavg: 1092.212
+[AVIOContext @ 0x5567df7c6000] Statistics: 81203445 bytes read, 2469 seeks
+[AVIOContext @ 0x5567df88ba80] Statistics: 111578 bytes read, 0 seeks

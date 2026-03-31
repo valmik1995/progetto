@@ -1,0 +1,22 @@
+{% extends 'foto/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block foto_content %}
+
+<h1>Notizia</h1>
+<ul>
+{% for notizia in object_list %}
+    <li><a href="/notizia/{{ notizia.id }}">{{ notizia.id }}</a> - {{ notizia.created_date|date }} - {{ notizia.title }} - {{ notizia.text }}</li>
+    {% for images in notizia.images_set.all %}
+    {{ images.image.url }}
+    {% endfor %}
+{% empty %}
+    <li>No articles yet.</li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}

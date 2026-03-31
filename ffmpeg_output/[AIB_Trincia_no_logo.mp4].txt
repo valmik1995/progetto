@@ -1,0 +1,130 @@
+[h264 @ 0x564fa6bda180] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/AIB_Trincia_no_logo.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : https://clipchamp.com
+    comment         : Create videos with https://clipchamp.com/en/video-editor - free online video editor, video compressor, video converter.
+  Duration: 00:02:54.94, start: 0.000000, bitrate: 9950 kb/s
+    Stream #0:0(und): Video: h264 (Constrained Baseline), 1 reference frame (avc1 / 0x31637661), yuv420p(left), 1280x720 [SAR 1:1 DAR 16:9], 9753 kb/s, 30 fps, 30 tbr, 15360 tbn, 60 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 192 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x564fa6c3a580] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_0 @ 0x564fa6c3d9c0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x564fa6c34700] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x564fa6c426c0] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> scale
+  Stream #0:1 (aac) -> concat:in0:a0
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x564fa6d81580] Reinit context to 1280x720, pix_fmt: yuv420p
+[h264 @ 0x564fa70723c0] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x564fa7e89200] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x564fa7e91700] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x564fa7e92900] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x564fa7e97040] w:1280 h:720 pixfmt:yuv420p tb:1/15360 fr:30/1 sar:1/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x564fa7e980c0] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x564fa7e99140] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_1 @ 0x564fa7e9a100] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[graph_0_in_2_0 @ 0x564fa7e9b240] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_scale_0 @ 0x564fa7e89200] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_1 @ 0x564fa6d34500] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x564fa7e91700] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x564fa7e91bc0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x564fa7e93f80] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x564fa7e93f80] [framesync @ 0x564fa7e940a8] Selected 1/76800 time base
+[Parsed_overlay_6 @ 0x564fa7e93f80] [framesync @ 0x564fa7e940a8] Sync level 2
+[Parsed_scale_4 @ 0x564fa7e92900] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_5 @ 0x564fa7e933c0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[libx264 @ 0x564fa6c33640] using SAR=1/1
+[libx264 @ 0x564fa6c33640] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x564fa6c33640] profile High, level 3.1
+[libx264 @ 0x564fa6c33640] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/AIB_Trincia_no_logo.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    comment         : Create videos with https://clipchamp.com/en/video-editor - free online video editor, video compressor, video converter.
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+[Parsed_overlay_6 @ 0x564fa7e93f80] [framesync @ 0x564fa7e940a8] Sync level 0
+[Parsed_concat_7 @ 0x564fa7e950c0] EOF on in0:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x564fa7e950c0] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x564fa7e950c0] Segment finished at pts=174900000
+[Parsed_concat_7 @ 0x564fa7e950c0] EOF on in1:a0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x564fa7e950c0] EOF on in1:v0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x564fa7e950c0] Segment finished at pts=176918685
+No more output streams to write to, finishing.
+frame= 5297 fps= 82 q=-1.0 Lsize=  241758kB time=00:02:56.93 bitrate=11193.3kbits/s speed=2.73x    
+[AVIOContext @ 0x564fa6bd8440] Statistics: 0 seeks, 128 writeouts
+video:238762kB audio:2802kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.080062%
+Input file #0 (/var/www/html/project/media/video/original/AIB_Trincia_no_logo.mp4):
+  Input stream #0:0 (video): 5247 packets read (213232348 bytes); 5247 frames decoded; 
+  Input stream #0:1 (audio): 7534 packets read (4198540 bytes); 7532 frames decoded (7712768 samples); 
+  Total: 12781 packets (217430888 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/AIB_Trincia_no_logo.mp4):
+  Output stream #0:0 (video): 5297 frames encoded; 5297 packets muxed (244492116 bytes); 
+  Output stream #0:1 (audio): 7620 frames encoded (7802220 samples); 7621 packets muxed (2869688 bytes); 
+  Total: 12918 packets (247361804 bytes) muxed
+[AVIOContext @ 0x564fa6c41200] Statistics: 2 seeks, 947 writeouts
+[libx264 @ 0x564fa6c33640] frame I:29    Avg QP:18.04  size:279350
+[libx264 @ 0x564fa6c33640] frame P:1395  Avg QP:21.79  size:101493
+[libx264 @ 0x564fa6c33640] frame B:3873  Avg QP:25.89  size: 24479
+[libx264 @ 0x564fa6c33640] consecutive B-frames:  1.7%  1.9%  1.7% 94.7%
+[libx264 @ 0x564fa6c33640] mb I  I16..4:  4.5%  3.5% 92.0%
+[libx264 @ 0x564fa6c33640] mb P  I16..4:  0.5%  1.3%  3.8%  P16..4: 43.6% 19.4% 27.1%  0.0%  0.0%    skip: 4.2%
+[libx264 @ 0x564fa6c33640] mb B  I16..4:  0.2%  0.3%  0.6%  B16..8: 30.0% 14.6%  7.9%  direct:15.8%  skip:30.5%  L0:37.3% L1:27.3% BI:35.4%
+[libx264 @ 0x564fa6c33640] 8x8 transform intra:20.9% inter:38.7%
+[libx264 @ 0x564fa6c33640] coded y,uvDC,uvAC intra: 88.1% 68.9% 27.1% inter: 40.5% 14.1% 1.2%
+[libx264 @ 0x564fa6c33640] i16 v,h,dc,p: 27% 51% 17%  5%
+[libx264 @ 0x564fa6c33640] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 43% 13%  3%  4%  4%  5%  4%  6%
+[libx264 @ 0x564fa6c33640] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 25% 12%  6%  8%  7%  8%  7%  9%
+[libx264 @ 0x564fa6c33640] i8c dc,h,v,p: 42% 33% 16%  9%
+[libx264 @ 0x564fa6c33640] Weighted P-Frames: Y:10.5% UV:0.6%
+[libx264 @ 0x564fa6c33640] kb/s:11056.71
+[aac @ 0x564fa6c564c0] Qavg: 727.136
+[AVIOContext @ 0x564fa6be13c0] Statistics: 217622466 bytes read, 2 seeks
+[AVIOContext @ 0x564fa6c39f00] Statistics: 111578 bytes read, 0 seeks
+[AVIOContext @ 0x564fa6c13f80] Statistics: 1530915 bytes read, 42 seeks

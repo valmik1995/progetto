@@ -1,0 +1,175 @@
+-vsync is deprecated. Use -fps_mode
+Passing a number to -vsync is deprecated, use a string argument as described in the manual.
+[h264 @ 0x5ab81304d480] Reinit context to 1920x1088, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/Teatro_San_Nazaro_Napoli_no_logo_no_codino.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    creation_time   : 2026-02-17T06:43:12.000000Z
+    encoder         : Blackmagic Design DaVinci Resolve Studio
+  Duration: 00:00:18.84, start: 0.000000, bitrate: 7913 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/unknown, progressive, left), 1920x1080 (1920x1088), 7616 kb/s, SAR 1:1 DAR 16:9, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      creation_time   : 2026-02-17T06:43:12.000000Z
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : H.264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 319 kb/s (default)
+    Metadata:
+      creation_time   : 2026-02-17T06:43:12.000000Z
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, 1 reference frame, rgba(pc, gbr/unknown/unknown), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 fps, 25 tbr, 25 tbn
+[h264 @ 0x5ab81305f6c0] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+  Stream #2:0[0x1](ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #2:1[0x2](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+[out#0/mp4 @ 0x5ab814e45680] Adding streams from explicit maps...
+[out#0/mp4 @ 0x5ab814e45680] Creating output stream from an explicitly mapped complex filtergraph 0, output [v]
+[vost#0:0/libx264 @ 0x5ab814e461c0] Created video stream from complex filtergraph 0:[concat]
+[vost#0:0/libx264 @ 0x5ab814e461c0] 
+[out#0/mp4 @ 0x5ab814e45680] Creating output stream from an explicitly mapped complex filtergraph 0, output [a]
+[aost#0:1/aac @ 0x5ab814e47c40] Created audio stream from complex filtergraph 0:[concat]
+[aost#0:1/aac @ 0x5ab814e47c40] 
+Stream mapping:
+  Stream #0:0 (h264) -> scale:default
+  Stream #0:1 (aac) -> concat
+  Stream #1:0 (png) -> scale:default
+  Stream #2:0 (aac) -> concat
+  Stream #2:1 (h264) -> scale:default
+  concat -> Stream #0:0 (libx264)
+  concat -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x5ab813081280] Reinit context to 1920x1088, pix_fmt: yuv420p
+[in#1/png_pipe @ 0x5ab8130aed00] EOF while reading input
+[in#1/png_pipe @ 0x5ab8130aed00] Terminating demuxer thread
+[vist#1:0/png @ 0x5ab81312f480] Decoder thread received EOF packet
+[vist#1:0/png @ 0x5ab81312f480] Decoder returned EOF, finishing
+[vist#1:0/png @ 0x5ab81312f480] Terminating decoder thread
+[h264 @ 0x5ab813ff7880] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x5ab81307ee80] w:1920 h:1080 flags:'' interl:0
+[Parsed_scale_2 @ 0x5ab8130e3300] w:1920 h:1080 flags:'' interl:0
+[Parsed_scale_4 @ 0x5ab8130e3800] w:1920 h:1080 flags:'' interl:0
+[graph 0 input from stream 0:0 @ 0x5ab8130438c0] w:1920 h:1080 pixfmt:yuv420p tb:1/15360 fr:30/1 sar:1/1
+[graph 0 input from stream 1:0 @ 0x5ab8130e5140] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835
+[graph 0 input from stream 2:1 @ 0x5ab8130e54c0] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1
+[graph_0_in_0_1 @ 0x5ab8130e5840] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:stereo
+[graph_0_in_2_0 @ 0x5ab8130e5c00] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:stereo
+[Parsed_concat_7 @ 0x5ab8130e3e00] auto-inserting filter 'auto_aresample_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_7'
+[Parsed_scale_0 @ 0x5ab81307ee80] w:1920 h:1080 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:(null)
+[Parsed_setsar_1 @ 0x5ab8130e30c0] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x5ab8130e3300] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1920 h:1080 fmt:yuva420p sar:1/1 flags:0x00000004
+[Parsed_setsar_3 @ 0x5ab8130e3540] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x5ab8130e3b80] main w:1920 h:1080 fmt:yuv420p overlay w:1920 h:1080 fmt:yuva420p
+[Parsed_overlay_6 @ 0x5ab8130e3b80] [framesync @ 0x5ab81306df68] Selected 1/76800 time base
+[Parsed_overlay_6 @ 0x5ab8130e3b80] [framesync @ 0x5ab81306df68] Sync level 2
+[Parsed_scale_4 @ 0x5ab8130e3800] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x00000004
+[Parsed_setsar_5 @ 0x5ab81307ed80] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_aresample_0 @ 0x5ab8130ea640] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[Parsed_concat_7 @ 0x5ab8130e3e00] Video inputs have different frame rates, output will be VFR
+[Parsed_scale_0 @ 0x5ab81307ee80] w:1920 h:1080 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:(null)
+    Last message repeated 2 times
+[Parsed_scale_2 @ 0x5ab8130e3300] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1920 h:1080 fmt:yuva420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[Parsed_scale_4 @ 0x5ab8130e3800] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[libx264 @ 0x5ab814e46580] using SAR=1/1
+[libx264 @ 0x5ab814e46580] MB rate (8160000000) > level limit (16711680)
+[libx264 @ 0x5ab814e46580] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x5ab814e46580] profile High, level 6.2, 4:2:0, 8-bit
+[libx264 @ 0x5ab814e46580] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=24 lookahead_threads=8 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/Teatro_San_Nazaro_Napoli_no_logo_no_codino.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/unknown, progressive, left), 1920x1080 (0x0) [SAR 1:1 DAR 16:9], q=2-31, 1000k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81306cf40] EOF while reading input
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81306cf40] Terminating demuxer thread
+[vist#0:0/h264 @ 0x5ab81304f080] Decoder thread received EOF packet
+[vist#0:0/h264 @ 0x5ab81304f080] Decoder returned EOF, finishing
+[vist#0:0/h264 @ 0x5ab81304f080] Terminating decoder thread
+[Parsed_overlay_6 @ 0x5ab8130e3b80] [framesync @ 0x5ab81306df68] Sync level 0
+[Parsed_concat_7 @ 0x5ab8130e3e00] EOF on in0:v0, 1 streams left in segment.
+[aist#0:1/aac @ 0x5ab8130b17c0] Decoder thread received EOF packet
+[aist#0:1/aac @ 0x5ab8130b17c0] Decoder returned EOF, finishing
+[aist#0:1/aac @ 0x5ab8130b17c0] Terminating decoder thread
+[Parsed_concat_7 @ 0x5ab8130e3e00] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x5ab8130e3e00] Segment finished at pts=18793333
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81312f600] EOF while reading input
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81312f600] Terminating demuxer thread
+[aist#2:0/aac @ 0x5ab81305d780] Decoder thread received EOF packet
+[aist#2:0/aac @ 0x5ab81305d780] Decoder returned EOF, finishing
+[aist#2:0/aac @ 0x5ab81305d780] Terminating decoder thread
+[vist#2:1/h264 @ 0x5ab8130604c0] Decoder thread received EOF packet
+[vist#2:1/h264 @ 0x5ab8130604c0] Decoder returned EOF, finishing
+[vist#2:1/h264 @ 0x5ab8130604c0] Terminating decoder thread
+[Parsed_concat_7 @ 0x5ab8130e3e00] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x5ab8130e3e00] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x5ab8130e3e00] Segment finished at pts=20812020
+No more output streams to write to, finishing.
+[out#0/mp4 @ 0x5ab814e45680] All streams finished
+[out#0/mp4 @ 0x5ab814e45680] Terminating muxer thread
+[AVIOContext @ 0x5ab814f13100] Statistics: 25094077 bytes written, 2 seeks, 99 writeouts
+[out#0/mp4 @ 0x5ab814e45680] Output file #0 (/var/www/html/project/media/video/watermarks/Teatro_San_Nazaro_Napoli_no_logo_no_codino.mp4):
+[out#0/mp4 @ 0x5ab814e45680]   Output stream #0:0 (video): 613 frames encoded; 613 packets muxed (24742181 bytes); 
+[out#0/mp4 @ 0x5ab814e45680]   Output stream #0:1 (audio): 976 frames encoded (998977 samples); 977 packets muxed (325427 bytes); 
+[out#0/mp4 @ 0x5ab814e45680]   Total: 1590 packets (25067608 bytes) muxed
+[out#0/mp4 @ 0x5ab814e45680] video:24162kB audio:318kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.105574%
+frame=  613 fps= 73 q=-1.0 Lsize=   24506kB time=00:00:20.80 bitrate=9651.6kbits/s speed=2.49x    
+[AVIOContext @ 0x5ab813043c00] Statistics: 3409 bytes written, 0 seeks, 17 writeouts
+[libx264 @ 0x5ab814e46580] frame I:6     Avg QP:13.77  size:137648
+[libx264 @ 0x5ab814e46580] frame P:260   Avg QP:17.94  size: 60916
+[libx264 @ 0x5ab814e46580] frame B:347   Avg QP:19.50  size: 23278
+[libx264 @ 0x5ab814e46580] consecutive B-frames: 11.7% 36.2%  6.4% 45.7%
+[libx264 @ 0x5ab814e46580] mb I  I16..4: 35.7% 22.0% 42.3%
+[libx264 @ 0x5ab814e46580] mb P  I16..4: 18.0% 22.6%  7.9%  P16..4: 17.7% 11.4%  8.3%  0.0%  0.0%    skip:13.9%
+[libx264 @ 0x5ab814e46580] mb B  I16..4:  5.7%  5.9%  0.8%  B16..8: 27.0% 11.0%  1.8%  direct:10.7%  skip:37.1%  L0:45.5% L1:43.5% BI:11.0%
+[libx264 @ 0x5ab814e46580] 8x8 transform intra:45.9% inter:40.1%
+[libx264 @ 0x5ab814e46580] coded y,uvDC,uvAC intra: 39.7% 45.4% 13.1% inter: 16.4% 27.7% 1.2%
+[libx264 @ 0x5ab814e46580] i16 v,h,dc,p: 62% 22% 11%  5%
+[libx264 @ 0x5ab814e46580] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 46% 21% 18%  2%  2%  3%  3%  3%  2%
+[libx264 @ 0x5ab814e46580] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 22% 10%  5%  7%  7%  7%  6%  5%
+[libx264 @ 0x5ab814e46580] i8c dc,h,v,p: 46% 19% 28%  8%
+[libx264 @ 0x5ab814e46580] Weighted P-Frames: Y:1.2% UV:0.0%
+[libx264 @ 0x5ab814e46580] kb/s:9519.01
+[aac @ 0x5ab814e48000] Qavg: 2750.669
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81306cf40] Input file #0 (/var/www/html/project/media/video/original/Teatro_San_Nazaro_Napoli_no_logo_no_codino.mp4):
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81306cf40]   Input stream #0:0 (video): 563 packets read (17868091 bytes); 563 frames decoded; 0 decode errors; 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81306cf40]   Input stream #0:1 (audio): 883 packets read (753424 bytes); 881 frames decoded; 0 decode errors (902080 samples); 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81306cf40]   Total: 1446 packets (18621515 bytes) demuxed
+[AVIOContext @ 0x5ab81306e3c0] Statistics: 40944679 bytes read, 1064 seeks
+[in#1/png_pipe @ 0x5ab8130aed00] Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+[in#1/png_pipe @ 0x5ab8130aed00]   Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 0 decode errors; 
+[in#1/png_pipe @ 0x5ab8130aed00]   Total: 1 packets (111578 bytes) demuxed
+[AVIOContext @ 0x5ab81306db40] Statistics: 111578 bytes read, 0 seeks
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81312f600] Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81312f600]   Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded; 0 decode errors (89024 samples); 
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81312f600]   Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 0 decode errors; 
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x5ab81312f600]   Total: 139 packets (229944 bytes) demuxed
+[AVIOContext @ 0x5ab81305f100] Statistics: 1629219 bytes read, 37 seeks

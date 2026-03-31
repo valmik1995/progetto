@@ -1,0 +1,39 @@
+[h264 @ 0x5654da3160c0] Reinit context to 1920x1088, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/DJI_20240919173244_0033_S.MP4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    creation_time   : 2024-09-19T15:32:45.000000Z
+    encoder         : Lavf56.15.102
+  Duration: 00:01:13.97, start: 0.000000, bitrate: 31026 kb/s
+    Stream #0:0(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(left), 1920x1080 (1920x1088), 31025 kb/s, 29.97 fps, 29.97 tbr, 30k tbn, 58 tbc (default)
+    Metadata:
+      creation_time   : 2024-09-19T15:32:45.000000Z
+      handler_name    : VideoHandler
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x5654da34ed40] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_0 @ 0x5654da367380] w:640 h:360 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x5654da36b000] w:640 h:360 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x5654da365700] w:640 h:360 flags:'bilinear' interl:0
+Stream specifier ':a' in filtergraph description [0:v] scale=w=640:h=360, setsar=1 [video-scaled];         [1:v] scale=w=640:h=360, setsar=1 [wm-watermarks];         [2:v] scale=w=640:h=360, setsar=1 [video2];         [video-scaled][wm-watermarks]overlay=0:0 [video0];         [video0][0:a][video2][2:a] concat=n=2:v=1:a=1[v][a] matches no streams.
+[AVIOContext @ 0x5654da31d3c0] Statistics: 752323 bytes read, 2 seeks
+[AVIOContext @ 0x5654da31c400] Statistics: 111578 bytes read, 0 seeks
+[AVIOContext @ 0x5654da349840] Statistics: 65536 bytes read, 1 seeks

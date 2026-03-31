@@ -1,0 +1,417 @@
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Routing option strict to both codec and muxer layer
+[Parsed_scale_0 @ 0x63d50c8421c0] w:1280 h:720 flags:'' interl:0
+[Parsed_scale_2 @ 0x63d50c84f880] w:1280 h:720 flags:'' interl:0
+-vsync is deprecated. Use -fps_mode
+Passing a number to -vsync is deprecated, use a string argument as described in the manual.
+[h264 @ 0x63d50c858940] Reinit context to 848x480, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/1000147946.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    creation_time   : 2026-01-18T06:49:07.000000Z
+  Duration: 00:00:31.61, start: 0.000000, bitrate: 1785 kb/s
+  Stream #0:0[0x1](eng): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 848x478 (848x480), 1457 kb/s, 29.33 fps, 30 tbr, 90k tbn (default)
+    Metadata:
+      creation_time   : 2026-01-18T06:49:07.000000Z
+      handler_name    : VideoHandle
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 319 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-18T06:49:07.000000Z
+      handler_name    : SoundHandle
+      vendor_id       : [0][0][0][0]
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, 1 reference frame, rgba(pc, gbr/unknown/unknown), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 fps, 25 tbr, 25 tbn
+[out#0/mp4 @ 0x63d50d6d4080] Creating output stream from unlabeled output of complex filtergraph 0. This overrides automatic video mapping.
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Created video stream from complex filtergraph 0:[overlay:default]
+[vost#0:0/libx264 @ 0x63d50d6d4e00] 
+[out#0/mp4 @ 0x63d50d6d4080] No explicit maps, mapping streams automatically...
+[aost#0:1/aac @ 0x63d50d6d6800] Created audio stream from input stream 0:1
+Stream mapping:
+  Stream #0:0 (h264) -> scale:default (graph 0)
+  Stream #1:0 (png) -> scale:default (graph 0)
+  overlay:default (graph 0) -> Stream #0:0 (libx264)
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[h264 @ 0x63d50c9888c0] Reinit context to 848x480, pix_fmt: yuv420p
+[graph_1_in_0_1 @ 0x63d50c8421c0] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:stereo
+[in#1/png_pipe @ 0x63d50c8ada80] EOF while reading input
+[in#1/png_pipe @ 0x63d50c8ada80] Terminating demuxer thread
+[vist#1:0/png @ 0x63d50c8ad340] Decoder thread received EOF packet
+[vist#1:0/png @ 0x63d50c8ad340] Decoder returned EOF, finishing
+[vist#1:0/png @ 0x63d50c8ad340] Terminating decoder thread
+[Parsed_scale_0 @ 0x63d50d8dfd80] w:1280 h:720 flags:'' interl:0
+[Parsed_scale_2 @ 0x63d50d8df300] w:1280 h:720 flags:'' interl:0
+[graph 0 input from stream 0:0 @ 0x63d50d8e4340] w:848 h:478 pixfmt:yuv420p tb:1/90000 fr:30/1 sar:0/1
+[graph 0 input from stream 1:0 @ 0x63d50d902100] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835
+[Parsed_scale_0 @ 0x63d50d8dfd80] w:848 h:478 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x00000004
+[Parsed_setsar_1 @ 0x63d50d8de940] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x63d50d8df300] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x00000004
+[Parsed_setsar_3 @ 0x63d50d8de740] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_4 @ 0x63d50d8de140] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_4 @ 0x63d50d8de140] [framesync @ 0x63d50c85d928] Selected 1/90000 time base
+[Parsed_overlay_4 @ 0x63d50d8de140] [framesync @ 0x63d50c85d928] Sync level 2
+[Parsed_scale_0 @ 0x63d50d8dfd80] w:848 h:478 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x00000004
+    Last message repeated 2 times
+[Parsed_scale_2 @ 0x63d50d8df300] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[libx264 @ 0x63d50d6d51c0] using SAR=1/1
+[libx264 @ 0x63d50d6d51c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x63d50d6d51c0] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x63d50d6d51c0] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/1000147946.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 (0x0) [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-18T06:49:07.000000Z
+      handler_name    : SoundHandle
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 aac
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.600319 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.603661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.606987 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.604332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.604652 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.604988 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.605324 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.605659 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.605995 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.606331 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.606667 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.606987 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.607323 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.607658 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.607994 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.608330 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.608665 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.608986 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.609322 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.609657 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.609993 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.610329 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.610664 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.610985 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.611320 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.611656 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.611992 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.612328 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.612663 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.612999 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.613319 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.613655 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.613991 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.614326 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.614662 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.614998 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.615318 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.615654 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.615990 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.616325 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.616661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.616997 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.617332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.617653 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.617989 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.621330 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.624657 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.621986 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.622322 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.622658 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.622993 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.623329 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.623665 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.623985 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.624321 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.624657 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.624992 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.625328 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.625664 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.625999 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.626320 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.626656 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.626991 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.627327 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.627663 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.627998 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.628319 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.628654 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.628990 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.629326 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.629662 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.629997 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.630333 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.630653 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.630989 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.631325 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.631660 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.631996 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.632332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.632652 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.632988 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.633324 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.633659 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.633995 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.634331 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.634666 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.634987 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.635323 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.635658 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.639000 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.642326 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.639656 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.639992 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.640327 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.640663 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.640999 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.641319 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.641655 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.641991 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.642326 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.642662 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.642998 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.643318 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.643654 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.643990 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.644325 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.644661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.644997 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.645332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.645653 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.645988 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.646324 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.646660 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.646996 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.647331 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.647652 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.647987 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.648323 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.648659 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.648994 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.649330 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.649666 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.649986 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.650322 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.650658 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.650993 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.651329 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.651665 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.651985 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.652321 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.652657 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.652992 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.653328 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.653664 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.653999 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.654320 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.654655 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.654991 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.658333 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.661659 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.658989 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.659325 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.659660 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.659996 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.660332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.660652 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.660988 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.661324 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.661659 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.661995 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.662331 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.662666 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.662987 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.663322 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.663658 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.663994 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.664330 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.664665 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.664986 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.665321 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.665657 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.665993 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.666328 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.666664 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.667000 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.667320 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.667656 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.667992 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.668327 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.668663 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.668999 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.669319 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.669655 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.669991 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.670326 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.670662 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.670998 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.671333 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.671654 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.671989 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.672325 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.672661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.672997 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.673332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.673653 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.673988 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.674324 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.677666 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.680992 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.678322 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.678658 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.678993 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.679329 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.679665 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.679985 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.680321 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.680656 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.680992 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.681328 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.681664 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.681999 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.682320 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.682655 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.682991 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.683327 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.683662 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.683998 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.684319 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.684654 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.684990 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.685326 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.685661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.685997 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.686333 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.686653 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.686989 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.687325 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.687660 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.687996 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.688332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.688652 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.688988 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.689323 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.689659 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.689995 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.690331 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.690666 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.690987 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.691322 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.691658 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.691994 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.692329 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.692665 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.692986 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.693321 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.693657 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.693993 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.697319 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.700661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.697990 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.700661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.700996 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.701332 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.701653 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.701988 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.702324 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.702660 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.702995 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.703331 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.703651 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.703987 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.704323 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.704659 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.704994 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.705330 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.705666 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.705986 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.706322 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.706657 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.706993 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.707329 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.707664 too large
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63d50c857d80] EOF while reading input
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63d50c857d80] Terminating demuxer thread
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.707985 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.708321 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.708656 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.708992 too large
+[vist#0:0/h264 @ 0x63d50c84b600] Decoder thread received EOF packet
+[vist#0:0/h264 @ 0x63d50c84b600] Decoder returned EOF, finishing
+[vist#0:0/h264 @ 0x63d50c84b600] Terminating decoder thread
+[Parsed_overlay_4 @ 0x63d50d8de140] [framesync @ 0x63d50c85d928] Sync level 0
+[aist#0:1/aac @ 0x63d50c8b0480] Decoder thread received EOF packet
+[aist#0:1/aac @ 0x63d50c8b0480] Decoder returned EOF, finishing
+[aist#0:1/aac @ 0x63d50c8b0480] Terminating decoder thread
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.709328 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.709663 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.709999 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.710320 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.710655 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.710991 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.711327 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.711662 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.711998 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.712318 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.712654 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.712990 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.713326 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.713661 too large
+[vost#0:0/libx264 @ 0x63d50d6d4e00] Past duration 0.713997 too large
+No more output streams to write to, finishing.
+[out#0/mp4 @ 0x63d50d6d4080] All streams finished
+[out#0/mp4 @ 0x63d50d6d4080] Terminating muxer thread
+[AVIOContext @ 0x63d50d83a800] Statistics: 16373001 bytes written, 2 seeks, 66 writeouts
+[out#0/mp4 @ 0x63d50d6d4080] Output file #0 (/var/www/html/project/media/video/watermarks/1000147946.mp4):
+[out#0/mp4 @ 0x63d50d6d4080]   Output stream #0:0 (video): 927 frames encoded; 927 packets muxed (15829303 bytes); 
+[out#0/mp4 @ 0x63d50d6d4080]   Output stream #0:1 (audio): 1481 frames encoded (1516544 samples); 1482 packets muxed (507905 bytes); 
+[out#0/mp4 @ 0x63d50d6d4080]   Total: 2409 packets (16337208 bytes) muxed
+[out#0/mp4 @ 0x63d50d6d4080] video:15458kB audio:496kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.219064%
+frame=  927 fps= 83 q=-1.0 Lsize=   15989kB time=00:00:31.57 bitrate=4148.6kbits/s speed=2.82x    
+[AVIOContext @ 0x63d50c84f6c0] Statistics: 4632 bytes written, 0 seeks, 23 writeouts
+[libx264 @ 0x63d50d6d51c0] frame I:4     Avg QP:15.69  size: 49430
+[libx264 @ 0x63d50d6d51c0] frame P:253   Avg QP:17.80  size: 25562
+[libx264 @ 0x63d50d6d51c0] frame B:670   Avg QP:18.71  size: 13677
+[libx264 @ 0x63d50d6d51c0] consecutive B-frames:  2.9%  0.9%  3.9% 92.3%
+[libx264 @ 0x63d50d6d51c0] mb I  I16..4: 30.1% 47.0% 22.9%
+[libx264 @ 0x63d50d6d51c0] mb P  I16..4: 27.0% 36.9%  4.4%  P16..4: 16.6%  8.6%  3.8%  0.0%  0.0%    skip: 2.8%
+[libx264 @ 0x63d50d6d51c0] mb B  I16..4:  8.3% 10.7%  0.7%  B16..8: 27.6% 11.0%  1.2%  direct:19.6%  skip:20.7%  L0:46.0% L1:46.5% BI: 7.5%
+[libx264 @ 0x63d50d6d51c0] 8x8 transform intra:54.0% inter:28.9%
+[libx264 @ 0x63d50d6d51c0] coded y,uvDC,uvAC intra: 38.8% 81.0% 21.8% inter: 10.4% 59.5% 1.9%
+[libx264 @ 0x63d50d6d51c0] i16 v,h,dc,p: 32% 32% 14% 22%
+[libx264 @ 0x63d50d6d51c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 32% 18%  4%  6%  5%  7%  3%  4%
+[libx264 @ 0x63d50d6d51c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 23% 14%  5%  8%  7%  7%  5%  5%
+[libx264 @ 0x63d50d6d51c0] i8c dc,h,v,p: 38% 20% 20% 22%
+[libx264 @ 0x63d50d6d51c0] Weighted P-Frames: Y:5.5% UV:4.7%
+[libx264 @ 0x63d50d6d51c0] kb/s:4003.02
+[aac @ 0x63d50d6d6bc0] Qavg: 699.066
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63d50c857d80] Input file #0 (/var/www/html/project/media/video/original/1000147946.mp4):
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63d50c857d80]   Input stream #0:0 (video): 927 packets read (5760276 bytes); 927 frames decoded; 0 decode errors; 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63d50c857d80]   Input stream #0:1 (audio): 1481 packets read (1263786 bytes); 1481 frames decoded; 0 decode errors (1516544 samples); 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63d50c857d80]   Total: 2408 packets (7024062 bytes) demuxed
+[AVIOContext @ 0x63d50c858140] Statistics: 7107027 bytes read, 2 seeks
+[in#1/png_pipe @ 0x63d50c8ada80] Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+[in#1/png_pipe @ 0x63d50c8ada80]   Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 0 decode errors; 
+[in#1/png_pipe @ 0x63d50c8ada80]   Total: 1 packets (111578 bytes) demuxed
+[AVIOContext @ 0x63d50c8ad680] Statistics: 111578 bytes read, 0 seeks

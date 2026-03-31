@@ -1,0 +1,84 @@
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Routing option strict to both codec and muxer layer
+[Parsed_scale_0 @ 0x5ac3160cb1c0] w:1280 h:720 flags:'' interl:0
+[Parsed_scale_2 @ 0x5ac3160d8880] w:1280 h:720 flags:'' interl:0
+-vsync is deprecated. Use -fps_mode
+Passing a number to -vsync is deprecated, use a string argument as described in the manual.
+[h264 @ 0x5ac3160e1940] Reinit context to 848x480, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/1000233737_X7WtFhb.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:00:16.91, start: 0.000000, bitrate: 1704 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 848x478 (848x480), 1445 kb/s, 29.95 fps, 29.97 tbr, 90k tbn (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 255 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, 1 reference frame, rgba(pc, gbr/unknown/unknown), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 fps, 25 tbr, 25 tbn
+[out#0/mp4 @ 0x5ac316f6a880] Creating output stream from unlabeled output of complex filtergraph 0. This overrides automatic video mapping.
+[vost#0:0/libx264 @ 0x5ac316f6b600] Created video stream from complex filtergraph 0:[overlay:default]
+[vost#0:0/libx264 @ 0x5ac316f6b600] 
+[out#0/mp4 @ 0x5ac316f6a880] No explicit maps, mapping streams automatically...
+[aost#0:1/aac @ 0x5ac316f6d000] Created audio stream from input stream 0:1
+Stream mapping:
+  Stream #0:0 (h264) -> scale:default (graph 0)
+  Stream #1:0 (png) -> scale:default (graph 0)
+  overlay:default (graph 0) -> Stream #0:0 (libx264)
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[h264 @ 0x5ac316172fc0] Reinit context to 848x480, pix_fmt: yuv420p
+[in#1/png_pipe @ 0x5ac31612db40] EOF while reading input
+[in#1/png_pipe @ 0x5ac31612db40] Terminating demuxer thread
+[vist#1:0/png @ 0x5ac3160d6d80] Decoder thread received EOF packet
+[vist#1:0/png @ 0x5ac3160d6d80] Decoder returned EOF, finishing
+[vist#1:0/png @ 0x5ac3160d6d80] Terminating decoder thread
+[Parsed_scale_0 @ 0x5ac3160cb1c0] w:1280 h:720 flags:'' interl:0
+[Parsed_scale_2 @ 0x5ac3170e2780] w:1280 h:720 flags:'' interl:0
+[graph 0 input from stream 0:0 @ 0x5ac3170f01c0] w:848 h:478 pixfmt:yuv420p tb:1/90000 fr:30000/1001 sar:0/1
+[graph 0 input from stream 1:0 @ 0x5ac3170f0540] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835
+[Parsed_scale_0 @ 0x5ac3160cb1c0] w:848 h:478 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x00000004
+[Parsed_setsar_1 @ 0x5ac3170e25c0] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x5ac3170e2780] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x00000004
+[Parsed_setsar_3 @ 0x5ac3170ef980] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_4 @ 0x5ac3170efb80] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_4 @ 0x5ac3170efb80] [framesync @ 0x5ac3160e6b28] Selected 1/90000 time base
+[Parsed_overlay_4 @ 0x5ac3170efb80] [framesync @ 0x5ac3160e6b28] Sync level 2
+[Parsed_scale_0 @ 0x5ac3160cb1c0] w:848 h:478 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x00000004
+    Last message repeated 2 times
+[Parsed_scale_2 @ 0x5ac3170e2780] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[libx264 @ 0x5ac316f6b9c0] using SAR=1/1
+[libx264 @ 0x5ac316f6b9c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x5ac316f6b9c0] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x5ac316f6b9c0] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+[graph_1_in_0_1 @ 0x5ac31a597340] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:stereo
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/1000233737_X7WtFhb.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 (0x0) [SAR 1:1 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 aac

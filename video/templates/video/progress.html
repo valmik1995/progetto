@@ -1,0 +1,123 @@
+{% extends 'video/base.html' %}
+{% block video_active %}active{% endblock %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block video_content %}
+<style>
+  .video-upload-title { font-weight: 700; letter-spacing: -0.02em; }
+  .video-panel {
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    border-radius: 14px;
+    background: #fff;
+  }
+  .video-option-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: .75rem .9rem;
+    height: 100%;
+  }
+  .video-progress-wrap {
+    background: linear-gradient(125deg, #ecfeff 0%, #f8fafc 65%, #fff7ed 100%);
+    border-radius: 14px;
+    border: 1px solid #dbeafe;
+  }
+  .video-status-badge {
+    display: inline-block;
+    font-size: .85rem;
+    font-weight: 600;
+    color: #0f766e;
+    background: #ccfbf1;
+    border: 1px solid #99f6e4;
+    border-radius: 999px;
+    padding: .35rem .65rem;
+    margin-bottom: .75rem;
+  }
+</style>
+
+<div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+  <div>
+    <h3 class="mb-1 video-upload-title">Upload video con filigrana</h3>
+    <p class="text-muted mb-0">Carica il file e scegli orientamento, logo e codino.</p>
+  </div>
+</div>
+
+{% if not task_id %}
+<form method="post" enctype="multipart/form-data" class="video-panel p-3 p-md-4">
+  {% csrf_token %}
+
+  <div class="form-row">
+    <div class="form-group col-md-6 mb-0">
+      {{ form.title|as_crispy_field }}
+    </div>
+    <div class="form-group col-md-6 mb-0">
+      {{ form.formato|as_crispy_field }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="video-option-box">
+      <label class="font-weight-bold d-block">{{ form.posizione.label }}</label>
+      {{ form.posizione }}
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="video-option-box">
+      <label class="font-weight-bold d-block">{{ form.logo.label }}</label>
+      {{ form.logo }}
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="video-option-box">
+      <label class="font-weight-bold d-block">{{ form.codino.label }}</label>
+      {{ form.codino }}
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    {{ form.video|as_crispy_field }}
+    <video id="videoPreview" controls style="max-width: 100%; display: none;" class="mt-2"></video>
+  </div>
+
+  <button type="submit" class="btn btn-dark px-4">Avvia elaborazione</button>
+</form>
+
+<script src="{% static 'js/file-preview.js' %}"></script>
+<script>
+  bindVideoPreview('id_video', 'videoPreview');
+</script>
+{% else %}
+<div class="video-panel video-progress-wrap p-3 p-md-4">
+  <span class="video-status-badge">Task video in corso</span>
+  <p id="videoTaskStatus" class="mb-2 font-weight-bold">Preparazione elaborazione...</p>
+  <div class="progress" style="height: 28px;">
+    <div
+      id="videoTaskProgressBar"
+      class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+      role="progressbar"
+      style="width: 0%"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+    >0%</div>
+  </div>
+</div>
+
+{% if task_id %}
+<script src="{% static 'js/task-progress.js' %}"></script>
+<script>
+  startTaskProgress({
+    endpoint: '{% url "video:video_get_task_info" %}',
+    taskId: '{{ task_id }}',
+    videoId: '{{ video_obj.id }}',
+    statusId: 'videoTaskStatus',
+    barId: 'videoTaskProgressBar',
+    onSuccessRedirect: '{% url "video:video-list" %}'
+  });
+</script>
+{% endif %}
+{% endif %}
+
+{% endblock %}

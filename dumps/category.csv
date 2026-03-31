@@ -1,0 +1,21 @@
+id;name;user_id;parent_id;slug
+1;USAR;1;;usar
+2;GOS;1;;gos
+3;ELICOTERRISTI;1;;elicoterristi
+4;SAF;1;;saf
+5;ISTITUZIONALE;1;;istituzionale
+6;PUNTELLATORI;1;;puntellatori
+7;SOMMOZZATORI;1;;sommozzatori
+8;ESERCITAZIONE;1;;esercitazione
+9;CONCORDIA;1;;concordia
+10;ATTREZZATURE;1;;attrezzature
+11;MEZZI;1;;mezzi
+12;AEROPORTUALI;1;;aeroportuali
+13;NAUTICI;1;;nautici
+14;TAS;1;;tas
+15;SAPR;1;;sapr
+19;CON;1;;con
+18;NBCR;1;;nbcr
+16;CINOFILI;1;;cinofili
+17;SOCCORSI;1;;soccorsi
+21;PONTE MORANDI;1;;ponte-morandi

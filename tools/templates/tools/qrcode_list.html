@@ -1,0 +1,36 @@
+{% extends 'tools/base.html' %} 
+{% block video_active %}active{% endblock %} 
+
+
+{% block tools_content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            {% if user.is_authenticated %}
+            <th scope="col">Creato</th>
+            {% endif %}
+            <th scope="col">Titolo</th>
+            <th scope="col">Azione</th>
+        </tr>
+    </thead>
+    {% for instance in object_list %}
+    <tbody>
+        <tr>
+            <th scope="row">{{ instance.id }}</th>
+            {% if user.is_authenticated %}
+            <td>{{ instance.user }}</td>
+            {% endif %}
+            <td>{{ instance.title }}</td>
+            <td>
+                <a href="{{ instance.get_absolute_url }}" class="btn btn-primary"><i class="far fa-eye"></i></a>
+                <a href="{% url 'tools:delete' instance.pk %}" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                <a href="{{ instance.image.url }}" class="btn btn-info" download=""><i class="fas fa-download"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

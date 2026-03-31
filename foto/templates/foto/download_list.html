@@ -1,0 +1,38 @@
+{% extends 'foto/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block foto_content %}
+
+<h1>Scaricate</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+
+                {% for download in object_list %}
+                <div class="col-md-3">
+                    <div class="card">
+
+                            <img class="image-thumbail" src="/media/{{ download.content_object.image_thumbails }}" alt="Card image cap">
+
+                    </div>
+                    <div class="card-body">
+                        <small>Scaricata da: <strong>{{ download.user.first_name}} {{ download.user.last_name}}</strong></small>
+                    </div>
+                    <div class="card-body">
+                        <small>Data: {{ download.created_date}}</small>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            {% include "foto/galleria/page.html" %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

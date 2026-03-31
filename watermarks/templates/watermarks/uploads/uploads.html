@@ -1,0 +1,152 @@
+{% extends 'watermarks/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+{% block javascript %} {# JQUERY FILE UPLOAD SCRIPTS #}
+<script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+<script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+<script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+{# PHOTOS PAGE SCRIPTS #}
+<script src="{% static 'js/watermarks/uploads.js' %}"></script>
+{% endblock %}
+
+
+{% block watermarks_content %} {# INSERIMENTO CODICE UPLOAD #}
+
+{% include "watermarks/sidebar.html" %}
+
+
+<div class="col-lg-9">
+  <style>
+    .wm-upload-card {
+      border: 1px solid rgba(30, 41, 59, 0.08);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .wm-gallery-title {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .wm-thumb {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      transition: transform .2s ease;
+    }
+    .wm-thumb-frame {
+      height: 148px;
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid rgba(30, 41, 59, 0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .35rem;
+    }
+    .wm-thumb:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+
+  <div class="wm-upload-card p-3 p-md-4 mb-4">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+      <div>
+        <h3 class="mb-1">Upload immagini</h3>
+        <p class="text-muted mb-0">{% block title %}Upload Watermarks{% endblock %}</p>
+      </div>
+    </div>
+
+
+
+  <div style="margin-bottom: 20px;">
+    <button type="button" class="btn btn-dark js-upload-photos">
+      Uploads Photo
+    </button>
+    <input id="fileupload" type="file" name="file" multiple style="display: none;" accept= "image/*"
+      data-url="{% url 'watermarks:basic_upload' %}" data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+  </div>
+
+  <script>
+    function fileValidation() {
+      var fileInput =
+        document.getElementById('fileupload');
+
+      var filePath = fileInput.value;
+
+      // Allowing file type
+      var allowedExtensions =
+        /(\.jpg|\.jpeg|\.png)$/i;;
+
+      if (!allowedExtensions.exec(filePath)) {
+        alert('In questa sezione puoi caricare Foto in formato JPG, JPEG, PNG');
+        fileInput.value = '';
+        return false;
+      } else {
+
+        // Image preview
+        if (fileInput.files && fileInput.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById(
+                'imagePreview').innerHTML =
+              '<img src="' + e.target.result +
+              '"/>';
+          };
+
+          reader.readAsDataURL(fileInput.files[0]);
+        }
+      }
+    }
+  </script>
+
+  </div>
+
+  <div class="wm-upload-card p-3 p-md-4 mb-4" id="gallery">
+
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h4 class="wm-gallery-title mb-0">Galleria</h4>
+      <span class="text-muted small">Originali</span>
+    </div>
+
+    <div class="row text-left text-lg-left" id="master">
+
+      {% for photo in photos %}
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{{ photo.file.url }}" class="d-block mb-4 h-100" download>
+          <div class="wm-thumb-frame">
+            <img class="img-fluid wm-thumb" src="{{ photo.file.url }}" alt="">
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+  <div class="wm-upload-card p-3 p-md-4" id="watermark">
+
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h4 class="wm-gallery-title mb-0">Galleria Watermarks</h4>
+      <span class="text-muted small">Elaborati</span>
+    </div>
+
+    <div class="row text-left text-lg-left" id="master">
+
+      {% for photo in photos %}
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{{ photo.file_watermark.url }}" class="d-block mb-4 h-100" download>
+          <div class="wm-thumb-frame">
+            <img class="img-fluid wm-thumb" src="{{ photo.file_watermark.url }}" alt="">
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

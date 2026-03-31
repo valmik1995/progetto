@@ -1,0 +1,110 @@
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'video:video-list' as video %}
+{% url 'social:twitter_search' as social %}
+{% url 'notizia:notizia_list' as notizia %}
+{% url 'foto:gallery' as galleria %}
+{% url 'tools:list' as qrcode %}
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-vvf">
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/templates/fiamma.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {% if request.get_full_path == home_url %}active{% endif %}">
+                <a class="nav-link" href="{{ home_url }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <!-- INIZIO SEZIONE VIDEO -->
+            <li class="nav-item {% if request.get_full_path == video %}active{% endif %}">
+                <a class="nav-link" href="{{ video }}">Video</a>
+            </li>
+
+            <!-- INIZIO SEZIONE FOTO -->
+            <li class="nav-item {% if '/basic-upload/' in request.path %} active{% endif %}">
+                <a class="nav-link" href="{% url 'watermarks:basic_upload' %}">Photos</a>
+            </li>
+            <!-- INIZIO SEZIONE SOCIAL -->
+            {% if user.is_authenticated %}
+            <li class="nav-item {% if request.get_full_path == social %}active{% endif %}">
+                <a class="nav-link" href="{{ social }}">Social</a>
+            </li>
+            {% endif %}
+            <!-- INIZIO SEZIONE NOTIZIA -->
+            {% if user.is_authenticated %}
+            <li class="nav-item {% if request.get_full_path == notizia %}active{% endif %}">
+                <a class="nav-link" href="{{ notizia }}">Notizia</a>
+            </li>
+            {% endif %}
+            <!-- FINE SEZIONE NOTIZIA -->
+
+            <!-- INIZIO SEZIONE GALLERIA -->
+            {% if user.is_authenticated %}
+            <li class="nav-item {% if request.get_full_path == galleria %}active{% endif %}">
+                <a class="nav-link" href="{{ galleria }}">Galleria</a>
+            </li>
+            {% endif %}
+
+
+            <!-- INIZIO SEZIONE TOOLS -->
+            {% if user.is_authenticated %}
+            <li class="nav-item  {% if '/tools/' in request.path %}active{% endif %}">
+                <a class="nav-link" href="{{ qrcode }}">Tools</a>
+            </li>
+            {% endif %}
+            <!-- FINE SEZIONE TOOLS -->
+        </ul>
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+
+            <li class="nav-item dropdown {% if '/accounts/' in request.path %} active{% endif %}">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Profile</a>
+                {%if user.profile.id %}
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'accounts:edit_profile_page' user.profile.id %}">Edit
+                        Profile</a>
+                    <a class="dropdown-item" href="{% url 'accounts:show_profile_page' user.profile.id %}">Show
+                        Profile</a>
+                    <a class="dropdown-item" href="{% url 'accounts:lista_coem' %}">Mappa CoEm</a>
+                </div>
+                {% else %}
+                <a class="dropdown-item" href="{% url 'create_profile_page' user.profile.id %}">Create Profile</a>
+                {% endif %}
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li class="nav-item dropdown"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+        {% if '/social/' in request.path %}
+        <form action="{% url 'social:twitter_search' %}" method="get" class="form-inline my-2 my-lg-0">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+            <input id="q" name="q" type="text" class="form-control mr-sm-2" placeholder="Ricerca ...">
+            <input type="hidden" name="r" type="text" value="published_date">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        {% elif '/foto' in request.path %}
+        <form action="{% url 'foto:search' %}" method="get" class="form-inline my-2 my-lg-0">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+            <input id="q" name="q" type="text" class="form-control mr-sm-2" placeholder="Ricerca ...">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        {% else %}
+        <form action="{% url 'notizia:notizia_search' %}" method="get" class="form-inline my-2 my-lg-0">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+            <input id="q" name="q" type="text" class="form-control mr-sm-2" placeholder="Ricerca ...">
+            <input type="hidden" name="r" type="text" value="published_date">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        {% endif %}
+
+    </div>
+</nav>

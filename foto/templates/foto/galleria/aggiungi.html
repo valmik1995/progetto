@@ -1,0 +1,82 @@
+{% extends 'foto/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Add Gallery{% endblock %}
+
+
+{% block foto_content %}
+<script src="/static/js/foto/tagsinput.js"></script>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            {% if task_id %}
+            <div class="progress progress-striped active" style="height:44px;">
+                <div id="progress-bar" class="bar" style="height:44px;background-color:green"></div>
+            </div>
+            <div id="process-raw-data"><progress id="progress-bar" value="0" max="100"
+                    style="display:none; margin-bottom: 1em;"></progress></div>
+            {% else %}
+            <a href="{% url 'foto:gallery' %}" class="btn btn-dark my-3">Go Back</a>
+            <div class="card">
+                <form id="process-raw-data" method="post" class="notizia-form" enctype="multipart/form-data">
+                    {% csrf_token %} {% crispy form %}
+
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% if task_id %}
+<script type="text/javascript">
+    var taskid = "{{task_id}}";
+    var frm = $('#process-raw-data');
+    var pgrbar = $('#progress-bar');
+
+    get_task_info(taskid);
+
+    function get_task_info(tid) {
+        $.ajax({
+            type: 'get',
+            url: '{% url 'foto:galleria_get_task_info' %}',
+            data: {
+                'task_id': tid
+            },
+            success: function (data) {
+                frm.html('');
+                if (data.state == 'PENDING') {
+                    frm.html('Attendere prego ...');
+                } else if (data.state == 'PROGRESS') {
+                    var bar = document.getElementById("progress-bar");
+                    var barMessage = document.getElementById("progress-bar-message");
+                    pgrbar.css('width', data.result.percent +'%');
+                    pgrbar.val(data.result.percent);
+                    frm.html('Immagini processate numero ' + data.result.current + ' di ' + data.result.total);        
+                } else if (data.state == 'SUCCESS') {
+                    pgrbar.css('display', 'none');
+                    frm.html('Processo completato!');
+                    window.location = '{% url 'foto:gallery' %}';
+                }
+                if (data.state != 'SUCCESS') {
+                    setTimeout(function () {
+                        get_task_info(tid)
+                    }, 500);
+                }
+            },
+            error: function (data) {
+                frm.html("error!");
+            }
+        });
+    }
+
+
+</script>
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

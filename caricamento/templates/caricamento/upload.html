@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block files_active %}active{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <h1>Caricamento Multiplo!</h1>
+    <progress id="progress-bar" value="0" max="100" style="display:none; margin-bottom: 1em;"></progress>
+
+    <form id="process-raw-data" action="{% url 'caricamento:upload_files' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{  form|crispy  }}
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </form>
+
+{% endblock %}

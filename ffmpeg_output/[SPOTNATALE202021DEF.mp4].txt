@@ -1,0 +1,143 @@
+[h264 @ 0x561b59049180] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/adminuser/project/media/video/original/SPOTNATALE202021DEF.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:01:08.99, start: 0.000000, bitrate: 3943 kb/s
+    Stream #0:0(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 3820 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 121 kb/s (default)
+Input #1, png_pipe, from '/home/adminuser/project/media/watermarks/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x561b590b6740] Reinit context to 1920x1088, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/home/adminuser/project/media/watermarks/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T12:49:20.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 2134 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 171 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T12:49:20.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (Main), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1920x1080 (1920x1088) [SAR 1:1 DAR 16:9], 1947 kb/s, 30 fps, 30 tbr, 30k tbn, 60k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T12:49:20.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_0 @ 0x561b590f2e80] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x561b59126500] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x561b590b3bc0] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> scale
+  Stream #0:1 (aac) -> concat:in0:a0
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x561b590975c0] Reinit context to 1280x720, pix_fmt: yuv420p
+[h264 @ 0x561b59504380] Reinit context to 1920x1088, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x561b5a9e62c0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x561b5a9e3180] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x561b5a9e8400] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x561b5a9e7280] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x561b5a9e6b00] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x561b5a9e2800] w:1920 h:1080 pixfmt:yuv420p tb:1/30000 fr:30/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_1 @ 0x561b5a9e2900] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[graph_0_in_2_0 @ 0x561b5a9ea8c0] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_scale_0 @ 0x561b5a9e62c0] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_1 @ 0x561b5a9e66c0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x561b5a9e3180] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x561b5a9e7740] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x561b5a9e9a80] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x561b5a9e9a80] [framesync @ 0x561b5a9e9ba8] Selected 1/25000 time base
+[Parsed_overlay_6 @ 0x561b5a9e9a80] [framesync @ 0x561b5a9e9ba8] Sync level 2
+[Parsed_scale_4 @ 0x561b5a9e8400] w:1920 h:1080 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_5 @ 0x561b5a9e8ec0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[libx264 @ 0x561b5910a9c0] using SAR=1/1
+[libx264 @ 0x561b5910a9c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x561b5910a9c0] profile High, level 3.1
+[libx264 @ 0x561b5910a9c0] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/adminuser/project/media/video/watermarks/SPOTNATALE202021DEF.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 25 fps, 12800 tbn, 25 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+[Parsed_overlay_6 @ 0x561b5a9e9a80] [framesync @ 0x561b5a9e9ba8] Sync level 0
+[Parsed_concat_7 @ 0x561b5a9e2040] EOF on in0:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x561b5a9e2040] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x561b5a9e2040] Segment finished at pts=68986485
+Past duration 0.671196 too large
+Past duration 0.837868 too large
+    Last message repeated 1 times
+*** dropping frame 1731 from stream 0 at ts 1731
+Past duration 0.837868 too large
+*** dropping frame 1736 from stream 0 at ts 1736
+Past duration 0.837868 too large
+*** dropping frame 1741 from stream 0 at ts 1741
+Past duration 0.837868 too large
+*** dropping frame 1746 from stream 0 at ts 1746
+Past duration 0.837868 too large
+*** dropping frame 1751 from stream 0 at ts 1751
+Past duration 0.837868 too large
+*** dropping frame 1756 from stream 0 at ts 1756
+[Parsed_concat_7 @ 0x561b5a9e2040] EOF on in1:a0, 1 streams left in segment.
+Past duration 0.837868 too large
+*** dropping frame 1761 from stream 0 at ts 1761
+Past duration 0.837868 too large
+*** dropping frame 1766 from stream 0 at ts 1766
+Past duration 0.837868 too large
+*** dropping frame 1771 from stream 0 at ts 1771
+[Parsed_concat_7 @ 0x561b5a9e2040] EOF on in1:v0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x561b5a9e2040] Segment finished at pts=71005170
+No more output streams to write to, finishing.
+frame= 1774 fps=210 q=-1.0 Lsize=   22458kB time=00:01:11.00 bitrate=2590.9kbits/s dup=0 drop=9 speed=8.41x    
+[AVIOContext @ 0x561b59047440] Statistics: 0 seeks, 17 writeouts
+video:21333kB audio:1066kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.264409%
+Input file #0 (/home/adminuser/project/media/video/original/SPOTNATALE202021DEF.mp4):
+  Input stream #0:0 (video): 1723 packets read (32913096 bytes); 1723 frames decoded; 
+  Input stream #0:1 (audio): 2971 packets read (1051155 bytes); 2971 frames decoded (3042304 samples); 
+  Total: 4694 packets (33964251 bytes) demuxed
+Input file #1 (/home/adminuser/project/media/watermarks/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Input file #2 (/home/adminuser/project/media/watermarks/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (44420 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 60 packets read (486936 bytes); 60 frames decoded; 
+  Total: 149 packets (531356 bytes) demuxed
+Output file #0 (/home/adminuser/project/media/video/watermarks/SPOTNATALE202021DEF.mp4):
+  Output stream #0:0 (video): 1774 frames encoded; 1774 packets muxed (21844619 bytes); 
+  Output stream #0:1 (audio): 3058 frames encoded (3131328 samples); 3059 packets muxed (1091415 bytes); 
+  Total: 4833 packets (22936034 bytes) muxed
+[AVIOContext @ 0x561b59134b40] Statistics: 2 seeks, 91 writeouts
+[libx264 @ 0x561b5910a9c0] frame I:13    Avg QP:12.79  size: 95346
+[libx264 @ 0x561b5910a9c0] frame P:674   Avg QP:16.46  size: 20572
+[libx264 @ 0x561b5910a9c0] frame B:1087  Avg QP:18.94  size:  6200
+[libx264 @ 0x561b5910a9c0] consecutive B-frames:  3.1% 45.0%  1.9% 50.1%
+[libx264 @ 0x561b5910a9c0] mb I  I16..4: 27.5% 20.9% 51.6%
+[libx264 @ 0x561b5910a9c0] mb P  I16..4: 10.3% 12.4%  3.2%  P16..4: 30.4% 13.2%  7.3%  0.0%  0.0%    skip:23.1%
+[libx264 @ 0x561b5910a9c0] mb B  I16..4:  1.7%  2.9%  0.4%  B16..8: 18.4%  5.6%  0.8%  direct:13.4%  skip:56.8%  L0:37.7% L1:47.4% BI:14.9%
+[libx264 @ 0x561b5910a9c0] 8x8 transform intra:48.8% inter:37.3%
+[libx264 @ 0x561b5910a9c0] coded y,uvDC,uvAC intra: 47.5% 66.3% 22.8% inter: 10.4% 25.2% 1.4%
+[libx264 @ 0x561b5910a9c0] i16 v,h,dc,p: 54% 20% 16% 10%
+[libx264 @ 0x561b5910a9c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 25% 20%  4%  4%  4%  4%  5%  5%
+[libx264 @ 0x561b5910a9c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 22% 14%  6%  7%  6%  6%  6%  6%
+[libx264 @ 0x561b5910a9c0] i8c dc,h,v,p: 48% 22% 23%  7%
+[libx264 @ 0x561b5910a9c0] Weighted P-Frames: Y:10.2% UV:6.1%
+[libx264 @ 0x561b5910a9c0] kb/s:2461.29
+[aac @ 0x561b59117300] Qavg: 4041.665
+[AVIOContext @ 0x561b590503c0] Statistics: 88372573 bytes read, 2229 seeks
+[AVIOContext @ 0x561b5904b300] Statistics: 111578 bytes read, 0 seeks
+[AVIOContext @ 0x561b5904cf40] Statistics: 2160323 bytes read, 61 seeks

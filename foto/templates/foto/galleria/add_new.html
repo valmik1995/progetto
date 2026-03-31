@@ -1,0 +1,18 @@
+{% extends 'foto/base.html' %} 
+
+{% block  uploads_active %}active{% endblock %}
+{% load static %} {% block title %}Multiple Images{% endblock %}
+ 
+ {% block foto_content %}
+
+<div>
+    <form id="post-form" method="post" class="foto-form" enctype="multipart/form-data">
+        {% csrf_token %} 
+    <table>{{ form.as_table }}</table>
+    <button type="submit">Sign in</button>
+    </form>
+</div>
+
+{% endblock %} 
+{% block footer %} 
+{% endblock %}

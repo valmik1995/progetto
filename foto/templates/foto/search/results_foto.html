@@ -1,0 +1,94 @@
+{% extends 'foto/base.html' %}
+{% load static %}
+{% load my_tags %}
+{% block title %}Galleria Search{% endblock %}
+
+{% block foto_content %}
+
+<div class="container">
+    <div class="row">
+        {% include "foto/galleria/left-bar.html" %}
+
+        <div class="col-md-9">
+            <div class="row">
+
+
+                {% if not search_term %}
+                <form action="{% url 'social:search_results' %}" method="get">
+                    <div class="form-row">
+                        <div class="col-md-3 form-group form-inline">
+                            <input name="d" type="text" class="form-control" placeholder="AAAA"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+                        </div>
+                        <div class="col-md-3 form-group form-inline">
+                            <input name="q" type="text" class="form-control" placeholder="Termine">
+                        </div>
+                        <div class="col-md-3 form-group form-inline" style="display: none;">
+                            <input name="r" type="text" class="form-control" placeholder="Termine" value="date">
+                        </div>
+                        <div class="col-md-3 form-group form-inline">
+                            <button type="submit" class="btn btn-primary">Cerca</button>
+                        </div>
+                    </div>
+                </form>
+                {% endif %}
+
+                {% if not search_term %}
+                {% comment %} nessuno risultato {% endcomment %}
+
+
+                {% else %}
+            
+                    <div class='col-md-12 py-0 mb-3'>
+                        <h4 class='my-0 py-0'>Il termine <b style="color:#4F4747;text-decoration: underline;
+            ">{{ search_term }}</b> è presente in <b style="color:#4F4747;text-decoration: underline;">{{ count }}</b>
+                            immagini</h4>
+                    </div>
+      
+                {% endif %}
+
+
+                {% for photo in object_list %}
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <a href="{% url 'foto:photo' photo.id %}">
+                            <img class="image-thumbail" src="{{photo.image_thumbails}}" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <small>Categoria: {{photo.category.name}} Id.: {{photo.id}}</small>
+                        </div>
+                        <div class="card-body">
+                            {% for tag in photo.tags %}
+                            <a href="{% url 'foto:tagged' tag.slug %}" class="badge badge-info">{{ tag.name }}</a>
+                            {% endfor %}
+
+                        </div>
+                        <div class="btn-group galleria-button">
+                            <button type="button" class="btn btn-block btn-outline-dark btn-sm m-1"><a
+                                    href="{% url 'foto:update' photo.id %}">Edit</a></button>
+                            <form action="{% url 'foto:delete' photo.id %}" method="post">
+                                {% csrf_token %}
+                                <button onclick="return confirm('Are you sure?');" style="width: auto"
+                                    class="btn btn-block btn-outline-dark btn-sm m-1">Delete</button>
+                            </form>
+                            <button type="button" class="btn btn-block btn-outline-dark btn-sm m-1"><a
+                                    href="{{ photo.image }}" Download>Download</a></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                {% endfor %}
+
+
+
+                {% include "foto/galleria/page.html" %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    {% endblock foto_content %}

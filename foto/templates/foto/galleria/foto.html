@@ -1,0 +1,21 @@
+{% extends 'foto/base.html' %} {% block uploads_active %}active{% endblock %} {% load static %} {% block title %}Galleria{% endblock %} {% block foto_content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+            <div class="col-md-12">
+
+            	<a href="{% url 'foto:gallery' %}" class="btn btn-dark my-3">Go Back</a>
+            	<img style="max-width: 100%; max-height: 100%;" src="{{photo.image_thumbails.url}}">
+		<p>{{photo.description}}</p>
+            </div>
+            <div class="col-md-12">
+            	{% for line in output %}
+               		 {{ line }}
+                	<br >
+            	{% endfor %}
+            </div>
+
+    </div>
+</div>
+
+{% endblock %}

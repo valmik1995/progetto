@@ -1,0 +1,27 @@
+{% extends 'notizia/base.html' %}
+{% load crispy_forms_tags %}
+{% block uploads_active %}active{% endblock %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block photos_content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.css" />
+<div>
+  <form id="post-form" method="post" class="notizia-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {{ form.media }}
+    <input type="submit" value="Update" />
+  </form>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+{{ form.media }}
+{% endblock %}

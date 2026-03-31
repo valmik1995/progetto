@@ -1,0 +1,796 @@
+[h264 @ 0x55a1d4191140] Reinit context to 368x656, pix_fmt: yuv420p
+[aac @ 0x55a1d41934c0] Input buffer exhausted before END element found
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/video_2023-08-14_09-24-41.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    creation_time   : 2023-08-14T07:23:35.000000Z
+  Duration: 00:00:18.09, start: 0.000000, bitrate: 1486 kb/s
+    Stream #0:0(eng): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt470bg/smpte170m, left), 368x656, 1387 kb/s, 29.70 fps, 29.67 tbr, 90k tbn, 180k tbc (default)
+    Metadata:
+      creation_time   : 2023-08-14T07:23:35.000000Z
+      handler_name    : VideoHandle
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 96 kb/s (default)
+    Metadata:
+      creation_time   : 2023-08-14T07:23:35.000000Z
+      handler_name    : SoundHandle
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo_vertical.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x55a1d4201800] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_1 @ 0x55a1d41d4180] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55a1d420a6c0] w:-1 h:720 flags:'bilinear' interl:0
+[Parsed_scale_7 @ 0x55a1d41deb40] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_9 @ 0x55a1d41c5600] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> split
+  Stream #0:1 (aac) -> concat:in0:a0
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[aac @ 0x55a1d41c3200] Input buffer exhausted before END element found
+[h264 @ 0x55a1d41d38c0] Reinit context to 368x656, pix_fmt: yuv420p
+Error while decoding stream #0:1: Invalid data found when processing input
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 24 times
+[h264 @ 0x55a1d4634d40] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_1 @ 0x55a1d5124700] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55a1d5126380] w:-1 h:720 flags:'bilinear' interl:0
+[Parsed_scale_7 @ 0x55a1d5129c80] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_9 @ 0x55a1d512b400] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x55a1d512fb40] w:368 h:656 pixfmt:yuv420p tb:1/90000 fr:89/3 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x55a1d5130b80] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x55a1d5126280] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_1 @ 0x55a1d5121880] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[graph_0_in_2_0 @ 0x55a1d5121d40] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_concat_12 @ 0x55a1d512db80] auto-inserting filter 'auto_resampler_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_12'
+[Parsed_scale_1 @ 0x55a1d5124700] w:368 h:656 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_boxblur_2 @ 0x55a1d5125100] luma_radius:36 luma_power:1 chroma_radius:18 chroma_power:1 alpha_radius:36 alpha_power:1 w:1280 chroma_w:640 h:720 chroma_h:360
+[Parsed_setsar_3 @ 0x55a1d5126540] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_4 @ 0x55a1d5126380] w:368 h:656 fmt:yuv420p sar:0/1 -> w:404 h:720 fmt:yuva420p sar:0/1 flags:0x2
+[Parsed_setsar_5 @ 0x55a1d5127340] w:404 h:720 sar:0/1 dar:101/180 -> sar:1/1 dar:101/180
+[Parsed_overlay_6 @ 0x55a1d51288c0] main w:1280 h:720 fmt:yuv420p overlay w:404 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x55a1d51288c0] [framesync @ 0x55a1d5128d68] Selected 1/90000 time base
+[Parsed_overlay_6 @ 0x55a1d51288c0] [framesync @ 0x55a1d5128d68] Sync level 2
+[Parsed_scale_7 @ 0x55a1d5129c80] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_8 @ 0x55a1d512a780] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_11 @ 0x55a1d512ca80] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_11 @ 0x55a1d512ca80] [framesync @ 0x55a1d512cbe8] Selected 1/90000 time base
+[Parsed_overlay_11 @ 0x55a1d512ca80] [framesync @ 0x55a1d512cbe8] Sync level 2
+[Parsed_scale_9 @ 0x55a1d512b400] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_10 @ 0x55a1d512bf00] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_resampler_0 @ 0x55a1d5139a00] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[libx264 @ 0x55a1d420b780] using SAR=1/1
+[libx264 @ 0x55a1d420b780] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55a1d420b780] profile High, level 3.1
+[libx264 @ 0x55a1d420b780] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/video_2023-08-14_09-24-41.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 29.67 fps, 11392 tbn, 29.67 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 278 times
+Past duration 0.600563 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.603432 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.606316 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.604912 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.607780 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.610634 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.613503 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.610451 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.613319 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.616188 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.619072 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.621941 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.618874 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.615822 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.625938 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.627144 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.621773 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.630257 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.627525 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.633034 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.626350 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.627571 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.636696 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.625725 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.636192 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.631462 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.638939 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.640175 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.644691 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.649223 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.641853 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.641762 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.647285 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.648811 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.650383 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.651924 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.649193 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.654701 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.660225 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.658134 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.659676 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.664207 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.662453 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.660698 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.668861 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.670403 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.668343 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.673500 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.665169 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.674294 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.667625 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.674767 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.676338 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.677864 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.672493 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.679344 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.678246 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.684731 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.684639 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.684547 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.691704 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.684364 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.692848 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.693077 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.688362 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.679695 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.673988 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.676216 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.678398 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.676003 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.673622 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.671211 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.673729 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.676277 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.678825 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.675117 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.679939 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.677864 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.680412 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.678001 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.679253 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.670586 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.680367 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.672356 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.683144 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.682365 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.681633 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.685478 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.689323 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.677040 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.689476 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.694984 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.696205 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.691185 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.695366 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.693275 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.702080 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.703300 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.704536 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.705757 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.706963 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.708214 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.709419 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.710625 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.711876 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.713081 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.714302 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.715538 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.716759 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.717964 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.719200 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.713829 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.724953 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.722878 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.726402 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.725304 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.724220 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.731697 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.732613 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.728539 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.734062 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.734947 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.729576 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.729485 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.729378 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.729286 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.729195 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.725136 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.727028 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.728920 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.730782 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.732674 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.734550 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.722908 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.732048 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.735893 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.739784 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.739693 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.739571 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.739464 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.744011 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.748512 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.753044 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.757545 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.755470 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.753426 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.763206 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.772987 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.782784 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.780373 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.773689 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.787102 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.784721 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.789879 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.787804 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.785744 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.783669 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.791466 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.799294 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.796883 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.799767 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.797676 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.799248 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.800789 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.802361 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.803886 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.802132 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.809959 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.802284 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.809456 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.816597 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.815849 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.815071 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.818611 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.816200 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.817772 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.813042 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.849892 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.857033 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.854622 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.859138 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.859367 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.859596 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.867424 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.864372 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.866920 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.869438 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.871971 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.874519 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 66 times
+Past duration 0.933784 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.931694 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.929619 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.937767 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.931740 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.937233 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.939125 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.936714 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.938286 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.943779 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.945671 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.940620 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.942833 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.952293 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.949242 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.955406 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.952339 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.949287 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.954765 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.960289 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.957878 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.959770 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.961632 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.956627 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.964088 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.961693 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.962898 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.968086 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.961082 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.965584 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.974388 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.971336 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.978798 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.977730 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.976631 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.982475 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.967552 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.983269 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.987480 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.982430 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.986275 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.990135 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.994011 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.997871 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.996437 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.998009 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.999550 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 5 times
+Past duration 0.996208 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 9 times
+Past duration 0.995949 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 57 times
+Past duration 0.779884 too large
+*** dropping frame 499 from stream 0 at ts 498
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.803856 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.794182 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.812218 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.808830 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.810371 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.816200 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.817772 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+Past duration 0.819313 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 1 times
+Past duration 0.820885 too large
+[aac @ 0x55a1d41c3200] ChannelElement 0.0 missing 
+    Last message repeated 19 times
+Past duration 0.600502 too large
+Past duration 0.603279 too large
+Past duration 0.601204 too large
+Past duration 0.606026 too large
+Past duration 0.607597 too large
+Past duration 0.600914 too large
+[Parsed_overlay_6 @ 0x55a1d51288c0] [framesync @ 0x55a1d5128d68] Sync level 1
+[Parsed_overlay_6 @ 0x55a1d51288c0] [framesync @ 0x55a1d5128d68] Sync level 0
+[Parsed_overlay_11 @ 0x55a1d512ca80] [framesync @ 0x55a1d512cbe8] Sync level 0
+[Parsed_concat_12 @ 0x55a1d512db80] EOF on in0:v0, 1 streams left in segment.
+[Parsed_concat_12 @ 0x55a1d512db80] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_12 @ 0x55a1d512db80] Segment finished at pts=18090666
+[Parsed_concat_12 @ 0x55a1d512db80] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_12 @ 0x55a1d512db80] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_12 @ 0x55a1d512db80] Segment finished at pts=20109353
+No more output streams to write to, finishing.
+frame=  584 fps= 39 q=-1.0 Lsize=   12621kB time=00:00:20.11 bitrate=5139.6kbits/s dup=0 drop=1 speed=1.35x    
+[AVIOContext @ 0x55a1d418f500] Statistics: 0 seeks, 29 writeouts
+video:12290kB audio:309kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.174581%
+Input file #0 (/var/www/html/project/media/video/original/video_2023-08-14_09-24-41.mp4):
+  Input stream #0:0 (video): 535 packets read (3123936 bytes); 535 frames decoded; 
+  Input stream #0:1 (audio): 849 packets read (217789 bytes); 848 frames decoded (868352 samples); 
+  Total: 1384 packets (3341725 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo_vertical.png):
+  Input stream #1:0 (video): 1 packets read (93903 bytes); 1 frames decoded; 
+  Total: 1 packets (93903 bytes) demuxed
+Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/video_2023-08-14_09-24-41.mp4):
+  Output stream #0:0 (video): 584 frames encoded; 584 packets muxed (12585349 bytes); 
+  Output stream #0:1 (audio): 943 frames encoded (965249 samples); 944 packets muxed (316426 bytes); 
+  Total: 1528 packets (12901775 bytes) muxed
+[AVIOContext @ 0x55a1d41ddac0] Statistics: 2 seeks, 53 writeouts
+[libx264 @ 0x55a1d420b780] frame I:4     Avg QP:13.32  size: 76074
+[libx264 @ 0x55a1d420b780] frame P:196   Avg QP:17.93  size: 36495
+[libx264 @ 0x55a1d420b780] frame B:384   Avg QP:20.77  size: 13352
+[libx264 @ 0x55a1d420b780] consecutive B-frames:  5.1% 13.7% 23.6% 57.5%
+[libx264 @ 0x55a1d420b780] mb I  I16..4: 39.3% 33.1% 27.6%
+[libx264 @ 0x55a1d420b780] mb P  I16..4: 12.6% 23.3%  2.9%  P16..4: 16.0% 10.4%  9.1%  0.0%  0.0%    skip:25.7%
+[libx264 @ 0x55a1d420b780] mb B  I16..4:  3.0%  3.4%  0.1%  B16..8: 18.8%  9.5%  2.8%  direct:11.7%  skip:50.7%  L0:38.0% L1:40.6% BI:21.5%
+[libx264 @ 0x55a1d420b780] 8x8 transform intra:57.3% inter:18.4%
+[libx264 @ 0x55a1d420b780] coded y,uvDC,uvAC intra: 38.1% 20.6% 2.4% inter: 19.9% 7.2% 0.7%
+[libx264 @ 0x55a1d420b780] i16 v,h,dc,p: 20% 40%  9% 31%
+[libx264 @ 0x55a1d420b780] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 53% 13%  3%  4%  2%  6%  2%  3%
+[libx264 @ 0x55a1d420b780] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 24% 13%  5%  8%  6%  9%  5%  8%
+[libx264 @ 0x55a1d420b780] i8c dc,h,v,p: 65% 24%  8%  3%
+[libx264 @ 0x55a1d420b780] Weighted P-Frames: Y:13.3% UV:2.0%
+[libx264 @ 0x55a1d420b780] kb/s:5011.34
+[aac @ 0x55a1d422b980] Qavg: 2610.767
+[AVIOContext @ 0x55a1d4198500] Statistics: 3406299 bytes read, 2 seeks
+[AVIOContext @ 0x55a1d4192880] Statistics: 93903 bytes read, 0 seeks
+[AVIOContext @ 0x55a1d4260b80] Statistics: 1530915 bytes read, 42 seeks

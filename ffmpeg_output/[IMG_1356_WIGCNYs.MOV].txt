@@ -1,0 +1,40 @@
+[h264 @ 0x5630bcf271c0] Reinit context to 352x640, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/IMG_1356_WIGCNYs.MOV':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2022-03-02T19:14:44.000000Z
+  Duration: 00:00:12.00, start: 0.000000, bitrate: 2042 kb/s
+    Stream #0:0(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, unknown/bt470bg/unknown, progressive, left), 352x640, 2040 kb/s, 30 fps, 30 tbr, 90k tbn, 180k tbc (default)
+    Metadata:
+      creation_time   : 2022-03-02T19:14:44.000000Z
+      handler_name    : Core Media Video
+      encoder         : 'avc1'
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo_vertical.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x5630bcf69800] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_1 @ 0x5630bcf4a6c0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x5630bcf4b740] w:-1 h:720 flags:'bilinear' interl:0
+[Parsed_scale_7 @ 0x5630bcf8fbc0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_9 @ 0x5630bd0c1b40] w:1280 h:720 flags:'bilinear' interl:0
+Stream specifier ':a' in filtergraph description [0:v] split=2 [video0-1][video0-2];        [video0-1] scale=w=1280:h=720,boxblur=luma_radius=min(h\,w)/20:luma_power=1:chroma_radius=min(cw\,ch)/20:chroma_power=1, setsar=1 [bg0];[video0-2] scale=-1:720, setsar=1 [video0-2-scaled];        [bg0][video0-2-scaled] overlay=x=(W-w)/2:y=(H-h)/2 [video-scaled];[1:v] scale=w=1280:h=720, setsar=1 [video-watermarks];[2:v] scale=w=1280:h=720, setsar=1 [video2];        [video-scaled][video-watermarks]overlay=0:0 [video0];[video0][0:a][video2][2:a] concat=n=2:v=1:a=1[v][a] matches no streams.
+[AVIOContext @ 0x5630bcf2e4c0] Statistics: 67858 bytes read, 2 seeks
+[AVIOContext @ 0x5630bcf2a2c0] Statistics: 93903 bytes read, 0 seeks
+[AVIOContext @ 0x5630bcf29700] Statistics: 65536 bytes read, 1 seeks

@@ -1,0 +1,93 @@
+{% extends 'social/base.html' %}
+{% block social_content %}
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Text</th>
+            <th scope="col">Date</th>
+            <th scope="col">Media</th>
+            <th scope="col">Link</th>
+            <th scope="col">Like</th>
+            <th scope="col">Retweet</th>
+        </tr>
+    </thead>
+    {% for item in tweets %}
+
+    <tbody>
+        <tr>
+            <td scope="row">{{ item.tweet_text }}</th>
+            <td style="white-space:nowrap;">{{ item.published_date }}</td>
+            {% if item.media_url != 'none' %}
+            <td style="white-space:nowrap;"><a href="{{ item.media_url }}" download rel="noopener noreferrer"
+                target="_blank" target="_blank">Media</a></td>
+            {% elif item.media_url == 'none' %}
+            <td style="white-space:nowrap;"></td>
+            {% endif %}
+            {% if item.url != 'none' %}
+            <td style="white-space:nowrap;"><a href="{{ item.url }}" target="_blank">Link</a></td>
+            {% elif item.url == 'none' %}
+            <td style="white-space:nowrap;"></td>
+            {% endif %}
+            <td style="white-space:nowrap;">{{ item.like }}</td>
+            <td style="white-space:nowrap;">{{ item.retweet }}</td>
+           
+        </tr>
+    </tbody>
+    {% endfor %}
+
+
+
+</table>
+
+{% if tweets.has_other_pages %}
+
+
+<!--Pagination-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+    {% if tweets.has_previous %}
+        <li class="page-item">
+        <a class="page-link" href="?page={{ tweets.previous_page_number }}">Previous</a>
+      </li>
+    {% else %}
+        <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+    {% endif %}
+
+    {% if tweets.number|add:'-4' > 1 %}
+        <li class="page-item"><a class="page-link" href="?page={{ tweets.number|add:'-5' }}">&hellip;</a></li>
+    {% endif %}
+
+    {% for i in tweets.paginator.page_range %}
+        {% if tweets.number == i %}
+            <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            {{ i }}
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        {% elif i > tweets.number|add:'-5' and i < tweets.number|add:'5' %}
+             <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+    {% if tweets.paginator.num_pages > tweets.number|add:'4' %}
+       <li class="page-item"><a class="page-link" href="?page={{ tweets.number|add:'5' }}">&hellip;</a></li>
+    {% endif %}
+
+    {% if tweets.has_next %}
+        <li class="page-item">
+        <a class="page-link" href="?page={{ tweets.next_page_number }}">Next</a>
+      </li>
+    {% else %}
+        <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+<!--end of Pagination-->
+{% endif %}
+{% endblock %}

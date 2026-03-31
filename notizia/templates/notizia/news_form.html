@@ -1,0 +1,86 @@
+{% extends 'notizia/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}News{% endblock %}
+
+{% block photos_content %}
+
+<form id="post-form" method="post" class="notizia-form" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="notizia-title">Title</label>
+    <input type="text" name="title" class="form-control" id="notizia-title" placeholder="Enter Title" required>
+  </div>
+  <div class="form-group">
+    <label for="notizia-description">Description</label>
+    <textarea type="text" name="description" class="form-control" id="notizia-description" placeholder="Description here"></textarea>
+  </div>
+  <div class="form-group"><label for="notizia-image">Images</label>
+    <input type="file" name="images" class="form-control-file" id="notizia-image" multiple>
+  </div>
+  <input type="submit" value="Submit form" class="btn btn-primary" id="notizia">
+</form>
+
+
+<!-- <div id="output">
+    <h1></h1>
+</div>
+
+<script src="{% static 'notizia/message.js' %}"></script> -->
+
+<!-- <div class="row mb-2 posts">
+  {% for post in posts %}
+  <div class="col-md-6">
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <h3 class="mb-0">{{post.title}}</h3>
+        <p class="mb-auto">{{post.description}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+<script>
+  $(document).on('submit', '#post-form', function(e) {
+    e.preventDefault();
+    var data = new FormData();
+    var img = $('#notizia-image')[0].files[0];
+    data.append('img', img);
+
+
+    $.ajax({
+      type: 'POST',
+      url: '{% url "notizia:notizia_create" %}',
+
+      data: {
+        title: $('#notizia-title').val(),
+        description: $('#notizia-description').val(),
+        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+        action: 'post'
+      },
+      success: function(json) {
+        document.getElementById("post-form").reset();
+        $(".posts").prepend('<div class="col-md-6">' +
+          '<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">' +
+          '<div class="col p-4 d-flex flex-column position-static">' +
+          '<h3 class="mb-0">' + json.title + '</h3>' +
+          '<p class="mb-auto">' + json.description + '</p>' +
+          '</div>' +
+          '</div>' +
+          '</div>'
+        )
+      },
+      error: function(xhr, errmsg, err) {
+        $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " + errmsg +
+          " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+        console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+      }
+    });
+  });
+</script> -->
+
+
+
+{% endblock %}

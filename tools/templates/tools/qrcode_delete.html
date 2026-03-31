@@ -1,0 +1,27 @@
+{% extends 'tools/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}QrCode{% endblock %}
+
+
+
+{% block tools_content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Delete QrCode</h2>
+            <div class="card">
+                <form method="post" action="">{% csrf_token %}
+                    <p>Are you sure you want to delete "{{ object }}"?</p>
+                    <input type="submit" value="Confirm">
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

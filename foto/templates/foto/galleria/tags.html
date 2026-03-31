@@ -1,0 +1,57 @@
+{% extends 'foto/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+{% block title %}Galleria Galleria{% endblock %}
+
+
+{% block foto_content %}
+
+<div class="container">
+    <div class="row">
+        {% include "foto/galleria/left-bar.html" %}
+        <div class="col-md-9">
+            <div class="row">
+                    <div class"col-md-12" style="font-size: xx-large;padding: 0 0.5em;"><a
+                            href="{% url 'foto:gallery' %}" class="btn btn-dark my-3">Galleria</a> <p>Termine selezionato: <em
+                            style="color: darkolivegreen;">{{tag}}</em></p></div>
+            </div>
+            <div class="row">
+                {% for photo in photos %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <a href="{% url 'foto:photo' photo.id %}">
+                            <img class="image-thumbail" src="{{photo.image_thumbails.url}}" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <small>Categoria: {{photo.category.name}} Id.: {{photo.id}}</small>
+                        </div>
+                        <div class="card-body">
+                            {% for tag in photo.tags.all %}
+                            <a href="{% url 'foto:tagged' tag.slug %}" class="badge badge-info">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                        <div class="btn-group galleria-button">
+                            <button type="button" class="btn btn-block btn-outline-dark btn-sm m-1"><a
+                                    href="{% url 'foto:update' photo.id %}">Edit</a></button>
+                            <form action="{% url 'foto:delete' photo.id %}" method="post">
+                                {% csrf_token %}
+                                <button onclick="return confirm('Are you sure?');" style="width: auto"
+                                    class="btn btn-block btn-outline-dark btn-sm m-1">Delete</button>
+                            </form>
+                            <button type="button" class="btn btn-block btn-outline-dark btn-sm m-1"><a
+                                    href="{{ photo.image.url }}" Download>Download</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                {% empty %}
+                <h3>No photos...</h3>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

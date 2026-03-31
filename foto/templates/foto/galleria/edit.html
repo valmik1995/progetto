@@ -1,0 +1,54 @@
+{% extends 'foto/base.html' %} {% block uploads_active %}active{% endblock %} {% load static %} {% block title %}Add Galleria{% endblock %} {% block foto_content %}
+
+<div class="container">
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <a href="{% url 'foto:gallery' %}" class="btn btn-dark my-3">Go Back</a>
+            <div class="card">
+
+
+                <form method='POST' action="{% url 'foto:edit' instance.id %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-group m-3">
+                        <label>Description</label>
+                        <input required name="description" type="text" placeholder="Enter a description" class="form-control" value="{{ instance.description }}">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label>Select a category</label>
+                        <select name="category" class="form-control">
+
+                            <option value='{{instance.category_id}}'>{{instance.category}}</option>
+
+                            {% for category in categories %}
+                            <option value='{{category.id}}'>{{category.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+
+                    <div class="form-group m-3">
+                        <label>Create a new category</label>
+                        <input name="category_new" type="text" placeholder="Create a new category" class="form-control" value="">
+                    </div>
+                    <div class="form-group m-3">
+                        <label>Tags</label> {% for e in obj.tags.all %}{{e.name}}{% endfor %}
+                        <input name="tags" type="text" placeholder="Insert Tags" class="form-control" value="{% for e in instance.tags.all %}{{e}}{% endfor %}">
+                    </div>
+                    <div class="form-group m-3">
+                        <label>Upload image</label>
+                        <img src="/media/{{instance.image.name}}" width="100%">
+                        <input style="padding-top: 10px;" required name="images" type="file" multiple class="form-control-file">
+                    </div>
+
+                    <button type='submit' class="btn btn-primary m-3">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

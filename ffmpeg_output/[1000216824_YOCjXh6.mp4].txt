@@ -1,0 +1,132 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/1000216824_YOCjXh6.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    creation_time   : 2025-02-11T10:34:35.000000Z
+    com.android.version: 14
+  Duration: 00:00:14.47, start: 0.000000, bitrate: 3485 kb/s
+    Stream #0:0(eng): Video: hevc (Main), 1 reference frame (hvc1 / 0x31637668), yuv420p(tv, bt709), 1920x1080 (1920x1088), 3354 kb/s, 30 fps, 30 tbr, 90k tbn, 90k tbc (default)
+    Metadata:
+      creation_time   : 2025-02-11T10:34:35.000000Z
+      handler_name    : VideoHandle
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      creation_time   : 2025-02-11T10:34:35.000000Z
+      handler_name    : SoundHandle
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x55a87133f440] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_0 @ 0x55a8712f4f80] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55a87138d440] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55a871389fc0] w:1920 h:1080 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (hevc) -> scale
+  Stream #0:1 (aac) -> concat:in0:a0
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x55a8716d1940] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x55a873931e00] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55a871466c80] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55a87393b680] w:1920 h:1080 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x55a87393fe80] w:1920 h:1080 pixfmt:yuv420p tb:1/90000 fr:30/1 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x55a873940f00] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x55a873941f80] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_1 @ 0x55a873942f40] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[graph_0_in_2_0 @ 0x55a873944080] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_concat_7 @ 0x55a87393df00] auto-inserting filter 'auto_resampler_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_7'
+[Parsed_scale_0 @ 0x55a873931e00] w:1920 h:1080 fmt:yuv420p sar:0/1 -> w:1920 h:1080 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_setsar_1 @ 0x55a873932040] w:1920 h:1080 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x55a871466c80] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1920 h:1080 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x55a87393aa00] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x55a87393cdc0] main w:1920 h:1080 fmt:yuv420p overlay w:1920 h:1080 fmt:yuva420p
+[Parsed_overlay_6 @ 0x55a87393cdc0] [framesync @ 0x55a87393cf28] Selected 1/90000 time base
+[Parsed_overlay_6 @ 0x55a87393cdc0] [framesync @ 0x55a87393cf28] Sync level 2
+[Parsed_scale_4 @ 0x55a87393b680] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_5 @ 0x55a87393c1c0] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_resampler_0 @ 0x55a87394af00] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[libx264 @ 0x55a8714b1840] using SAR=1/1
+[libx264 @ 0x55a8714b1840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55a8714b1840] profile High, level 4.0
+[libx264 @ 0x55a8714b1840] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=24 lookahead_threads=8 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/1000216824_YOCjXh6.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    com.android.version: 14
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+[Parsed_overlay_6 @ 0x55a87393cdc0] [framesync @ 0x55a87393cf28] Sync level 0
+[Parsed_concat_7 @ 0x55a87393df00] EOF on in0:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x55a87393df00] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x55a87393df00] Segment finished at pts=14472346
+[Parsed_concat_7 @ 0x55a87393df00] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x55a87393df00] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x55a87393df00] Segment finished at pts=16491033
+No more output streams to write to, finishing.
+frame=  484 fps= 33 q=-1.0 Lsize=   12538kB time=00:00:16.51 bitrate=6220.2kbits/s speed=1.12x    
+[AVIOContext @ 0x55a8712f1440] Statistics: 0 seeks, 28 writeouts
+video:12262kB audio:257kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.152322%
+Input file #0 (/var/www/html/project/media/video/original/1000216824_YOCjXh6.mp4):
+  Input stream #0:0 (video): 434 packets read (6065610 bytes); 434 frames decoded; 
+  Input stream #0:1 (audio): 678 packets read (231650 bytes); 678 frames decoded (694272 samples); 
+  Total: 1112 packets (6297260 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/1000216824_YOCjXh6.mp4):
+  Output stream #0:0 (video): 484 frames encoded; 484 packets muxed (12556185 bytes); 
+  Output stream #0:1 (audio): 774 frames encoded (791581 samples); 775 packets muxed (262705 bytes); 
+  Total: 1259 packets (12818890 bytes) muxed
+[AVIOContext @ 0x55a871334080] Statistics: 2 seeks, 52 writeouts
+[libx264 @ 0x55a8714b1840] frame I:5     Avg QP:13.30  size:154090
+[libx264 @ 0x55a8714b1840] frame P:134   Avg QP:17.48  size: 58818
+[libx264 @ 0x55a8714b1840] frame B:345   Avg QP:21.08  size: 11314
+[libx264 @ 0x55a8714b1840] consecutive B-frames:  3.3%  4.5%  1.2% 90.9%
+[libx264 @ 0x55a8714b1840] mb I  I16..4: 28.6% 19.6% 51.8%
+[libx264 @ 0x55a8714b1840] mb P  I16..4:  5.8%  9.2%  2.0%  P16..4: 30.3% 18.1% 13.2%  0.0%  0.0%    skip:21.3%
+[libx264 @ 0x55a8714b1840] mb B  I16..4:  0.8%  0.5%  0.0%  B16..8: 26.3%  6.6%  0.6%  direct:10.6%  skip:54.5%  L0:32.8% L1:47.6% BI:19.7%
+[libx264 @ 0x55a8714b1840] 8x8 transform intra:46.6% inter:51.8%
+[libx264 @ 0x55a8714b1840] coded y,uvDC,uvAC intra: 52.2% 52.1% 21.1% inter: 15.4% 14.3% 0.6%
+[libx264 @ 0x55a8714b1840] i16 v,h,dc,p: 53% 30% 13%  5%
+[libx264 @ 0x55a8714b1840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 32% 19%  3%  4%  3%  5%  3%  5%
+[libx264 @ 0x55a8714b1840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 25% 10%  5%  7%  7%  8%  5%  6%
+[libx264 @ 0x55a8714b1840] i8c dc,h,v,p: 47% 26% 23%  5%
+[libx264 @ 0x55a8714b1840] Weighted P-Frames: Y:3.0% UV:0.0%
+[libx264 @ 0x55a8714b1840] kb/s:6099.84
+[aac @ 0x55a8714b4dc0] Qavg: 3252.251
+[AVIOContext @ 0x55a8712fa3c0] Statistics: 27675893 bytes read, 812 seeks
+[AVIOContext @ 0x55a8713187c0] Statistics: 111578 bytes read, 0 seeks
+[AVIOContext @ 0x55a8712f53c0] Statistics: 1530915 bytes read, 42 seeks

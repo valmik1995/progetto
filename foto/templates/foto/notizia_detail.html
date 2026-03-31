@@ -1,0 +1,25 @@
+{% extends 'foto/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block foto_content %}
+
+<h1>{{ object.title }}</h1>
+<p>{{ object.text }}</p>
+<div class="container">
+  <div class="row text-center text-lg-left">
+{% for images in object.images_set.all %}
+<div class="col-lg-3 col-md-4 col-6">
+  <a href="#" class="d-block mb-4 h-100">
+        <img class="img-fluid img-thumbnail" src="{{ images.image.url }}" alt="">
+      </a>
+</div>
+{% endfor %}
+  </div>
+</div>
+<!-- <p>Published: {{ object.created_date|date }}</p>
+<p>Date: {{ now|date }} {{ now|time }}</p> -->
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load leaflet_tags %}
+{% load crispy_forms_tags %}
+{% block title %}ProfilePage{% endblock title %}
+
+
+{% block content %}
+<h2>Modifica Profilo</h2>
+{% leaflet_js plugins="forms" %}
+{% leaflet_css plugins="forms" %}
+<div style="margin:0 auto;" class="col-md-7">
+{% crispy form %}
+</div>
+{% endblock content %}

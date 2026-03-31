@@ -1,0 +1,15 @@
+{% extends 'tools/base.html' %}
+{% block tool_active %}active{% endblock %}
+{% block tools_content %}
+
+
+<a href="{% url 'tools:list' %}" class="btn btn-dark my-3">Go Back</a>
+
+<h1>{{ object.title }}</h1>
+
+<div>
+
+<img src="{{ object.image.url}}" width="450" height="450">
+
+</div>
+{% endblock %}

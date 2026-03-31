@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  .video-shell {
+    --video-bg: linear-gradient(140deg, #f1f6ff 0%, #f6f8fc 45%, #fffaf0 100%);
+    --video-card: #ffffff;
+    --video-text: #1e293b;
+    --video-muted: #64748b;
+    --video-border: rgba(30, 41, 59, 0.08);
+    --video-accent: #0f766e;
+    --video-accent-soft: #ccfbf1;
+    color: var(--video-text);
+  }
+  .video-header {
+    background: var(--video-bg);
+    border: 1px solid var(--video-border);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .video-sidebar-card,
+  .video-main-card {
+    background: var(--video-card);
+    border: 1px solid var(--video-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.05);
+  }
+  .video-nav-link {
+    border-radius: 10px;
+    padding: .65rem .8rem;
+    margin-bottom: .45rem;
+    color: var(--video-text);
+    text-decoration: none;
+    display: block;
+    border: 1px solid transparent;
+  }
+  .video-nav-link:hover {
+    background: #f8fafc;
+    color: var(--video-text);
+    text-decoration: none;
+  }
+  .video-nav-link.active {
+    background: var(--video-accent-soft);
+    border-color: #99f6e4;
+    color: #115e59;
+    font-weight: 600;
+  }
+  .video-muted { color: var(--video-muted); }
+</style>
+
+<div class="video-shell">
+  <div class="video-header d-flex flex-wrap align-items-center justify-content-between">
+    <div>
+      <h2 class="mb-1">Video Studio</h2>
+      <p class="mb-0 video-muted">{% block title %}upload and watermarks{% endblock %}</p>
+    </div>
+    <a href="{% url 'video:video-create' %}" class="btn btn-dark">Nuovo video</a>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 mb-4 mb-lg-0">
+      <div class="video-sidebar-card p-3">
+        <h6 class="text-uppercase video-muted mb-3">Menu</h6>
+        <a href="{% url 'video:video-create' %}" class="video-nav-link{% if request.path == '/video/create/' %} active{% endif %}">
+          Aggiungi video
+        </a>
+        <a href="{% url 'video:video-list' %}" class="video-nav-link{% if request.path == '/video/list/' %} active{% endif %}">
+          Lista video
+        </a>
+        <hr>
+        <form method="post" action="{% url 'video:clear_database' %}">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <button onclick="return confirm('Sei sicuro di cancellare tutti i video?');" type="submit" class="btn btn-outline-danger btn-block">
+            Cancella archivio
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="video-main-card p-3 p-md-4">
+      {% block video_content %}
+      {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+    {% block sidebar %}
+    <div class="col-lg-3 mb-4 mb-lg-0">
+        <div class="wm-surface p-3">
+            <h6 class="text-uppercase wm-muted mb-3">Menu</h6>
+            <a href="{% url 'watermarks:basic_upload' %}"
+               class="d-block px-3 py-2 rounded border mb-2 {% if request.path == '/basic-upload/' %}bg-info text-white border-info{% else %}text-dark bg-light border-light{% endif %}">
+                Watermark immagini (JPG/PNG/HEIC)
+            </a>
+            <button type="button" class="btn btn-outline-danger btn-block mt-3" data-toggle="modal" data-target="#confirmClearModal">
+                Cancella immagini
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal conferma cancellazione -->
+    <div class="modal fade" id="confirmClearModal" tabindex="-1" aria-labelledby="confirmClearModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmClearModalLabel">Conferma cancellazione</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Sei sicuro di voler cancellare tutte le immagini originali e i watermark? Questa azione non può essere annullata.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+            <form method="post" action="{% url 'watermarks:clear_database' %}" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <button type="submit" class="btn btn-danger">Sì, cancella tutto</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

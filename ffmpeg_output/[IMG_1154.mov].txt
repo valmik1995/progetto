@@ -1,0 +1,216 @@
+-vsync is deprecated. Use -fps_mode
+Passing a number to -vsync is deprecated, use a string argument as described in the manual.
+[h264 @ 0x646e5cf4e1c0] Reinit context to 3840x2160, pix_fmt: yuv420p
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5cf4bc00] Could not find codec parameters for stream 1 (Audio: none (apac / 0x63617061), 48000 Hz, 4 channels, 399 kb/s): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[aist#0:1/none @ 0x646e5d28f000] Guessed Channel Layout: 4.0
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/IMG_1154.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2026-01-19T21:52:47.000000Z
+    com.apple.quicktime.location.accuracy.horizontal: 272.984113
+    com.apple.quicktime.full-frame-rate-playback-intent: 0
+    com.apple.quicktime.location.ISO6709: +45.4465+011.8574/
+    com.apple.quicktime.make: Apple
+    com.apple.quicktime.model: iPhone 16 Pro
+    com.apple.quicktime.software: 26.2
+    com.apple.quicktime.creationdate: 2026-01-19T13:11:28+0100
+  Duration: 00:00:12.20, start: 0.000000, bitrate: 25953 kb/s
+  Stream #0:0[0x1](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 195 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-19T21:52:47.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: none (apac / 0x63617061), 48000 Hz, 4 channels, 399 kb/s
+    Metadata:
+      creation_time   : 2026-01-19T21:52:47.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #0:2[0x3](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 3840x2160, 25305 kb/s, 30 fps, 30 tbr, 600 tbn (default)
+    Metadata:
+      creation_time   : 2026-01-19T21:52:47.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+      encoder         : H.264
+  Stream #0:3[0x4](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-19T21:52:48.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:4[0x5](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-19T21:52:48.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:5[0x6](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-19T21:52:48.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:6[0x7](und): Data: none (mebx / 0x7862656D), 39 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-19T21:52:48.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:7[0x8](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2026-01-19T21:52:48.000000Z
+      handler_name    : Core Media Metadata
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, 1 reference frame, rgba(pc, gbr/unknown/unknown), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 fps, 25 tbr, 25 tbn
+[h264 @ 0x646e5d0c3140] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+  Stream #2:0[0x1](ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #2:1[0x2](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+[out#0/mp4 @ 0x646e5f17a2c0] Adding streams from explicit maps...
+[out#0/mp4 @ 0x646e5f17a2c0] Creating output stream from an explicitly mapped complex filtergraph 0, output [v]
+[vost#0:0/libx264 @ 0x646e5f17ad00] Created video stream from complex filtergraph 0:[concat]
+[vost#0:0/libx264 @ 0x646e5f17ad00] 
+[out#0/mp4 @ 0x646e5f17a2c0] Creating output stream from an explicitly mapped complex filtergraph 0, output [a]
+[aost#0:1/aac @ 0x646e5f17c880] Created audio stream from complex filtergraph 0:[concat]
+[aost#0:1/aac @ 0x646e5f17c880] 
+Stream mapping:
+  Stream #0:0 (aac) -> concat
+  Stream #0:2 (h264) -> scale:default
+  Stream #1:0 (png) -> scale:default
+  Stream #2:0 (aac) -> concat
+  Stream #2:1 (h264) -> scale:default
+  concat -> Stream #0:0 (libx264)
+  concat -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x646e5cf856c0] Reinit context to 3840x2160, pix_fmt: yuv420p
+[in#1/png_pipe @ 0x646e5d18f180] EOF while reading input
+[in#1/png_pipe @ 0x646e5d18f180] Terminating demuxer thread
+[vist#1:0/png @ 0x646e5d0c4000] Decoder thread received EOF packet
+[vist#1:0/png @ 0x646e5d0c4000] Decoder returned EOF, finishing
+[vist#1:0/png @ 0x646e5d0c4000] Terminating decoder thread
+[h264 @ 0x646e5d34f880] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x646e5cf81100] w:1920 h:1080 flags:'' interl:0
+[Parsed_scale_2 @ 0x646e5d172bc0] w:1920 h:1080 flags:'' interl:0
+[Parsed_scale_4 @ 0x646e5d180000] w:1920 h:1080 flags:'' interl:0
+[graph 0 input from stream 0:2 @ 0x646e5cf81800] w:3840 h:2160 pixfmt:yuv420p tb:1/600 fr:30/1 sar:0/1
+[graph 0 input from stream 1:0 @ 0x646e5d1818c0] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835
+[graph 0 input from stream 2:1 @ 0x646e5d181c00] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1
+[graph_0_in_0_0 @ 0x646e5d181f40] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:stereo
+[graph_0_in_2_0 @ 0x646e5d182380] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:stereo
+[Parsed_concat_7 @ 0x646e5d1805c0] auto-inserting filter 'auto_aresample_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_7'
+[Parsed_scale_0 @ 0x646e5cf81100] w:3840 h:2160 fmt:yuv420p sar:0/1 -> w:1920 h:1080 fmt:yuv420p sar:0/1 flags:0x00000004
+[Parsed_setsar_1 @ 0x646e5cf83600] w:1920 h:1080 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x646e5d172bc0] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1920 h:1080 fmt:yuva420p sar:1/1 flags:0x00000004
+[Parsed_setsar_3 @ 0x646e5d17fd40] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x646e5d180380] main w:1920 h:1080 fmt:yuv420p overlay w:1920 h:1080 fmt:yuva420p
+[Parsed_overlay_6 @ 0x646e5d180380] [framesync @ 0x646e5cf6ba28] Selected 1/600 time base
+[Parsed_overlay_6 @ 0x646e5d180380] [framesync @ 0x646e5cf6ba28] Sync level 2
+[Parsed_scale_4 @ 0x646e5d180000] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x00000004
+[Parsed_setsar_5 @ 0x646e5cf814c0] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_aresample_0 @ 0x646e5d1870c0] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[Parsed_concat_7 @ 0x646e5d1805c0] Video inputs have different frame rates, output will be VFR
+[Parsed_scale_0 @ 0x646e5cf81100] w:3840 h:2160 fmt:yuv420p sar:0/1 -> w:1920 h:1080 fmt:yuv420p sar:0/1 flags:0x00000004
+    Last message repeated 2 times
+[Parsed_scale_2 @ 0x646e5d172bc0] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1920 h:1080 fmt:yuva420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[Parsed_scale_4 @ 0x646e5d180000] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[libx264 @ 0x646e5f17b0c0] using SAR=1/1
+[libx264 @ 0x646e5f17b0c0] MB rate (8160000000) > level limit (16711680)
+[libx264 @ 0x646e5f17b0c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x646e5f17b0c0] profile High, level 6.2, 4:2:0, 8-bit
+[libx264 @ 0x646e5f17b0c0] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=24 lookahead_threads=8 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/IMG_1154.mp4':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    com.apple.quicktime.creationdate: 2026-01-19T13:11:28+0100
+    com.apple.quicktime.location.accuracy.horizontal: 272.984113
+    com.apple.quicktime.full-frame-rate-playback-intent: 0
+    com.apple.quicktime.location.ISO6709: +45.4465+011.8574/
+    com.apple.quicktime.make: Apple
+    com.apple.quicktime.model: iPhone 16 Pro
+    com.apple.quicktime.software: 26.2
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1920x1080 (0x0) [SAR 1:1 DAR 16:9], q=2-31, 1000k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5cf6bf40] EOF while reading input
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5cf6bf40] Terminating demuxer thread
+[aist#0:0/aac @ 0x646e5cf6ae40] Decoder thread received EOF packet
+[aist#0:0/aac @ 0x646e5cf6ae40] Decoder returned EOF, finishing
+[aist#0:0/aac @ 0x646e5cf6ae40] Terminating decoder thread
+[Parsed_concat_7 @ 0x646e5d1805c0] EOF on in0:a0, 1 streams left in segment.
+[vist#0:2/h264 @ 0x646e5cf77740] Decoder thread received EOF packet
+[vist#0:2/h264 @ 0x646e5cf77740] Decoder returned EOF, finishing
+[vist#0:2/h264 @ 0x646e5cf77740] Terminating decoder thread
+[Parsed_overlay_6 @ 0x646e5d180380] [framesync @ 0x646e5cf6ba28] Sync level 0
+[Parsed_concat_7 @ 0x646e5d1805c0] EOF on in0:v0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x646e5d1805c0] Segment finished at pts=12201333
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5d18f800] EOF while reading input
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5d18f800] Terminating demuxer thread
+[aist#2:0/aac @ 0x646e5cf768c0] Decoder thread received EOF packet
+[aist#2:0/aac @ 0x646e5cf768c0] Decoder returned EOF, finishing
+[aist#2:0/aac @ 0x646e5cf768c0] Terminating decoder thread
+[vist#2:1/h264 @ 0x646e5d0c9cc0] Decoder thread received EOF packet
+[vist#2:1/h264 @ 0x646e5d0c9cc0] Decoder returned EOF, finishing
+[vist#2:1/h264 @ 0x646e5d0c9cc0] Terminating decoder thread
+[Parsed_concat_7 @ 0x646e5d1805c0] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x646e5d1805c0] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x646e5d1805c0] Segment finished at pts=14220020
+No more output streams to write to, finishing.
+[out#0/mp4 @ 0x646e5f17a2c0] All streams finished
+[out#0/mp4 @ 0x646e5f17a2c0] Terminating muxer thread
+[AVIOContext @ 0x646e5f247d00] Statistics: 17349378 bytes written, 2 seeks, 70 writeouts
+[out#0/mp4 @ 0x646e5f17a2c0] Output file #0 (/var/www/html/project/media/video/watermarks/IMG_1154.mp4):
+[out#0/mp4 @ 0x646e5f17a2c0]   Output stream #0:0 (video): 416 frames encoded; 416 packets muxed (17110324 bytes); 
+[out#0/mp4 @ 0x646e5f17a2c0]   Output stream #0:1 (audio): 667 frames encoded (682561 samples); 668 packets muxed (220706 bytes); 
+[out#0/mp4 @ 0x646e5f17a2c0]   Total: 1084 packets (17331030 bytes) muxed
+[out#0/mp4 @ 0x646e5f17a2c0] video:16709kB audio:216kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.105845%
+frame=  416 fps= 26 q=-1.0 Lsize=   16943kB time=00:00:14.20 bitrate=9768.8kbits/s speed=0.889x    
+[AVIOContext @ 0x646e5cf42c00] Statistics: 6026 bytes written, 0 seeks, 30 writeouts
+[libx264 @ 0x646e5f17b0c0] frame I:3     Avg QP:12.69  size:178124
+[libx264 @ 0x646e5f17b0c0] frame P:119   Avg QP:17.35  size: 83265
+[libx264 @ 0x646e5f17b0c0] frame B:294   Avg QP:21.50  size: 22676
+[libx264 @ 0x646e5f17b0c0] consecutive B-frames:  4.1%  4.3%  2.2% 89.4%
+[libx264 @ 0x646e5f17b0c0] mb I  I16..4: 36.0% 13.4% 50.5%
+[libx264 @ 0x646e5f17b0c0] mb P  I16..4:  4.1%  9.3%  5.9%  P16..4: 31.3% 14.6% 12.5%  0.0%  0.0%    skip:22.2%
+[libx264 @ 0x646e5f17b0c0] mb B  I16..4:  1.0%  2.7%  0.9%  B16..8: 17.4%  9.7%  2.9%  direct:10.1%  skip:55.4%  L0:31.8% L1:44.6% BI:23.6%
+[libx264 @ 0x646e5f17b0c0] 8x8 transform intra:49.2% inter:31.6%
+[libx264 @ 0x646e5f17b0c0] coded y,uvDC,uvAC intra: 64.7% 53.6% 11.1% inter: 17.9% 14.1% 0.5%
+[libx264 @ 0x646e5f17b0c0] i16 v,h,dc,p: 49% 23% 21%  8%
+[libx264 @ 0x646e5f17b0c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 27% 23%  4%  3%  3%  4%  4%  5%
+[libx264 @ 0x646e5f17b0c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 20% 14%  7%  8%  7%  7%  7%  7%
+[libx264 @ 0x646e5f17b0c0] i8c dc,h,v,p: 55% 23% 20%  3%
+[libx264 @ 0x646e5f17b0c0] Weighted P-Frames: Y:14.3% UV:2.5%
+[libx264 @ 0x646e5f17b0c0] kb/s:9638.33
+[aac @ 0x646e5f17cc40] Qavg: 3380.137
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5cf6bf40] Input file #0 (/var/www/html/project/media/video/original/IMG_1154.mov):
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5cf6bf40]   Input stream #0:0 (audio): 574 packets read (299385 bytes); 572 frames decoded; 0 decode errors (585664 samples); 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5cf6bf40]   Input stream #0:2 (video): 366 packets read (38590565 bytes); 366 frames decoded; 0 decode errors; 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5cf6bf40]   Total: 940 packets (38889950 bytes) demuxed
+[AVIOContext @ 0x646e5cf6d3c0] Statistics: 52814730 bytes read, 705 seeks
+[in#1/png_pipe @ 0x646e5d18f180] Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+[in#1/png_pipe @ 0x646e5d18f180]   Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 0 decode errors; 
+[in#1/png_pipe @ 0x646e5d18f180]   Total: 1 packets (111578 bytes) demuxed
+[AVIOContext @ 0x646e5d18f540] Statistics: 111578 bytes read, 0 seeks
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5d18f800] Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5d18f800]   Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded; 0 decode errors (89024 samples); 
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5d18f800]   Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 0 decode errors; 
+[in#2/mov,mp4,m4a,3gp,3g2,mj2 @ 0x646e5d18f800]   Total: 139 packets (229944 bytes) demuxed
+[AVIOContext @ 0x646e5cf5ac40] Statistics: 1629219 bytes read, 37 seeks

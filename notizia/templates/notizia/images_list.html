@@ -1,0 +1,24 @@
+{% extends 'watermarks/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block photos_content %}
+
+<h1>Notizia</h1>
+<ul>
+{% for images in object_list %}
+    <li>{{ images.id }} - {{ images.image }}- {{ images.note_id }}</li>
+    {% for notizia in images.note_id.set.all %}
+    {{ notizia.id }}
+    {% endfor %}
+    
+{% empty %}
+    <li>No articles yet.</li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+

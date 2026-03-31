@@ -1,0 +1,100 @@
+ffmpeg version 4.2.7-0ubuntu0.1 Copyright (c) 2000-2022 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+Routing option strict to both codec and muxer layer
+[h264 @ 0x55b242e50e00] Reinit context to 1920x1088, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/DJI_20240919172716_0011_W.MP4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    creation_time   : 2024-09-19T15:27:17.000000Z
+    encoder         : Lavf56.15.102
+  Duration: 00:00:00.30, start: 0.000000, bitrate: 46696 kb/s
+    Stream #0:0(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(left), 1920x1080 (1920x1088), 46732 kb/s, 29.97 fps, 29.97 tbr, 30k tbn, 58 tbc (default)
+    Metadata:
+      creation_time   : 2024-09-19T15:27:17.000000Z
+      handler_name    : VideoHandler
+    Stream #0:1(und): Data: none (djmd / 0x646D6A64), 37 kb/s
+    Metadata:
+      creation_time   : 2024-09-19T15:27:17.000000Z
+      handler_name    : DJI meta
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[Parsed_scale_0 @ 0x55b242e77740] w:640 h:360 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55b242e7d7c0] w:640 h:360 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> scale
+  Stream #1:0 (png) -> scale
+  overlay -> Stream #0:0 (libx264)
+Press [q] to stop, [?] for help
+[h264 @ 0x55b242e6e800] Reinit context to 1920x1088, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x55b24381d6c0] w:640 h:360 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55b24381dec0] w:640 h:360 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x55b24381ec00] w:1920 h:1080 pixfmt:yuv420p tb:1/30000 fr:30000/1001 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x55b24381f1c0] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[Parsed_scale_0 @ 0x55b24381d6c0] w:1920 h:1080 fmt:yuv420p sar:0/1 -> w:640 h:360 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_setsar_1 @ 0x55b24381d940] w:640 h:360 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x55b24381dec0] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:640 h:360 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x55b24381e140] w:640 h:360 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_4 @ 0x55b24381e440] main w:640 h:360 fmt:yuv420p overlay w:640 h:360 fmt:yuva420p
+[Parsed_overlay_4 @ 0x55b24381e440] [framesync @ 0x55b24381e568] Selected 1/30000 time base
+[Parsed_overlay_4 @ 0x55b24381e440] [framesync @ 0x55b24381e568] Sync level 2
+[libx264 @ 0x55b242e6d140] using SAR=1/1
+[libx264 @ 0x55b242e6d140] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55b242e6d140] profile High, level 3.0
+[libx264 @ 0x55b242e6d140] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=11 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/DJI_20240919172716_0011_W.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p, 640x360 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 30k tbn, 29.97 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+[Parsed_overlay_4 @ 0x55b24381e440] [framesync @ 0x55b24381e568] Sync level 0
+No more output streams to write to, finishing.
+frame=    9 fps=0.0 q=-1.0 Lsize=      74kB time=00:00:00.20 bitrate=3021.7kbits/s speed=0.654x    
+[AVIOContext @ 0x55b242e4f0c0] Statistics: 0 seeks, 1 writeouts
+video:73kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.284300%
+Input file #0 (/var/www/html/project/media/video/original/DJI_20240919172716_0011_W.MP4):
+  Input stream #0:0 (video): 9 packets read (1754225 bytes); 9 frames decoded; 
+  Input stream #0:1 (data): 1 packets read (252 bytes); 
+  Total: 10 packets (1754477 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/DJI_20240919172716_0011_W.mp4):
+  Output stream #0:0 (video): 9 frames encoded; 9 packets muxed (74671 bytes); 
+  Total: 9 packets (74671 bytes) muxed
+[AVIOContext @ 0x55b242e7c340] Statistics: 2 seeks, 4 writeouts
+[libx264 @ 0x55b242e6d140] frame I:1     Avg QP:19.92  size: 44642
+[libx264 @ 0x55b242e6d140] frame P:2     Avg QP:22.74  size:  7818
+[libx264 @ 0x55b242e6d140] frame B:6     Avg QP:23.60  size:  2284
+[libx264 @ 0x55b242e6d140] consecutive B-frames: 11.1%  0.0%  0.0% 88.9%
+[libx264 @ 0x55b242e6d140] mb I  I16..4:  1.3% 18.5% 80.2%
+[libx264 @ 0x55b242e6d140] mb P  I16..4:  0.8%  3.2%  3.7%  P16..4: 33.5% 27.0% 20.6%  0.0%  0.0%    skip:11.2%
+[libx264 @ 0x55b242e6d140] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8: 21.3%  8.6%  2.3%  direct: 9.2%  skip:58.6%  L0:39.2% L1:26.7% BI:34.1%
+[libx264 @ 0x55b242e6d140] 8x8 transform intra:21.7% inter:35.3%
+[libx264 @ 0x55b242e6d140] coded y,uvDC,uvAC intra: 96.9% 83.8% 59.0% inter: 12.9% 5.5% 1.6%
+[libx264 @ 0x55b242e6d140] i16 v,h,dc,p:  0% 62% 15% 23%
+[libx264 @ 0x55b242e6d140] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 38% 14%  2%  7%  4% 11%  1%  9%
+[libx264 @ 0x55b242e6d140] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu:  8% 25%  9%  5% 13%  6% 18%  4% 13%
+[libx264 @ 0x55b242e6d140] i8c dc,h,v,p: 45% 37% 12%  6%
+[libx264 @ 0x55b242e6d140] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x55b242e6d140] kb/s:1970.88
+[AVIOContext @ 0x55b242e58040] Statistics: 1789689 bytes read, 2 seeks
+[AVIOContext @ 0x55b242e57e40] Statistics: 111578 bytes read, 0 seeks

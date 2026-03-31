@@ -1,0 +1,608 @@
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Routing option strict to both codec and muxer layer
+[Parsed_scale_0 @ 0x580c086c21c0] w:1280 h:720 flags:'' interl:0
+[Parsed_scale_2 @ 0x580c086cf880] w:1280 h:720 flags:'' interl:0
+-vsync is deprecated. Use -fps_mode
+Passing a number to -vsync is deprecated, use a string argument as described in the manual.
+[h264 @ 0x580c086d8940] Reinit context to 832x464, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/1000241781.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:00:23.57, start: 0.000000, bitrate: 1225 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Baseline), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 832x464, 1160 kb/s, 50.38 fps, 29.97 tbr, 600 tbn (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 64 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, 1 reference frame, rgba(pc, gbr/unknown/unknown), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 fps, 25 tbr, 25 tbn
+[out#0/mp4 @ 0x580c0955da40] Creating output stream from unlabeled output of complex filtergraph 0. This overrides automatic video mapping.
+[vost#0:0/libx264 @ 0x580c0955e7c0] Created video stream from complex filtergraph 0:[overlay:default]
+[vost#0:0/libx264 @ 0x580c0955e7c0] 
+[out#0/mp4 @ 0x580c0955da40] No explicit maps, mapping streams automatically...
+[aost#0:1/aac @ 0x580c095601c0] Created audio stream from input stream 0:1
+Stream mapping:
+  Stream #0:0 (h264) -> scale:default (graph 0)
+  Stream #1:0 (png) -> scale:default (graph 0)
+  overlay:default (graph 0) -> Stream #0:0 (libx264)
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[h264 @ 0x580c08861200] Reinit context to 832x464, pix_fmt: yuv420p
+[graph_1_in_0_1 @ 0x580c088a0080] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:stereo
+[in#1/png_pipe @ 0x580c086db1c0] EOF while reading input
+[in#1/png_pipe @ 0x580c086db1c0] Terminating demuxer thread
+[vist#1:0/png @ 0x580c087cda00] Decoder thread received EOF packet
+[vist#1:0/png @ 0x580c087cda00] Decoder returned EOF, finishing
+[vist#1:0/png @ 0x580c087cda00] Terminating decoder thread
+[Parsed_scale_0 @ 0x580c0976df00] w:1280 h:720 flags:'' interl:0
+[Parsed_scale_2 @ 0x580c0977b180] w:1280 h:720 flags:'' interl:0
+[graph 0 input from stream 0:0 @ 0x580c0976a940] w:832 h:464 pixfmt:yuv420p tb:1/600 fr:30000/1001 sar:0/1
+[graph 0 input from stream 1:0 @ 0x580c0976acc0] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835
+[Parsed_scale_0 @ 0x580c0976df00] w:832 h:464 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x00000004
+[Parsed_setsar_1 @ 0x580c0977afc0] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x580c0977b180] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x00000004
+[Parsed_setsar_3 @ 0x580c097884c0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_4 @ 0x580c09788780] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_4 @ 0x580c09788780] [framesync @ 0x580c086dd928] Selected 1/600 time base
+[Parsed_overlay_4 @ 0x580c09788780] [framesync @ 0x580c086dd928] Sync level 2
+[Parsed_scale_0 @ 0x580c0976df00] w:832 h:464 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x00000004
+    Last message repeated 2 times
+[Parsed_scale_2 @ 0x580c0977b180] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[libx264 @ 0x580c0955eb80] using SAR=1/1
+[libx264 @ 0x580c0955eb80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x580c0955eb80] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x580c0955eb80] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/1000241781.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 (0x0) [SAR 1:1 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 aac
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 228 at ts 226
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 229 at ts 227
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 230 at ts 228
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 231 at ts 229
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 232 at ts 230
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 233 at ts 231
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 234 at ts 232
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 235 at ts 233
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 236 at ts 234
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 237 at ts 235
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 238 at ts 236
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 239 at ts 237
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 240 at ts 238
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 241 at ts 239
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 242 at ts 240
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 243 at ts 241
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 244 at ts 242
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 245 at ts 243
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 246 at ts 244
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 247 at ts 245
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 248 at ts 246
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 249 at ts 247
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 250 at ts 248
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 251 at ts 249
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 251 at ts 250
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 252 at ts 251
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 253 at ts 252
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 254 at ts 253
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 255 at ts 254
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 256 at ts 255
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 257 at ts 256
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 258 at ts 257
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 259 at ts 258
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 260 at ts 259
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 261 at ts 260
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 262 at ts 261
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 263 at ts 262
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 264 at ts 263
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 265 at ts 264
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 266 at ts 265
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 267 at ts 266
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 268 at ts 267
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 269 at ts 268
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 270 at ts 269
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 271 at ts 270
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 272 at ts 271
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 273 at ts 272
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 274 at ts 273
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 275 at ts 274
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 276 at ts 275
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 277 at ts 276
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 279 at ts 277
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 280 at ts 278
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 281 at ts 279
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 282 at ts 280
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 283 at ts 281
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 284 at ts 282
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 285 at ts 283
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 286 at ts 284
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 287 at ts 285
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 288 at ts 286
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 289 at ts 287
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 290 at ts 288
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 291 at ts 289
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 292 at ts 290
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 293 at ts 291
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 294 at ts 292
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 295 at ts 293
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 296 at ts 294
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 297 at ts 295
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 298 at ts 296
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 299 at ts 297
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 300 at ts 298
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 301 at ts 299
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 301 at ts 300
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 302 at ts 301
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 303 at ts 302
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 304 at ts 303
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 305 at ts 304
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 306 at ts 305
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 307 at ts 306
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 308 at ts 307
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 309 at ts 308
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 310 at ts 309
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 311 at ts 310
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 312 at ts 311
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 313 at ts 312
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 314 at ts 313
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 315 at ts 314
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 316 at ts 315
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 317 at ts 316
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 318 at ts 317
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 319 at ts 318
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 320 at ts 319
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 321 at ts 320
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 322 at ts 321
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 323 at ts 322
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 324 at ts 323
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 325 at ts 324
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 326 at ts 325
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 328 at ts 326
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 329 at ts 327
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 330 at ts 328
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 331 at ts 329
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 332 at ts 330
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 333 at ts 331
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 334 at ts 332
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 335 at ts 333
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 336 at ts 334
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 337 at ts 335
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 338 at ts 336
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 339 at ts 337
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 340 at ts 338
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 341 at ts 339
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 342 at ts 340
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 343 at ts 341
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 344 at ts 342
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 345 at ts 343
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 346 at ts 344
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 347 at ts 345
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 348 at ts 346
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 349 at ts 347
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 350 at ts 348
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 351 at ts 349
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 351 at ts 350
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 352 at ts 351
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 353 at ts 352
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 354 at ts 353
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 355 at ts 354
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 356 at ts 355
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 357 at ts 356
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 358 at ts 357
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 359 at ts 358
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 360 at ts 359
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 361 at ts 360
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 362 at ts 361
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 363 at ts 362
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 364 at ts 363
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 365 at ts 364
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 366 at ts 365
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 367 at ts 366
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 368 at ts 367
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 369 at ts 368
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 370 at ts 369
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 371 at ts 370
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 372 at ts 371
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 373 at ts 372
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 374 at ts 373
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 375 at ts 374
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 376 at ts 375
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 378 at ts 376
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 379 at ts 377
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 380 at ts 378
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 381 at ts 379
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 382 at ts 380
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 383 at ts 381
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 384 at ts 382
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 385 at ts 383
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 386 at ts 384
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 387 at ts 385
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 388 at ts 386
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 389 at ts 387
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 390 at ts 388
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 391 at ts 389
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 392 at ts 390
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 393 at ts 391
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 394 at ts 392
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 395 at ts 393
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 396 at ts 394
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 397 at ts 395
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 398 at ts 396
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 399 at ts 397
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 400 at ts 398
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 401 at ts 399
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 401 at ts 400
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 402 at ts 401
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 403 at ts 402
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 404 at ts 403
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 405 at ts 404
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 406 at ts 405
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 407 at ts 406
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 408 at ts 407
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 409 at ts 408
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 410 at ts 409
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 411 at ts 410
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 412 at ts 411
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 413 at ts 412
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 414 at ts 413
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 415 at ts 414
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 416 at ts 415
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 417 at ts 416
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 418 at ts 417
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 419 at ts 418
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 420 at ts 419
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 421 at ts 420
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 422 at ts 421
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 423 at ts 422
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 424 at ts 423
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 425 at ts 424
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 426 at ts 425
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 428 at ts 426
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 429 at ts 427
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 430 at ts 428
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 431 at ts 429
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 432 at ts 430
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 433 at ts 431
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 434 at ts 432
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 435 at ts 433
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 436 at ts 434
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 437 at ts 435
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 438 at ts 436
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 439 at ts 437
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 440 at ts 438
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 441 at ts 439
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 442 at ts 440
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 443 at ts 441
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 444 at ts 442
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 445 at ts 443
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 446 at ts 444
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 447 at ts 445
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 448 at ts 446
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 449 at ts 447
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 450 at ts 448
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 451 at ts 449
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 451 at ts 450
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 452 at ts 451
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 453 at ts 452
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 454 at ts 453
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 455 at ts 454
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 456 at ts 455
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 457 at ts 456
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 458 at ts 457
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 459 at ts 458
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 460 at ts 459
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 461 at ts 460
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 462 at ts 461
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 463 at ts 462
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 464 at ts 463
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 465 at ts 464
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 466 at ts 465
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 467 at ts 466
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 468 at ts 467
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 469 at ts 468
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 470 at ts 469
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 471 at ts 470
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 472 at ts 471
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 473 at ts 472
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 474 at ts 473
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 475 at ts 474
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 476 at ts 475
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 478 at ts 476
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 479 at ts 477
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 480 at ts 478
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 481 at ts 479
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 482 at ts 480
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 483 at ts 481
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 484 at ts 482
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 485 at ts 483
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 486 at ts 484
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 487 at ts 485
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 488 at ts 486
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 489 at ts 487
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 490 at ts 488
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 491 at ts 489
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 492 at ts 490
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 493 at ts 491
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 494 at ts 492
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 495 at ts 493
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 496 at ts 494
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 497 at ts 495
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 498 at ts 496
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 499 at ts 497
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 500 at ts 498
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 501 at ts 499
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 501 at ts 500
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 502 at ts 501
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 503 at ts 502
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 504 at ts 503
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 505 at ts 504
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 506 at ts 505
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 507 at ts 506
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 508 at ts 507
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 509 at ts 508
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 510 at ts 509
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 511 at ts 510
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 512 at ts 511
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 513 at ts 512
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 514 at ts 513
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 515 at ts 514
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 516 at ts 515
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 517 at ts 516
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 518 at ts 517
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 519 at ts 518
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 520 at ts 519
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 521 at ts 520
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 522 at ts 521
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 523 at ts 522
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 524 at ts 523
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 525 at ts 524
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 527 at ts 525
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 528 at ts 526
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 529 at ts 527
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 530 at ts 528
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 531 at ts 529
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 532 at ts 530
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 533 at ts 531
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 534 at ts 532
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 535 at ts 533
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 536 at ts 534
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 537 at ts 535
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 538 at ts 536
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 539 at ts 537
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 540 at ts 538
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 541 at ts 539
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 542 at ts 540
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 543 at ts 541
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 544 at ts 542
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 545 at ts 543
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 546 at ts 544
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 547 at ts 545
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 548 at ts 546
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 549 at ts 547
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 550 at ts 548
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 551 at ts 549
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 551 at ts 550
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 552 at ts 551
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 553 at ts 552
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 554 at ts 553
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 555 at ts 554
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 556 at ts 555
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 557 at ts 556
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 558 at ts 557
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 559 at ts 558
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 560 at ts 559
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 561 at ts 560
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 562 at ts 561
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 563 at ts 562
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 564 at ts 563
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 565 at ts 564
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 566 at ts 565
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 567 at ts 566
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 568 at ts 567
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 569 at ts 568
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 570 at ts 569
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 571 at ts 570
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 572 at ts 571
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 573 at ts 572
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 574 at ts 573
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 575 at ts 574
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 577 at ts 575
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 578 at ts 576
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 579 at ts 577
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 580 at ts 578
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 581 at ts 579
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 582 at ts 580
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 583 at ts 581
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 584 at ts 582
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 585 at ts 583
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 586 at ts 584
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 587 at ts 585
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 588 at ts 586
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 589 at ts 587
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 590 at ts 588
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 591 at ts 589
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 592 at ts 590
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 593 at ts 591
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 594 at ts 592
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 595 at ts 593
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 596 at ts 594
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 597 at ts 595
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 598 at ts 596
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 599 at ts 597
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 600 at ts 598
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 601 at ts 599
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 601 at ts 600
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 602 at ts 601
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 603 at ts 602
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 604 at ts 603
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 605 at ts 604
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 606 at ts 605
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 607 at ts 606
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 608 at ts 607
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 609 at ts 608
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 610 at ts 609
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 611 at ts 610
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 612 at ts 611
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 613 at ts 612
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 614 at ts 613
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 615 at ts 614
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 616 at ts 615
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 617 at ts 616
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 618 at ts 617
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 619 at ts 618
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 620 at ts 619
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 621 at ts 620
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 622 at ts 621
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 623 at ts 622
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 624 at ts 623
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 625 at ts 624
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 627 at ts 625
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 628 at ts 626
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 629 at ts 627
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 630 at ts 628
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 631 at ts 629
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 632 at ts 630
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 633 at ts 631
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 634 at ts 632
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 635 at ts 633
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 636 at ts 634
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 637 at ts 635
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 638 at ts 636
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 639 at ts 637
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 640 at ts 638
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 641 at ts 639
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 642 at ts 640
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 643 at ts 641
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 644 at ts 642
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 645 at ts 643
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 646 at ts 644
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 647 at ts 645
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 648 at ts 646
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 649 at ts 647
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 650 at ts 648
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 651 at ts 649
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 651 at ts 650
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 652 at ts 651
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 653 at ts 652
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 654 at ts 653
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 655 at ts 654
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 656 at ts 655
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 657 at ts 656
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 658 at ts 657
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 659 at ts 658
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 660 at ts 659
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 661 at ts 660
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 662 at ts 661
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 663 at ts 662
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 664 at ts 663
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 665 at ts 664
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 666 at ts 665
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 667 at ts 666
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 668 at ts 667
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 669 at ts 668
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 670 at ts 669
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 671 at ts 670
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 672 at ts 671
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 673 at ts 672
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 674 at ts 673
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 675 at ts 674
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 677 at ts 675
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 678 at ts 676
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 679 at ts 677
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 680 at ts 678
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 681 at ts 679
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 682 at ts 680
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 683 at ts 681
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 684 at ts 682
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 685 at ts 683
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 686 at ts 684
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 687 at ts 685
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 688 at ts 686
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 689 at ts 687
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 690 at ts 688
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 691 at ts 689
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 692 at ts 690
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 693 at ts 691
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 694 at ts 692
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 695 at ts 693
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 696 at ts 694
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 697 at ts 695
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x580c086d7d80] EOF while reading input
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x580c086d7d80] Terminating demuxer thread
+[vist#0:0/h264 @ 0x580c086dadc0] Decoder thread received EOF packet
+[vist#0:0/h264 @ 0x580c086dadc0] Decoder returned EOF, finishing
+[vist#0:0/h264 @ 0x580c086dadc0] Terminating decoder thread
+[Parsed_overlay_4 @ 0x580c09788780] [framesync @ 0x580c086dd928] Sync level 0
+[aist#0:1/aac @ 0x580c086db540] Decoder thread received EOF packet
+[aist#0:1/aac @ 0x580c086db540] Decoder returned EOF, finishing
+[aist#0:1/aac @ 0x580c086db540] Terminating decoder thread
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 698 at ts 696
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 699 at ts 697
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 700 at ts 698
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 701 at ts 699
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 701 at ts 700
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 702 at ts 701
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 703 at ts 702
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 704 at ts 703
+[vost#0:0/libx264 @ 0x580c0955e7c0] *** dropping frame 705 at ts 704
+No more output streams to write to, finishing.
+[out#0/mp4 @ 0x580c0955da40] All streams finished
+[out#0/mp4 @ 0x580c0955da40] Terminating muxer thread
+[AVIOContext @ 0x580c096c4040] Statistics: 15085597 bytes written, 2 seeks, 61 writeouts
+[out#0/mp4 @ 0x580c0955da40] Output file #0 (/var/www/html/project/media/video/watermarks/1000241781.mp4):
+[out#0/mp4 @ 0x580c0955da40]   Output stream #0:0 (video): 705 frames encoded; 705 packets muxed (14680148 bytes); 
+[out#0/mp4 @ 0x580c0955da40]   Output stream #0:1 (audio): 1015 frames encoded (1039360 samples); 1016 packets muxed (379660 bytes); 
+[out#0/mp4 @ 0x580c0955da40]   Total: 1721 packets (15059808 bytes) muxed
+[out#0/mp4 @ 0x580c0955da40] video:14336kB audio:371kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.171217%
+frame=  705 fps=140 q=-1.0 Lsize=   14732kB time=00:00:23.54 bitrate=5125.7kbits/s dup=0 drop=480 speed=4.68x    
+[AVIOContext @ 0x580c086cf6c0] Statistics: 2232 bytes written, 0 seeks, 11 writeouts
+[libx264 @ 0x580c0955eb80] frame I:4     Avg QP:16.57  size: 56238
+[libx264 @ 0x580c0955eb80] frame P:316   Avg QP:19.22  size: 26945
+[libx264 @ 0x580c0955eb80] frame B:385   Avg QP:20.61  size: 15428
+[libx264 @ 0x580c0955eb80] consecutive B-frames: 20.4% 14.8% 16.6% 48.2%
+[libx264 @ 0x580c0955eb80] mb I  I16..4: 23.6% 37.6% 38.8%
+[libx264 @ 0x580c0955eb80] mb P  I16..4: 22.2% 37.6%  5.3%  P16..4: 14.8% 10.7%  6.0%  0.0%  0.0%    skip: 3.4%
+[libx264 @ 0x580c0955eb80] mb B  I16..4: 11.5% 17.0%  0.8%  B16..8: 26.1% 14.3%  1.5%  direct:14.7%  skip:14.0%  L0:43.7% L1:43.6% BI:12.7%
+[libx264 @ 0x580c0955eb80] 8x8 transform intra:57.6% inter:34.9%
+[libx264 @ 0x580c0955eb80] coded y,uvDC,uvAC intra: 39.9% 50.8% 22.4% inter: 20.0% 53.5% 5.2%
+[libx264 @ 0x580c0955eb80] i16 v,h,dc,p: 63% 25%  7%  6%
+[libx264 @ 0x580c0955eb80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 37% 32% 12%  2%  3%  3%  4%  3%  4%
+[libx264 @ 0x580c0955eb80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 29% 12%  4%  5%  5%  7%  4%  4%
+[libx264 @ 0x580c0955eb80] i8c dc,h,v,p: 45% 24% 25%  6%
+[libx264 @ 0x580c0955eb80] Weighted P-Frames: Y:3.2% UV:1.6%
+[libx264 @ 0x580c0955eb80] kb/s:4992.27
+[aac @ 0x580c09560580] Qavg: 859.173
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x580c086d7d80] Input file #0 (/var/www/html/project/media/video/original/1000241781.mp4):
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x580c086d7d80]   Input stream #0:0 (video): 1184 packets read (3410302 bytes); 1184 frames decoded; 0 decode errors; 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x580c086d7d80]   Input stream #0:1 (audio): 1015 packets read (188701 bytes); 1015 frames decoded; 0 decode errors (1039360 samples); 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x580c086d7d80]   Total: 2199 packets (3599003 bytes) demuxed
+[AVIOContext @ 0x580c086d8140] Statistics: 3609994 bytes read, 0 seeks
+[in#1/png_pipe @ 0x580c086db1c0] Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+[in#1/png_pipe @ 0x580c086db1c0]   Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 0 decode errors; 
+[in#1/png_pipe @ 0x580c086db1c0]   Total: 1 packets (111578 bytes) demuxed
+[AVIOContext @ 0x580c0872cf80] Statistics: 111578 bytes read, 0 seeks

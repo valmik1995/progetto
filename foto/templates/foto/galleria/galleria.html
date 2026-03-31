@@ -1,0 +1,86 @@
+{% extends 'foto/base.html' %} 
+{% block uploads_active %}active{% endblock %} 
+{% load static %} 
+{% block title %}Galleria Galleria{% endblock %} 
+{% load auth_extras %}
+
+{% block foto_content %}
+
+<div class="container">
+    <div class="row">
+        {% include "foto/galleria/left-bar.html" %}
+
+        <div class="col-md-9">
+            <div class="row">
+
+                {% for photo in object_list %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <a href="{% url 'foto:photo' photo.id %}">
+                                {% if photo.image_thumbails %}
+				<img class="image-thumbail" src="{{photo.image_thumbails.url}}" alt="Card image cap">
+				{% endif %}
+                        </a>
+                        <div class="card-body">
+                            <small>Categoria: {{photo.category.name}} Id.: {{photo.id}}</small>
+                        </div>
+                        <div class="card-body">
+                        {% for tag in photo.tags.all %}
+                        <a href="{% url 'foto:tagged' tag.slug %}" class="badge badge-info">{{ tag }}</a>
+                        {% endfor %}
+                        </div>
+                        <div class="btn-group galleria-button">
+                            {% if request.user|has_group:"CoEm" %} 
+                            <button type="button" class="btn btn-block btn-outline-dark btn-sm m-1"><a href="{% url 'foto:update' photo.id %}">Edit</a></button>
+                            <form action="{% url 'foto:delete' photo.id %}" method="post">
+                                {% csrf_token %}
+                                <button onclick="return confirm('Are you sure?');" style="width: auto" class="btn btn-block btn-outline-dark btn-sm m-1">Delete</button>
+                            </form>
+                            <button onclick="downloadFile('{{ photo.image.url }}', '{{ photo.id }}')" type="button" class="btn btn-block btn-outline-dark btn-sm m-1">Download</button>
+                            {% else %}
+                            <button onclick="downloadFile('{{ photo.image.url }}', '{{ photo.id }}')" type="button" class="btn btn-block btn-outline-dark btn-sm m-1">Download</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                {% empty %}
+                <h3>No photos...</h3>
+                {% endfor %}
+
+            </div>
+            {% include "foto/galleria/page.html" %}
+        </div>
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    function downloadFile(file_url, id) {
+        axios({
+            method: "GET",
+            url: file_url,
+            responseType: 'blob',
+            onDownloadProgress: event => {
+                if (event.loaded === event.total) {
+                    // send a GET request to the backend telling that download is complete
+                    axios({
+                            method: "GET",
+                            url: "{% url 'foto:postdownload' %}" + "?q=" + id, // send id of the post, user is downloading
+                        })
+                        .then(console.log("download tracciato"))
+                        .catch(error => console.log(error))
+                }
+            }
+        }).then(response => {
+            const type = response.headers['content-type']
+            const blob = new Blob([response.data], { type: type, encoding: 'UTF-8' })
+            const link = document.createElement('a')
+            link.href = window.URL.createObjectURL(blob)
+            link.download = file_url
+            link.click()
+        })
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+
+{% leaflet_js %}
+{% leaflet_css %}
+
+
+  
+<div id="map" style="width:100%%; height:800px"></div>
+<script type="text/javascript">
+
+// Creating map options
+         var mapOptions = {
+            center: [41.87194, 12.56738],
+            zoom: 6
+         }
+         // Creating a map object
+         var map = new L.map('map', mapOptions);
+         
+         // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         
+         // Adding layer to the map
+         map.addLayer(layer);
+
+        {% for e in object_list %}
+          L.marker({{e.lat_lng}}).bindPopup('<div style="width:100px"><img style="margin: 0 10px;height:80px;width:80px" src="{{ e.profile_pic.url }}" /><p style="font-size: 1.1em; margin: 5px 0">{{ e.first_name }} {{ e.last_name }}<br />{{e.phone_number}}</p></div>', {
+          sprawling: true,
+          maxWidth: 200,
+          autoPanPaddingTopLeft: [200, 200]
+          }).addTo(map);
+        {% endfor %}
+
+  
+
+</script>
+
+{% endblock %}

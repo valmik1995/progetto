@@ -1,0 +1,22 @@
+{% extends 'tools/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block tools_content %}
+<div class="row">
+    <div class="col-md-12 mb-5">
+                <h1>Clicca per scaricare video Youtube</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 ml-auto mr-auto">
+        {% for file in filenames %}
+        <a href="/media/youtube/{{ file }}" download>Link Download</a><br />
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

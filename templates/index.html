@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block home_active %}active{% endblock %}
+{% load auth_extras %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-header">
+      {% include "messages/messages.html" %}
+      <h2>Benvenuto nella Prima Beta CoEm VvF</h2>
+    </div>
+    <h3>Archivio ed Elaborazione foto-video by Valerio Podrini</h3>
+    {% if request.user.is_superuser %} 
+      <p>Benvenuto {{request.user.first_name }} {{request.user.last_name }} sei l'amministratore</p>
+    {% elif request.user|has_group:"CoEm" %} 
+      <p>Benvenuto {{request.user.first_name }} {{request.user.last_name }} fai parte del meraviglioso gruppo CoEm</p>
+    {% else %}
+      <p>User doesn't belong to mygroup</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+

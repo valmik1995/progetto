@@ -1,0 +1,23 @@
+{% extends 'video/base.html' %}
+{% block video_active %}active{% endblock %}
+{% block video_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+  <div>
+    <h3 class="mb-1">{{ object.title }}</h3>
+    <p class="text-muted mb-0">Anteprima e download file elaborato.</p>
+  </div>
+  {% if object.video_watermarks %}
+  <a href="{{ object.video_watermarks.url }}" class="btn btn-dark" download>Scarica video</a>
+  {% endif %}
+</div>
+
+{% if object.video_watermarks %}
+<div class="embed-responsive embed-responsive-16by9 rounded border overflow-hidden">
+  <video loop muted playsinline controls class="embed-responsive-item">
+    <source src="{{ object.video_watermarks.url }}" type="video/mp4">
+  </video>
+</div>
+{% else %}
+<div class="alert alert-warning mb-0">Video watermark non disponibile.</div>
+{% endif %}
+{% endblock %}

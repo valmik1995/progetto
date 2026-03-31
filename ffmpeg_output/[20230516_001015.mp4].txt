@@ -1,0 +1,1012 @@
+[h264 @ 0x5571a1d30400] Reinit context to 1920x1088, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/20230516_001015.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    creation_time   : 2023-05-15T22:10:59.000000Z
+    com.android.version: 13
+    com.android.capture.fps: 60.000000
+  Duration: 00:00:43.50, start: 0.000000, bitrate: 27080 kb/s
+    Stream #0:0(eng): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, left), 1920x1080 (1920x1088), 26818 kb/s, 49.84 fps, 30 tbr, 90k tbn, 180k tbc (default)
+    Metadata:
+      creation_time   : 2023-05-15T22:10:59.000000Z
+      handler_name    : VideoHandle
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 256 kb/s (default)
+    Metadata:
+      creation_time   : 2023-05-15T22:10:59.000000Z
+      handler_name    : SoundHandle
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x5571a1d58bc0] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_0 @ 0x5571a1d817c0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x5571a1dcb580] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x5571a1dce340] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> scale
+  Stream #0:1 (aac) -> concat:in0:a0
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x5571a1de4780] Reinit context to 1920x1088, pix_fmt: yuv420p
+[h264 @ 0x5571a21e69c0] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x5571a3731ec0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x5571a373a840] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x5571a373ba00] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x5571a3740200] w:1920 h:1080 pixfmt:yuv420p tb:1/90000 fr:30/1 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x5571a3741280] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x5571a3742300] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_1 @ 0x5571a37432c0] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[graph_0_in_2_0 @ 0x5571a3744400] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_concat_7 @ 0x5571a373e240] auto-inserting filter 'auto_resampler_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_7'
+[Parsed_scale_0 @ 0x5571a3731ec0] w:1920 h:1080 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_setsar_1 @ 0x5571a1dde740] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x5571a373a840] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x5571a373acc0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x5571a373d140] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x5571a373d140] [framesync @ 0x5571a373d2a8] Selected 1/90000 time base
+[Parsed_overlay_6 @ 0x5571a373d140] [framesync @ 0x5571a373d2a8] Sync level 2
+[Parsed_scale_4 @ 0x5571a373ba00] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_5 @ 0x5571a373c4c0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_resampler_0 @ 0x5571a374ab40] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[libx264 @ 0x5571a1dcb980] using SAR=1/1
+[libx264 @ 0x5571a1dcb980] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x5571a1dcb980] profile High, level 3.1
+[libx264 @ 0x5571a1dcb980] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/20230516_001015.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    com.android.capture.fps: 60.000000
+    com.android.version: 13
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+Past duration 0.848000 too large
+*** dropping frame 395 from stream 0 at ts 393
+*** dropping frame 396 from stream 0 at ts 394
+*** dropping frame 397 from stream 0 at ts 395
+*** dropping frame 398 from stream 0 at ts 396
+*** dropping frame 399 from stream 0 at ts 397
+*** dropping frame 400 from stream 0 at ts 398
+*** dropping frame 401 from stream 0 at ts 399
+*** dropping frame 402 from stream 0 at ts 400
+*** dropping frame 403 from stream 0 at ts 401
+*** dropping frame 404 from stream 0 at ts 402
+*** dropping frame 405 from stream 0 at ts 403
+*** dropping frame 406 from stream 0 at ts 404
+*** dropping frame 407 from stream 0 at ts 405
+*** dropping frame 408 from stream 0 at ts 406
+*** dropping frame 409 from stream 0 at ts 407
+*** dropping frame 410 from stream 0 at ts 408
+*** dropping frame 411 from stream 0 at ts 409
+*** dropping frame 412 from stream 0 at ts 410
+*** dropping frame 413 from stream 0 at ts 411
+*** dropping frame 414 from stream 0 at ts 412
+*** dropping frame 415 from stream 0 at ts 413
+*** dropping frame 416 from stream 0 at ts 414
+*** dropping frame 417 from stream 0 at ts 415
+*** dropping frame 418 from stream 0 at ts 416
+*** dropping frame 419 from stream 0 at ts 417
+*** dropping frame 420 from stream 0 at ts 418
+*** dropping frame 421 from stream 0 at ts 419
+*** dropping frame 422 from stream 0 at ts 420
+*** dropping frame 423 from stream 0 at ts 421
+*** dropping frame 424 from stream 0 at ts 422
+*** dropping frame 425 from stream 0 at ts 423
+*** dropping frame 426 from stream 0 at ts 424
+*** dropping frame 427 from stream 0 at ts 425
+*** dropping frame 428 from stream 0 at ts 426
+*** dropping frame 429 from stream 0 at ts 427
+*** dropping frame 430 from stream 0 at ts 428
+*** dropping frame 431 from stream 0 at ts 429
+*** dropping frame 432 from stream 0 at ts 430
+*** dropping frame 433 from stream 0 at ts 431
+*** dropping frame 434 from stream 0 at ts 432
+*** dropping frame 435 from stream 0 at ts 433
+*** dropping frame 436 from stream 0 at ts 434
+*** dropping frame 437 from stream 0 at ts 435
+*** dropping frame 438 from stream 0 at ts 436
+*** dropping frame 440 from stream 0 at ts 438
+*** dropping frame 441 from stream 0 at ts 439
+*** dropping frame 442 from stream 0 at ts 440
+*** dropping frame 443 from stream 0 at ts 441
+*** dropping frame 444 from stream 0 at ts 442
+*** dropping frame 445 from stream 0 at ts 443
+*** dropping frame 446 from stream 0 at ts 444
+*** dropping frame 447 from stream 0 at ts 445
+*** dropping frame 448 from stream 0 at ts 446
+*** dropping frame 449 from stream 0 at ts 447
+*** dropping frame 450 from stream 0 at ts 448
+*** dropping frame 451 from stream 0 at ts 449
+Past duration 0.692009 too large
+*** dropping frame 453 from stream 0 at ts 451
+Past duration 0.692314 too large
+Past duration 0.692329 too large
+Past duration 0.692665 too large
+    Last message repeated 1 times
+Past duration 0.692986 too large
+Past duration 0.693321 too large
+Past duration 0.693657 too large
+Past duration 0.693672 too large
+Past duration 0.600319 too large
+Past duration 0.600334 too large
+Past duration 0.968666 too large
+*** dropping frame 494 from stream 0 at ts 492
+*** dropping frame 495 from stream 0 at ts 493
+*** dropping frame 496 from stream 0 at ts 494
+*** dropping frame 497 from stream 0 at ts 495
+*** dropping frame 498 from stream 0 at ts 496
+*** dropping frame 499 from stream 0 at ts 497
+*** dropping frame 500 from stream 0 at ts 498
+*** dropping frame 501 from stream 0 at ts 499
+*** dropping frame 502 from stream 0 at ts 500
+*** dropping frame 503 from stream 0 at ts 501
+*** dropping frame 504 from stream 0 at ts 502
+*** dropping frame 505 from stream 0 at ts 503
+*** dropping frame 506 from stream 0 at ts 504
+*** dropping frame 507 from stream 0 at ts 505
+*** dropping frame 508 from stream 0 at ts 506
+*** dropping frame 509 from stream 0 at ts 507
+*** dropping frame 510 from stream 0 at ts 508
+*** dropping frame 511 from stream 0 at ts 509
+*** dropping frame 512 from stream 0 at ts 510
+*** dropping frame 513 from stream 0 at ts 511
+*** dropping frame 514 from stream 0 at ts 512
+*** dropping frame 515 from stream 0 at ts 513
+*** dropping frame 516 from stream 0 at ts 514
+*** dropping frame 517 from stream 0 at ts 515
+*** dropping frame 518 from stream 0 at ts 516
+*** dropping frame 519 from stream 0 at ts 517
+*** dropping frame 520 from stream 0 at ts 518
+*** dropping frame 521 from stream 0 at ts 519
+*** dropping frame 522 from stream 0 at ts 520
+*** dropping frame 523 from stream 0 at ts 521
+*** dropping frame 524 from stream 0 at ts 522
+*** dropping frame 525 from stream 0 at ts 523
+*** dropping frame 526 from stream 0 at ts 524
+*** dropping frame 527 from stream 0 at ts 525
+*** dropping frame 528 from stream 0 at ts 526
+*** dropping frame 529 from stream 0 at ts 527
+*** dropping frame 530 from stream 0 at ts 528
+*** dropping frame 531 from stream 0 at ts 529
+*** dropping frame 532 from stream 0 at ts 530
+*** dropping frame 533 from stream 0 at ts 531
+*** dropping frame 534 from stream 0 at ts 532
+*** dropping frame 535 from stream 0 at ts 533
+*** dropping frame 536 from stream 0 at ts 534
+*** dropping frame 537 from stream 0 at ts 535
+*** dropping frame 538 from stream 0 at ts 536
+*** dropping frame 539 from stream 0 at ts 537
+*** dropping frame 540 from stream 0 at ts 538
+*** dropping frame 541 from stream 0 at ts 539
+*** dropping frame 542 from stream 0 at ts 540
+*** dropping frame 543 from stream 0 at ts 541
+*** dropping frame 544 from stream 0 at ts 542
+*** dropping frame 545 from stream 0 at ts 543
+*** dropping frame 546 from stream 0 at ts 544
+*** dropping frame 547 from stream 0 at ts 545
+*** dropping frame 548 from stream 0 at ts 546
+*** dropping frame 549 from stream 0 at ts 547
+*** dropping frame 550 from stream 0 at ts 548
+*** dropping frame 551 from stream 0 at ts 549
+*** dropping frame 552 from stream 0 at ts 550
+*** dropping frame 553 from stream 0 at ts 551
+*** dropping frame 554 from stream 0 at ts 552
+*** dropping frame 555 from stream 0 at ts 553
+*** dropping frame 556 from stream 0 at ts 554
+*** dropping frame 557 from stream 0 at ts 555
+*** dropping frame 558 from stream 0 at ts 556
+*** dropping frame 559 from stream 0 at ts 557
+*** dropping frame 561 from stream 0 at ts 559
+*** dropping frame 562 from stream 0 at ts 560
+*** dropping frame 563 from stream 0 at ts 561
+*** dropping frame 564 from stream 0 at ts 562
+*** dropping frame 565 from stream 0 at ts 563
+*** dropping frame 566 from stream 0 at ts 564
+*** dropping frame 567 from stream 0 at ts 565
+*** dropping frame 568 from stream 0 at ts 566
+*** dropping frame 569 from stream 0 at ts 567
+*** dropping frame 570 from stream 0 at ts 568
+*** dropping frame 571 from stream 0 at ts 569
+*** dropping frame 572 from stream 0 at ts 570
+*** dropping frame 573 from stream 0 at ts 571
+*** dropping frame 574 from stream 0 at ts 572
+*** dropping frame 575 from stream 0 at ts 573
+*** dropping frame 576 from stream 0 at ts 574
+*** dropping frame 577 from stream 0 at ts 575
+*** dropping frame 578 from stream 0 at ts 576
+*** dropping frame 579 from stream 0 at ts 577
+*** dropping frame 580 from stream 0 at ts 578
+*** dropping frame 581 from stream 0 at ts 579
+*** dropping frame 582 from stream 0 at ts 580
+*** dropping frame 583 from stream 0 at ts 581
+*** dropping frame 584 from stream 0 at ts 582
+*** dropping frame 585 from stream 0 at ts 583
+*** dropping frame 586 from stream 0 at ts 584
+*** dropping frame 587 from stream 0 at ts 585
+*** dropping frame 588 from stream 0 at ts 586
+*** dropping frame 589 from stream 0 at ts 587
+*** dropping frame 590 from stream 0 at ts 588
+*** dropping frame 591 from stream 0 at ts 589
+*** dropping frame 592 from stream 0 at ts 590
+*** dropping frame 593 from stream 0 at ts 591
+*** dropping frame 594 from stream 0 at ts 592
+*** dropping frame 595 from stream 0 at ts 593
+*** dropping frame 596 from stream 0 at ts 594
+*** dropping frame 597 from stream 0 at ts 595
+*** dropping frame 598 from stream 0 at ts 596
+*** dropping frame 599 from stream 0 at ts 597
+*** dropping frame 600 from stream 0 at ts 598
+*** dropping frame 601 from stream 0 at ts 599
+*** dropping frame 602 from stream 0 at ts 600
+*** dropping frame 603 from stream 0 at ts 601
+*** dropping frame 604 from stream 0 at ts 602
+*** dropping frame 605 from stream 0 at ts 603
+*** dropping frame 606 from stream 0 at ts 604
+*** dropping frame 607 from stream 0 at ts 605
+*** dropping frame 608 from stream 0 at ts 606
+*** dropping frame 609 from stream 0 at ts 607
+*** dropping frame 610 from stream 0 at ts 608
+*** dropping frame 611 from stream 0 at ts 609
+*** dropping frame 612 from stream 0 at ts 610
+*** dropping frame 613 from stream 0 at ts 611
+*** dropping frame 614 from stream 0 at ts 612
+*** dropping frame 615 from stream 0 at ts 613
+*** dropping frame 616 from stream 0 at ts 614
+*** dropping frame 617 from stream 0 at ts 615
+*** dropping frame 618 from stream 0 at ts 616
+*** dropping frame 619 from stream 0 at ts 617
+*** dropping frame 620 from stream 0 at ts 618
+*** dropping frame 621 from stream 0 at ts 619
+*** dropping frame 622 from stream 0 at ts 620
+*** dropping frame 623 from stream 0 at ts 621
+*** dropping frame 624 from stream 0 at ts 622
+*** dropping frame 625 from stream 0 at ts 623
+*** dropping frame 626 from stream 0 at ts 624
+*** dropping frame 627 from stream 0 at ts 625
+*** dropping frame 628 from stream 0 at ts 626
+*** dropping frame 629 from stream 0 at ts 627
+*** dropping frame 630 from stream 0 at ts 628
+*** dropping frame 631 from stream 0 at ts 629
+*** dropping frame 632 from stream 0 at ts 630
+*** dropping frame 633 from stream 0 at ts 631
+*** dropping frame 634 from stream 0 at ts 632
+*** dropping frame 635 from stream 0 at ts 633
+*** dropping frame 636 from stream 0 at ts 634
+*** dropping frame 637 from stream 0 at ts 635
+*** dropping frame 638 from stream 0 at ts 636
+*** dropping frame 639 from stream 0 at ts 637
+*** dropping frame 640 from stream 0 at ts 638
+*** dropping frame 641 from stream 0 at ts 639
+*** dropping frame 642 from stream 0 at ts 640
+*** dropping frame 643 from stream 0 at ts 641
+*** dropping frame 644 from stream 0 at ts 642
+*** dropping frame 645 from stream 0 at ts 643
+*** dropping frame 646 from stream 0 at ts 644
+*** dropping frame 647 from stream 0 at ts 645
+*** dropping frame 648 from stream 0 at ts 646
+*** dropping frame 649 from stream 0 at ts 647
+*** dropping frame 650 from stream 0 at ts 648
+*** dropping frame 652 from stream 0 at ts 650
+*** dropping frame 653 from stream 0 at ts 651
+*** dropping frame 654 from stream 0 at ts 652
+*** dropping frame 655 from stream 0 at ts 653
+*** dropping frame 656 from stream 0 at ts 654
+*** dropping frame 657 from stream 0 at ts 655
+*** dropping frame 658 from stream 0 at ts 656
+*** dropping frame 659 from stream 0 at ts 657
+*** dropping frame 660 from stream 0 at ts 658
+*** dropping frame 661 from stream 0 at ts 659
+*** dropping frame 662 from stream 0 at ts 660
+*** dropping frame 663 from stream 0 at ts 661
+*** dropping frame 664 from stream 0 at ts 662
+*** dropping frame 665 from stream 0 at ts 663
+*** dropping frame 666 from stream 0 at ts 664
+*** dropping frame 667 from stream 0 at ts 665
+*** dropping frame 668 from stream 0 at ts 666
+*** dropping frame 669 from stream 0 at ts 667
+*** dropping frame 670 from stream 0 at ts 668
+*** dropping frame 671 from stream 0 at ts 669
+*** dropping frame 672 from stream 0 at ts 670
+*** dropping frame 673 from stream 0 at ts 671
+*** dropping frame 674 from stream 0 at ts 672
+*** dropping frame 675 from stream 0 at ts 673
+*** dropping frame 676 from stream 0 at ts 674
+*** dropping frame 677 from stream 0 at ts 675
+*** dropping frame 678 from stream 0 at ts 676
+*** dropping frame 679 from stream 0 at ts 677
+*** dropping frame 680 from stream 0 at ts 678
+*** dropping frame 681 from stream 0 at ts 679
+*** dropping frame 682 from stream 0 at ts 680
+*** dropping frame 683 from stream 0 at ts 681
+*** dropping frame 684 from stream 0 at ts 682
+*** dropping frame 685 from stream 0 at ts 683
+*** dropping frame 686 from stream 0 at ts 684
+*** dropping frame 687 from stream 0 at ts 685
+*** dropping frame 688 from stream 0 at ts 686
+*** dropping frame 689 from stream 0 at ts 687
+*** dropping frame 690 from stream 0 at ts 688
+*** dropping frame 691 from stream 0 at ts 689
+*** dropping frame 692 from stream 0 at ts 690
+*** dropping frame 693 from stream 0 at ts 691
+*** dropping frame 694 from stream 0 at ts 692
+*** dropping frame 695 from stream 0 at ts 693
+*** dropping frame 696 from stream 0 at ts 694
+*** dropping frame 697 from stream 0 at ts 695
+*** dropping frame 698 from stream 0 at ts 696
+*** dropping frame 699 from stream 0 at ts 697
+*** dropping frame 700 from stream 0 at ts 698
+*** dropping frame 701 from stream 0 at ts 699
+*** dropping frame 702 from stream 0 at ts 700
+*** dropping frame 703 from stream 0 at ts 701
+*** dropping frame 704 from stream 0 at ts 702
+*** dropping frame 705 from stream 0 at ts 703
+*** dropping frame 706 from stream 0 at ts 704
+*** dropping frame 707 from stream 0 at ts 705
+*** dropping frame 708 from stream 0 at ts 706
+*** dropping frame 709 from stream 0 at ts 707
+*** dropping frame 710 from stream 0 at ts 708
+*** dropping frame 711 from stream 0 at ts 709
+*** dropping frame 712 from stream 0 at ts 710
+*** dropping frame 713 from stream 0 at ts 711
+*** dropping frame 714 from stream 0 at ts 712
+*** dropping frame 715 from stream 0 at ts 713
+*** dropping frame 716 from stream 0 at ts 714
+*** dropping frame 717 from stream 0 at ts 715
+*** dropping frame 718 from stream 0 at ts 716
+*** dropping frame 719 from stream 0 at ts 717
+*** dropping frame 720 from stream 0 at ts 718
+*** dropping frame 721 from stream 0 at ts 719
+*** dropping frame 722 from stream 0 at ts 720
+*** dropping frame 723 from stream 0 at ts 721
+*** dropping frame 724 from stream 0 at ts 722
+*** dropping frame 725 from stream 0 at ts 723
+*** dropping frame 726 from stream 0 at ts 724
+*** dropping frame 727 from stream 0 at ts 725
+*** dropping frame 728 from stream 0 at ts 726
+*** dropping frame 729 from stream 0 at ts 727
+*** dropping frame 730 from stream 0 at ts 728
+*** dropping frame 731 from stream 0 at ts 729
+*** dropping frame 732 from stream 0 at ts 730
+*** dropping frame 733 from stream 0 at ts 731
+*** dropping frame 734 from stream 0 at ts 732
+*** dropping frame 735 from stream 0 at ts 733
+*** dropping frame 736 from stream 0 at ts 734
+*** dropping frame 737 from stream 0 at ts 735
+*** dropping frame 738 from stream 0 at ts 736
+*** dropping frame 739 from stream 0 at ts 737
+*** dropping frame 740 from stream 0 at ts 738
+*** dropping frame 741 from stream 0 at ts 739
+*** dropping frame 743 from stream 0 at ts 741
+*** dropping frame 744 from stream 0 at ts 742
+*** dropping frame 745 from stream 0 at ts 743
+*** dropping frame 746 from stream 0 at ts 744
+*** dropping frame 747 from stream 0 at ts 745
+*** dropping frame 748 from stream 0 at ts 746
+*** dropping frame 749 from stream 0 at ts 747
+*** dropping frame 750 from stream 0 at ts 748
+*** dropping frame 751 from stream 0 at ts 749
+*** dropping frame 752 from stream 0 at ts 750
+*** dropping frame 753 from stream 0 at ts 751
+*** dropping frame 754 from stream 0 at ts 752
+*** dropping frame 755 from stream 0 at ts 753
+*** dropping frame 756 from stream 0 at ts 754
+*** dropping frame 757 from stream 0 at ts 755
+*** dropping frame 758 from stream 0 at ts 756
+*** dropping frame 759 from stream 0 at ts 757
+*** dropping frame 760 from stream 0 at ts 758
+*** dropping frame 761 from stream 0 at ts 759
+*** dropping frame 762 from stream 0 at ts 760
+*** dropping frame 763 from stream 0 at ts 761
+*** dropping frame 764 from stream 0 at ts 762
+*** dropping frame 765 from stream 0 at ts 763
+*** dropping frame 766 from stream 0 at ts 764
+*** dropping frame 767 from stream 0 at ts 765
+*** dropping frame 768 from stream 0 at ts 766
+*** dropping frame 769 from stream 0 at ts 767
+*** dropping frame 770 from stream 0 at ts 768
+*** dropping frame 771 from stream 0 at ts 769
+*** dropping frame 772 from stream 0 at ts 770
+*** dropping frame 773 from stream 0 at ts 771
+*** dropping frame 774 from stream 0 at ts 772
+*** dropping frame 775 from stream 0 at ts 773
+*** dropping frame 776 from stream 0 at ts 774
+*** dropping frame 777 from stream 0 at ts 775
+*** dropping frame 778 from stream 0 at ts 776
+*** dropping frame 779 from stream 0 at ts 777
+*** dropping frame 780 from stream 0 at ts 778
+*** dropping frame 781 from stream 0 at ts 779
+*** dropping frame 782 from stream 0 at ts 780
+*** dropping frame 783 from stream 0 at ts 781
+*** dropping frame 784 from stream 0 at ts 782
+*** dropping frame 785 from stream 0 at ts 783
+*** dropping frame 786 from stream 0 at ts 784
+*** dropping frame 787 from stream 0 at ts 785
+*** dropping frame 788 from stream 0 at ts 786
+*** dropping frame 789 from stream 0 at ts 787
+*** dropping frame 790 from stream 0 at ts 788
+*** dropping frame 791 from stream 0 at ts 789
+*** dropping frame 792 from stream 0 at ts 790
+*** dropping frame 793 from stream 0 at ts 791
+*** dropping frame 794 from stream 0 at ts 792
+*** dropping frame 795 from stream 0 at ts 793
+*** dropping frame 796 from stream 0 at ts 794
+*** dropping frame 797 from stream 0 at ts 795
+*** dropping frame 798 from stream 0 at ts 796
+*** dropping frame 799 from stream 0 at ts 797
+*** dropping frame 800 from stream 0 at ts 798
+*** dropping frame 801 from stream 0 at ts 799
+*** dropping frame 802 from stream 0 at ts 800
+*** dropping frame 803 from stream 0 at ts 801
+*** dropping frame 804 from stream 0 at ts 802
+*** dropping frame 805 from stream 0 at ts 803
+*** dropping frame 806 from stream 0 at ts 804
+*** dropping frame 807 from stream 0 at ts 805
+*** dropping frame 808 from stream 0 at ts 806
+*** dropping frame 809 from stream 0 at ts 807
+*** dropping frame 810 from stream 0 at ts 808
+*** dropping frame 811 from stream 0 at ts 809
+*** dropping frame 812 from stream 0 at ts 810
+*** dropping frame 813 from stream 0 at ts 811
+*** dropping frame 814 from stream 0 at ts 812
+*** dropping frame 815 from stream 0 at ts 813
+*** dropping frame 816 from stream 0 at ts 814
+*** dropping frame 817 from stream 0 at ts 815
+*** dropping frame 818 from stream 0 at ts 816
+*** dropping frame 819 from stream 0 at ts 817
+*** dropping frame 820 from stream 0 at ts 818
+*** dropping frame 821 from stream 0 at ts 819
+*** dropping frame 822 from stream 0 at ts 820
+*** dropping frame 823 from stream 0 at ts 821
+*** dropping frame 824 from stream 0 at ts 822
+*** dropping frame 825 from stream 0 at ts 823
+*** dropping frame 826 from stream 0 at ts 824
+*** dropping frame 827 from stream 0 at ts 825
+*** dropping frame 828 from stream 0 at ts 826
+*** dropping frame 829 from stream 0 at ts 827
+*** dropping frame 830 from stream 0 at ts 828
+*** dropping frame 831 from stream 0 at ts 829
+*** dropping frame 833 from stream 0 at ts 831
+*** dropping frame 834 from stream 0 at ts 832
+*** dropping frame 835 from stream 0 at ts 833
+*** dropping frame 836 from stream 0 at ts 834
+*** dropping frame 837 from stream 0 at ts 835
+*** dropping frame 838 from stream 0 at ts 836
+*** dropping frame 839 from stream 0 at ts 837
+*** dropping frame 840 from stream 0 at ts 838
+*** dropping frame 841 from stream 0 at ts 839
+*** dropping frame 842 from stream 0 at ts 840
+*** dropping frame 843 from stream 0 at ts 841
+*** dropping frame 844 from stream 0 at ts 842
+*** dropping frame 845 from stream 0 at ts 843
+*** dropping frame 846 from stream 0 at ts 844
+*** dropping frame 847 from stream 0 at ts 845
+*** dropping frame 848 from stream 0 at ts 846
+*** dropping frame 849 from stream 0 at ts 847
+*** dropping frame 850 from stream 0 at ts 848
+*** dropping frame 851 from stream 0 at ts 849
+*** dropping frame 852 from stream 0 at ts 850
+*** dropping frame 853 from stream 0 at ts 851
+*** dropping frame 854 from stream 0 at ts 852
+*** dropping frame 855 from stream 0 at ts 853
+*** dropping frame 856 from stream 0 at ts 854
+*** dropping frame 857 from stream 0 at ts 855
+*** dropping frame 858 from stream 0 at ts 856
+*** dropping frame 859 from stream 0 at ts 857
+*** dropping frame 860 from stream 0 at ts 858
+*** dropping frame 861 from stream 0 at ts 859
+*** dropping frame 862 from stream 0 at ts 860
+*** dropping frame 863 from stream 0 at ts 861
+*** dropping frame 864 from stream 0 at ts 862
+*** dropping frame 865 from stream 0 at ts 863
+*** dropping frame 866 from stream 0 at ts 864
+*** dropping frame 867 from stream 0 at ts 865
+*** dropping frame 868 from stream 0 at ts 866
+*** dropping frame 869 from stream 0 at ts 867
+*** dropping frame 870 from stream 0 at ts 868
+*** dropping frame 871 from stream 0 at ts 869
+*** dropping frame 872 from stream 0 at ts 870
+*** dropping frame 873 from stream 0 at ts 871
+*** dropping frame 874 from stream 0 at ts 872
+*** dropping frame 875 from stream 0 at ts 873
+*** dropping frame 876 from stream 0 at ts 874
+*** dropping frame 877 from stream 0 at ts 875
+*** dropping frame 878 from stream 0 at ts 876
+*** dropping frame 879 from stream 0 at ts 877
+*** dropping frame 880 from stream 0 at ts 878
+*** dropping frame 881 from stream 0 at ts 879
+*** dropping frame 882 from stream 0 at ts 880
+*** dropping frame 883 from stream 0 at ts 881
+*** dropping frame 884 from stream 0 at ts 882
+*** dropping frame 885 from stream 0 at ts 883
+*** dropping frame 886 from stream 0 at ts 884
+*** dropping frame 887 from stream 0 at ts 885
+*** dropping frame 888 from stream 0 at ts 886
+*** dropping frame 889 from stream 0 at ts 887
+*** dropping frame 890 from stream 0 at ts 888
+*** dropping frame 891 from stream 0 at ts 889
+*** dropping frame 892 from stream 0 at ts 890
+*** dropping frame 893 from stream 0 at ts 891
+*** dropping frame 894 from stream 0 at ts 892
+*** dropping frame 895 from stream 0 at ts 893
+*** dropping frame 896 from stream 0 at ts 894
+*** dropping frame 897 from stream 0 at ts 895
+*** dropping frame 898 from stream 0 at ts 896
+*** dropping frame 899 from stream 0 at ts 897
+*** dropping frame 900 from stream 0 at ts 898
+*** dropping frame 901 from stream 0 at ts 899
+*** dropping frame 902 from stream 0 at ts 900
+*** dropping frame 903 from stream 0 at ts 901
+*** dropping frame 904 from stream 0 at ts 902
+*** dropping frame 905 from stream 0 at ts 903
+*** dropping frame 906 from stream 0 at ts 904
+*** dropping frame 907 from stream 0 at ts 905
+*** dropping frame 908 from stream 0 at ts 906
+*** dropping frame 909 from stream 0 at ts 907
+*** dropping frame 910 from stream 0 at ts 908
+*** dropping frame 911 from stream 0 at ts 909
+*** dropping frame 912 from stream 0 at ts 910
+*** dropping frame 913 from stream 0 at ts 911
+*** dropping frame 914 from stream 0 at ts 912
+*** dropping frame 915 from stream 0 at ts 913
+*** dropping frame 916 from stream 0 at ts 914
+*** dropping frame 917 from stream 0 at ts 915
+*** dropping frame 918 from stream 0 at ts 916
+*** dropping frame 919 from stream 0 at ts 917
+*** dropping frame 920 from stream 0 at ts 918
+*** dropping frame 921 from stream 0 at ts 919
+*** dropping frame 922 from stream 0 at ts 920
+*** dropping frame 924 from stream 0 at ts 922
+*** dropping frame 925 from stream 0 at ts 923
+*** dropping frame 926 from stream 0 at ts 924
+*** dropping frame 927 from stream 0 at ts 925
+*** dropping frame 928 from stream 0 at ts 926
+*** dropping frame 929 from stream 0 at ts 927
+*** dropping frame 930 from stream 0 at ts 928
+*** dropping frame 931 from stream 0 at ts 929
+*** dropping frame 932 from stream 0 at ts 930
+*** dropping frame 933 from stream 0 at ts 931
+*** dropping frame 934 from stream 0 at ts 932
+*** dropping frame 935 from stream 0 at ts 933
+*** dropping frame 936 from stream 0 at ts 934
+*** dropping frame 937 from stream 0 at ts 935
+*** dropping frame 938 from stream 0 at ts 936
+*** dropping frame 939 from stream 0 at ts 937
+*** dropping frame 940 from stream 0 at ts 938
+*** dropping frame 941 from stream 0 at ts 939
+*** dropping frame 942 from stream 0 at ts 940
+*** dropping frame 943 from stream 0 at ts 941
+*** dropping frame 944 from stream 0 at ts 942
+*** dropping frame 945 from stream 0 at ts 943
+*** dropping frame 946 from stream 0 at ts 944
+*** dropping frame 947 from stream 0 at ts 945
+*** dropping frame 948 from stream 0 at ts 946
+*** dropping frame 949 from stream 0 at ts 947
+*** dropping frame 950 from stream 0 at ts 948
+*** dropping frame 951 from stream 0 at ts 949
+*** dropping frame 952 from stream 0 at ts 950
+*** dropping frame 953 from stream 0 at ts 951
+*** dropping frame 954 from stream 0 at ts 952
+*** dropping frame 955 from stream 0 at ts 953
+*** dropping frame 956 from stream 0 at ts 954
+*** dropping frame 957 from stream 0 at ts 955
+*** dropping frame 958 from stream 0 at ts 956
+*** dropping frame 959 from stream 0 at ts 957
+*** dropping frame 960 from stream 0 at ts 958
+*** dropping frame 961 from stream 0 at ts 959
+*** dropping frame 962 from stream 0 at ts 960
+*** dropping frame 963 from stream 0 at ts 961
+*** dropping frame 964 from stream 0 at ts 962
+*** dropping frame 965 from stream 0 at ts 963
+*** dropping frame 966 from stream 0 at ts 964
+*** dropping frame 967 from stream 0 at ts 965
+*** dropping frame 968 from stream 0 at ts 966
+*** dropping frame 969 from stream 0 at ts 967
+*** dropping frame 970 from stream 0 at ts 968
+*** dropping frame 971 from stream 0 at ts 969
+*** dropping frame 972 from stream 0 at ts 970
+*** dropping frame 973 from stream 0 at ts 971
+*** dropping frame 974 from stream 0 at ts 972
+*** dropping frame 975 from stream 0 at ts 973
+*** dropping frame 976 from stream 0 at ts 974
+*** dropping frame 977 from stream 0 at ts 975
+*** dropping frame 978 from stream 0 at ts 976
+*** dropping frame 979 from stream 0 at ts 977
+*** dropping frame 980 from stream 0 at ts 978
+*** dropping frame 981 from stream 0 at ts 979
+*** dropping frame 982 from stream 0 at ts 980
+*** dropping frame 983 from stream 0 at ts 981
+*** dropping frame 984 from stream 0 at ts 982
+*** dropping frame 985 from stream 0 at ts 983
+*** dropping frame 986 from stream 0 at ts 984
+*** dropping frame 987 from stream 0 at ts 985
+*** dropping frame 988 from stream 0 at ts 986
+*** dropping frame 989 from stream 0 at ts 987
+*** dropping frame 990 from stream 0 at ts 988
+*** dropping frame 991 from stream 0 at ts 989
+*** dropping frame 992 from stream 0 at ts 990
+*** dropping frame 993 from stream 0 at ts 991
+*** dropping frame 994 from stream 0 at ts 992
+*** dropping frame 995 from stream 0 at ts 993
+*** dropping frame 996 from stream 0 at ts 994
+*** dropping frame 997 from stream 0 at ts 995
+*** dropping frame 998 from stream 0 at ts 996
+*** dropping frame 999 from stream 0 at ts 997
+*** dropping frame 1000 from stream 0 at ts 998
+*** dropping frame 1001 from stream 0 at ts 999
+*** dropping frame 1002 from stream 0 at ts 1000
+*** dropping frame 1003 from stream 0 at ts 1001
+*** dropping frame 1004 from stream 0 at ts 1002
+*** dropping frame 1005 from stream 0 at ts 1003
+*** dropping frame 1006 from stream 0 at ts 1004
+*** dropping frame 1007 from stream 0 at ts 1005
+*** dropping frame 1008 from stream 0 at ts 1006
+*** dropping frame 1009 from stream 0 at ts 1007
+*** dropping frame 1010 from stream 0 at ts 1008
+*** dropping frame 1011 from stream 0 at ts 1009
+*** dropping frame 1012 from stream 0 at ts 1010
+*** dropping frame 1013 from stream 0 at ts 1011
+*** dropping frame 1015 from stream 0 at ts 1013
+*** dropping frame 1016 from stream 0 at ts 1014
+*** dropping frame 1017 from stream 0 at ts 1015
+*** dropping frame 1018 from stream 0 at ts 1016
+*** dropping frame 1019 from stream 0 at ts 1017
+*** dropping frame 1020 from stream 0 at ts 1018
+*** dropping frame 1021 from stream 0 at ts 1019
+*** dropping frame 1022 from stream 0 at ts 1020
+*** dropping frame 1023 from stream 0 at ts 1021
+*** dropping frame 1024 from stream 0 at ts 1022
+*** dropping frame 1025 from stream 0 at ts 1023
+*** dropping frame 1026 from stream 0 at ts 1024
+*** dropping frame 1027 from stream 0 at ts 1025
+*** dropping frame 1028 from stream 0 at ts 1026
+*** dropping frame 1029 from stream 0 at ts 1027
+*** dropping frame 1030 from stream 0 at ts 1028
+*** dropping frame 1031 from stream 0 at ts 1029
+*** dropping frame 1032 from stream 0 at ts 1030
+*** dropping frame 1033 from stream 0 at ts 1031
+*** dropping frame 1034 from stream 0 at ts 1032
+*** dropping frame 1035 from stream 0 at ts 1033
+*** dropping frame 1036 from stream 0 at ts 1034
+*** dropping frame 1037 from stream 0 at ts 1035
+*** dropping frame 1038 from stream 0 at ts 1036
+*** dropping frame 1039 from stream 0 at ts 1037
+*** dropping frame 1040 from stream 0 at ts 1038
+*** dropping frame 1041 from stream 0 at ts 1039
+*** dropping frame 1042 from stream 0 at ts 1040
+*** dropping frame 1043 from stream 0 at ts 1041
+*** dropping frame 1044 from stream 0 at ts 1042
+*** dropping frame 1045 from stream 0 at ts 1043
+*** dropping frame 1046 from stream 0 at ts 1044
+*** dropping frame 1047 from stream 0 at ts 1045
+*** dropping frame 1048 from stream 0 at ts 1046
+*** dropping frame 1049 from stream 0 at ts 1047
+*** dropping frame 1050 from stream 0 at ts 1048
+*** dropping frame 1051 from stream 0 at ts 1049
+*** dropping frame 1052 from stream 0 at ts 1050
+*** dropping frame 1053 from stream 0 at ts 1051
+*** dropping frame 1054 from stream 0 at ts 1052
+*** dropping frame 1055 from stream 0 at ts 1053
+*** dropping frame 1056 from stream 0 at ts 1054
+*** dropping frame 1057 from stream 0 at ts 1055
+*** dropping frame 1058 from stream 0 at ts 1056
+*** dropping frame 1059 from stream 0 at ts 1057
+*** dropping frame 1060 from stream 0 at ts 1058
+*** dropping frame 1061 from stream 0 at ts 1059
+*** dropping frame 1062 from stream 0 at ts 1060
+*** dropping frame 1063 from stream 0 at ts 1061
+*** dropping frame 1064 from stream 0 at ts 1062
+*** dropping frame 1065 from stream 0 at ts 1063
+*** dropping frame 1066 from stream 0 at ts 1064
+*** dropping frame 1067 from stream 0 at ts 1065
+*** dropping frame 1068 from stream 0 at ts 1066
+*** dropping frame 1069 from stream 0 at ts 1067
+*** dropping frame 1070 from stream 0 at ts 1068
+*** dropping frame 1071 from stream 0 at ts 1069
+*** dropping frame 1072 from stream 0 at ts 1070
+*** dropping frame 1073 from stream 0 at ts 1071
+*** dropping frame 1074 from stream 0 at ts 1072
+*** dropping frame 1075 from stream 0 at ts 1073
+*** dropping frame 1076 from stream 0 at ts 1074
+*** dropping frame 1077 from stream 0 at ts 1075
+*** dropping frame 1078 from stream 0 at ts 1076
+*** dropping frame 1079 from stream 0 at ts 1077
+*** dropping frame 1080 from stream 0 at ts 1078
+*** dropping frame 1081 from stream 0 at ts 1079
+*** dropping frame 1082 from stream 0 at ts 1080
+*** dropping frame 1083 from stream 0 at ts 1081
+*** dropping frame 1084 from stream 0 at ts 1082
+*** dropping frame 1085 from stream 0 at ts 1083
+*** dropping frame 1086 from stream 0 at ts 1084
+*** dropping frame 1087 from stream 0 at ts 1085
+*** dropping frame 1088 from stream 0 at ts 1086
+*** dropping frame 1089 from stream 0 at ts 1087
+*** dropping frame 1090 from stream 0 at ts 1088
+*** dropping frame 1091 from stream 0 at ts 1089
+*** dropping frame 1092 from stream 0 at ts 1090
+*** dropping frame 1093 from stream 0 at ts 1091
+*** dropping frame 1094 from stream 0 at ts 1092
+*** dropping frame 1095 from stream 0 at ts 1093
+*** dropping frame 1096 from stream 0 at ts 1094
+*** dropping frame 1097 from stream 0 at ts 1095
+*** dropping frame 1098 from stream 0 at ts 1096
+*** dropping frame 1099 from stream 0 at ts 1097
+*** dropping frame 1100 from stream 0 at ts 1098
+*** dropping frame 1101 from stream 0 at ts 1099
+*** dropping frame 1102 from stream 0 at ts 1100
+*** dropping frame 1103 from stream 0 at ts 1101
+*** dropping frame 1104 from stream 0 at ts 1102
+*** dropping frame 1106 from stream 0 at ts 1104
+*** dropping frame 1107 from stream 0 at ts 1105
+*** dropping frame 1108 from stream 0 at ts 1106
+*** dropping frame 1109 from stream 0 at ts 1107
+*** dropping frame 1110 from stream 0 at ts 1108
+*** dropping frame 1111 from stream 0 at ts 1109
+*** dropping frame 1112 from stream 0 at ts 1110
+*** dropping frame 1113 from stream 0 at ts 1111
+*** dropping frame 1114 from stream 0 at ts 1112
+*** dropping frame 1115 from stream 0 at ts 1113
+*** dropping frame 1116 from stream 0 at ts 1114
+*** dropping frame 1117 from stream 0 at ts 1115
+*** dropping frame 1118 from stream 0 at ts 1116
+*** dropping frame 1119 from stream 0 at ts 1117
+*** dropping frame 1120 from stream 0 at ts 1118
+*** dropping frame 1121 from stream 0 at ts 1119
+*** dropping frame 1122 from stream 0 at ts 1120
+*** dropping frame 1123 from stream 0 at ts 1121
+*** dropping frame 1124 from stream 0 at ts 1122
+*** dropping frame 1125 from stream 0 at ts 1123
+*** dropping frame 1126 from stream 0 at ts 1124
+*** dropping frame 1127 from stream 0 at ts 1125
+*** dropping frame 1128 from stream 0 at ts 1126
+*** dropping frame 1129 from stream 0 at ts 1127
+*** dropping frame 1130 from stream 0 at ts 1128
+*** dropping frame 1131 from stream 0 at ts 1129
+*** dropping frame 1132 from stream 0 at ts 1130
+*** dropping frame 1133 from stream 0 at ts 1131
+*** dropping frame 1134 from stream 0 at ts 1132
+*** dropping frame 1135 from stream 0 at ts 1133
+*** dropping frame 1136 from stream 0 at ts 1134
+*** dropping frame 1137 from stream 0 at ts 1135
+*** dropping frame 1138 from stream 0 at ts 1136
+*** dropping frame 1139 from stream 0 at ts 1137
+*** dropping frame 1140 from stream 0 at ts 1138
+*** dropping frame 1141 from stream 0 at ts 1139
+*** dropping frame 1142 from stream 0 at ts 1140
+*** dropping frame 1143 from stream 0 at ts 1141
+*** dropping frame 1144 from stream 0 at ts 1142
+*** dropping frame 1145 from stream 0 at ts 1143
+*** dropping frame 1146 from stream 0 at ts 1144
+*** dropping frame 1147 from stream 0 at ts 1145
+*** dropping frame 1148 from stream 0 at ts 1146
+*** dropping frame 1149 from stream 0 at ts 1147
+*** dropping frame 1150 from stream 0 at ts 1148
+*** dropping frame 1151 from stream 0 at ts 1149
+*** dropping frame 1152 from stream 0 at ts 1150
+*** dropping frame 1153 from stream 0 at ts 1151
+*** dropping frame 1154 from stream 0 at ts 1152
+*** dropping frame 1155 from stream 0 at ts 1153
+*** dropping frame 1156 from stream 0 at ts 1154
+*** dropping frame 1157 from stream 0 at ts 1155
+*** dropping frame 1158 from stream 0 at ts 1156
+*** dropping frame 1159 from stream 0 at ts 1157
+*** dropping frame 1160 from stream 0 at ts 1158
+*** dropping frame 1161 from stream 0 at ts 1159
+*** dropping frame 1162 from stream 0 at ts 1160
+*** dropping frame 1163 from stream 0 at ts 1161
+*** dropping frame 1164 from stream 0 at ts 1162
+*** dropping frame 1165 from stream 0 at ts 1163
+*** dropping frame 1166 from stream 0 at ts 1164
+*** dropping frame 1167 from stream 0 at ts 1165
+*** dropping frame 1168 from stream 0 at ts 1166
+*** dropping frame 1169 from stream 0 at ts 1167
+*** dropping frame 1170 from stream 0 at ts 1168
+*** dropping frame 1171 from stream 0 at ts 1169
+*** dropping frame 1172 from stream 0 at ts 1170
+*** dropping frame 1173 from stream 0 at ts 1171
+*** dropping frame 1174 from stream 0 at ts 1172
+*** dropping frame 1175 from stream 0 at ts 1173
+*** dropping frame 1176 from stream 0 at ts 1174
+*** dropping frame 1177 from stream 0 at ts 1175
+*** dropping frame 1178 from stream 0 at ts 1176
+*** dropping frame 1179 from stream 0 at ts 1177
+*** dropping frame 1180 from stream 0 at ts 1178
+*** dropping frame 1181 from stream 0 at ts 1179
+*** dropping frame 1182 from stream 0 at ts 1180
+*** dropping frame 1183 from stream 0 at ts 1181
+*** dropping frame 1184 from stream 0 at ts 1182
+*** dropping frame 1185 from stream 0 at ts 1183
+*** dropping frame 1186 from stream 0 at ts 1184
+*** dropping frame 1187 from stream 0 at ts 1185
+*** dropping frame 1188 from stream 0 at ts 1186
+*** dropping frame 1189 from stream 0 at ts 1187
+*** dropping frame 1190 from stream 0 at ts 1188
+*** dropping frame 1191 from stream 0 at ts 1189
+*** dropping frame 1192 from stream 0 at ts 1190
+*** dropping frame 1193 from stream 0 at ts 1191
+*** dropping frame 1194 from stream 0 at ts 1192
+*** dropping frame 1196 from stream 0 at ts 1194
+*** dropping frame 1197 from stream 0 at ts 1195
+*** dropping frame 1198 from stream 0 at ts 1196
+*** dropping frame 1199 from stream 0 at ts 1197
+*** dropping frame 1200 from stream 0 at ts 1198
+*** dropping frame 1201 from stream 0 at ts 1199
+*** dropping frame 1202 from stream 0 at ts 1200
+*** dropping frame 1203 from stream 0 at ts 1201
+*** dropping frame 1204 from stream 0 at ts 1202
+*** dropping frame 1205 from stream 0 at ts 1203
+*** dropping frame 1206 from stream 0 at ts 1204
+*** dropping frame 1207 from stream 0 at ts 1205
+*** dropping frame 1208 from stream 0 at ts 1206
+*** dropping frame 1209 from stream 0 at ts 1207
+*** dropping frame 1210 from stream 0 at ts 1208
+*** dropping frame 1211 from stream 0 at ts 1209
+*** dropping frame 1212 from stream 0 at ts 1210
+*** dropping frame 1213 from stream 0 at ts 1211
+*** dropping frame 1214 from stream 0 at ts 1212
+*** dropping frame 1215 from stream 0 at ts 1213
+*** dropping frame 1216 from stream 0 at ts 1214
+*** dropping frame 1217 from stream 0 at ts 1215
+*** dropping frame 1218 from stream 0 at ts 1216
+*** dropping frame 1219 from stream 0 at ts 1217
+*** dropping frame 1220 from stream 0 at ts 1218
+*** dropping frame 1221 from stream 0 at ts 1219
+*** dropping frame 1222 from stream 0 at ts 1220
+*** dropping frame 1223 from stream 0 at ts 1221
+*** dropping frame 1224 from stream 0 at ts 1222
+*** dropping frame 1225 from stream 0 at ts 1223
+*** dropping frame 1226 from stream 0 at ts 1224
+*** dropping frame 1227 from stream 0 at ts 1225
+*** dropping frame 1228 from stream 0 at ts 1226
+*** dropping frame 1229 from stream 0 at ts 1227
+*** dropping frame 1230 from stream 0 at ts 1228
+*** dropping frame 1231 from stream 0 at ts 1229
+*** dropping frame 1232 from stream 0 at ts 1230
+*** dropping frame 1233 from stream 0 at ts 1231
+*** dropping frame 1234 from stream 0 at ts 1232
+*** dropping frame 1235 from stream 0 at ts 1233
+*** dropping frame 1236 from stream 0 at ts 1234
+*** dropping frame 1237 from stream 0 at ts 1235
+*** dropping frame 1238 from stream 0 at ts 1236
+*** dropping frame 1239 from stream 0 at ts 1237
+*** dropping frame 1240 from stream 0 at ts 1238
+*** dropping frame 1241 from stream 0 at ts 1239
+*** dropping frame 1242 from stream 0 at ts 1240
+*** dropping frame 1243 from stream 0 at ts 1241
+*** dropping frame 1244 from stream 0 at ts 1242
+*** dropping frame 1245 from stream 0 at ts 1243
+*** dropping frame 1246 from stream 0 at ts 1244
+*** dropping frame 1247 from stream 0 at ts 1245
+*** dropping frame 1248 from stream 0 at ts 1246
+*** dropping frame 1249 from stream 0 at ts 1247
+*** dropping frame 1250 from stream 0 at ts 1248
+*** dropping frame 1251 from stream 0 at ts 1249
+*** dropping frame 1252 from stream 0 at ts 1250
+*** dropping frame 1253 from stream 0 at ts 1251
+*** dropping frame 1254 from stream 0 at ts 1252
+*** dropping frame 1255 from stream 0 at ts 1253
+*** dropping frame 1256 from stream 0 at ts 1254
+*** dropping frame 1257 from stream 0 at ts 1255
+*** dropping frame 1258 from stream 0 at ts 1256
+*** dropping frame 1259 from stream 0 at ts 1257
+*** dropping frame 1260 from stream 0 at ts 1258
+*** dropping frame 1261 from stream 0 at ts 1259
+*** dropping frame 1262 from stream 0 at ts 1260
+*** dropping frame 1263 from stream 0 at ts 1261
+*** dropping frame 1264 from stream 0 at ts 1262
+*** dropping frame 1265 from stream 0 at ts 1263
+*** dropping frame 1266 from stream 0 at ts 1264
+*** dropping frame 1267 from stream 0 at ts 1265
+*** dropping frame 1268 from stream 0 at ts 1266
+*** dropping frame 1269 from stream 0 at ts 1267
+*** dropping frame 1270 from stream 0 at ts 1268
+*** dropping frame 1271 from stream 0 at ts 1269
+*** dropping frame 1272 from stream 0 at ts 1270
+*** dropping frame 1273 from stream 0 at ts 1271
+*** dropping frame 1274 from stream 0 at ts 1272
+*** dropping frame 1275 from stream 0 at ts 1273
+*** dropping frame 1276 from stream 0 at ts 1274
+*** dropping frame 1277 from stream 0 at ts 1275
+*** dropping frame 1278 from stream 0 at ts 1276
+*** dropping frame 1279 from stream 0 at ts 1277
+*** dropping frame 1280 from stream 0 at ts 1278
+*** dropping frame 1281 from stream 0 at ts 1279
+*** dropping frame 1282 from stream 0 at ts 1280
+*** dropping frame 1283 from stream 0 at ts 1281
+*** dropping frame 1284 from stream 0 at ts 1282
+*** dropping frame 1285 from stream 0 at ts 1283
+*** dropping frame 1287 from stream 0 at ts 1285
+*** dropping frame 1288 from stream 0 at ts 1286
+*** dropping frame 1289 from stream 0 at ts 1287
+*** dropping frame 1290 from stream 0 at ts 1288
+*** dropping frame 1291 from stream 0 at ts 1289
+*** dropping frame 1292 from stream 0 at ts 1290
+*** dropping frame 1293 from stream 0 at ts 1291
+*** dropping frame 1294 from stream 0 at ts 1292
+*** dropping frame 1295 from stream 0 at ts 1293
+*** dropping frame 1296 from stream 0 at ts 1294
+*** dropping frame 1297 from stream 0 at ts 1295
+*** dropping frame 1298 from stream 0 at ts 1296
+*** dropping frame 1299 from stream 0 at ts 1297
+*** dropping frame 1300 from stream 0 at ts 1298
+*** dropping frame 1301 from stream 0 at ts 1299
+*** dropping frame 1302 from stream 0 at ts 1300
+*** dropping frame 1303 from stream 0 at ts 1301
+*** dropping frame 1304 from stream 0 at ts 1302
+*** dropping frame 1305 from stream 0 at ts 1303
+*** dropping frame 1306 from stream 0 at ts 1304
+[Parsed_overlay_6 @ 0x5571a373d140] [framesync @ 0x5571a373d2a8] Sync level 0
+[Parsed_concat_7 @ 0x5571a373e240] EOF on in0:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x5571a373e240] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x5571a373e240] Segment finished at pts=43503822
+Past duration 0.685326 too large
+*** dropping frame 1307 from stream 0 at ts 1305
+[Parsed_concat_7 @ 0x5571a373e240] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x5571a373e240] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x5571a373e240] Segment finished at pts=45522509
+No more output streams to write to, finishing.
+frame= 1356 fps= 47 q=-1.0 Lsize=   63196kB time=00:00:45.52 bitrate=11371.7kbits/s dup=0 drop=862 speed=1.57x    
+[AVIOContext @ 0x5571a1d2e440] Statistics: 0 seeks, 58 writeouts
+video:62429kB audio:717kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.079759%
+Input file #0 (/var/www/html/project/media/video/original/20230516_001015.mp4):
+  Input stream #0:0 (video): 2168 packets read (145826814 bytes); 2168 frames decoded; 
+  Input stream #0:1 (audio): 2039 packets read (1392022 bytes); 2039 frames decoded (2087936 samples); 
+  Total: 4207 packets (147218836 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/20230516_001015.mp4):
+  Output stream #0:0 (video): 1356 frames encoded; 1356 packets muxed (63926930 bytes); 
+  Output stream #0:1 (audio): 2134 frames encoded (2185065 samples); 2135 packets muxed (734375 bytes); 
+  Total: 3491 packets (64661305 bytes) muxed
+[AVIOContext @ 0x5571a1dcaf00] Statistics: 2 seeks, 250 writeouts
+[libx264 @ 0x5571a1dcb980] frame I:7     Avg QP:16.68  size:129678
+[libx264 @ 0x5571a1dcb980] frame P:398   Avg QP:20.92  size: 76523
+[libx264 @ 0x5571a1dcb980] frame B:951   Avg QP:23.37  size: 34240
+[libx264 @ 0x5571a1dcb980] consecutive B-frames:  4.1%  3.8%  9.7% 82.3%
+[libx264 @ 0x5571a1dcb980] mb I  I16..4: 19.5% 12.0% 68.5%
+[libx264 @ 0x5571a1dcb980] mb P  I16..4:  6.1% 13.8% 13.8%  P16..4: 19.0% 19.4% 20.7%  0.0%  0.0%    skip: 7.2%
+[libx264 @ 0x5571a1dcb980] mb B  I16..4:  3.0%  4.5%  1.1%  B16..8: 28.4% 17.9%  5.7%  direct:26.9%  skip:12.4%  L0:29.1% L1:31.2% BI:39.7%
+[libx264 @ 0x5571a1dcb980] 8x8 transform intra:44.4% inter:36.6%
+[libx264 @ 0x5571a1dcb980] coded y,uvDC,uvAC intra: 78.2% 55.8% 15.3% inter: 54.9% 28.4% 1.4%
+[libx264 @ 0x5571a1dcb980] i16 v,h,dc,p: 30% 19% 39% 12%
+[libx264 @ 0x5571a1dcb980] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 15% 25%  6%  6%  7%  6%  7%  7%
+[libx264 @ 0x5571a1dcb980] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 15% 12%  7% 10% 10% 10%  8%  8%
+[libx264 @ 0x5571a1dcb980] i8c dc,h,v,p: 52% 20% 22%  6%
+[libx264 @ 0x5571a1dcb980] Weighted P-Frames: Y:25.1% UV:10.1%
+[libx264 @ 0x5571a1dcb980] kb/s:11239.78
+[aac @ 0x5571a1de4300] Qavg: 1384.308
+[AVIOContext @ 0x5571a1d373c0] Statistics: 147284054 bytes read, 2 seeks
+[AVIOContext @ 0x5571a1d79080] Statistics: 111578 bytes read, 0 seeks
+[AVIOContext @ 0x5571a1d7c0c0] Statistics: 1530915 bytes read, 42 seeks

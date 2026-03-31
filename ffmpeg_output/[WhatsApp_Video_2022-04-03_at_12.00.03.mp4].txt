@@ -1,0 +1,265 @@
+[h264 @ 0x56473f7240c0] Reinit context to 352x640, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/WhatsApp_Video_2022-04-03_at_12.00.03.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:00:14.08, start: 0.000000, bitrate: 2216 kb/s
+    Stream #0:0(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, unknown/bt470bg/unknown, left), 352x640, 2051 kb/s, 29.90 fps, 90k tbr, 90k tbn, 180k tbc (default)
+    Metadata:
+      rotate          : 270
+    Side data:
+      displaymatrix: rotation of 90.00 degrees
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 157 kb/s (default)
+[h264 @ 0x56473f82d200] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #1, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #1:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #1:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_1 @ 0x56473f81aa00] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x56473f7eee00] w:-1 h:720 flags:'bilinear' interl:0
+[Parsed_scale_7 @ 0x56473f78be80] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> split
+  Stream #0:1 (aac) -> concat:in0:a0
+  Stream #1:0 (aac) -> concat:in1:a0
+  Stream #1:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x56473f733c80] Reinit context to 352x640, pix_fmt: yuv420p
+[h264 @ 0x56473fbc3740] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_1 @ 0x5647405f1d80] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x5647405fc600] w:-1 h:720 flags:'bilinear' interl:0
+[Parsed_scale_7 @ 0x5647405fef00] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x564740602840] w:352 h:640 pixfmt:yuv420p tb:1/90000 fr:2526000/84493 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:1 @ 0x564740604200] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_1 @ 0x564740605180] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[graph_0_in_1_0 @ 0x5647406062c0] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_concat_9 @ 0x564740600880] auto-inserting filter 'auto_resampler_0' between the filter 'graph_0_in_1_0' and the filter 'Parsed_concat_9'
+[transpose @ 0x564740603640] w:352 h:640 dir:2 -> w:640 h:352 rotation:counterclockwise vflip:0
+[Parsed_scale_1 @ 0x5647405f1d80] w:640 h:352 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_boxblur_2 @ 0x5647405f9a80] luma_radius:36 luma_power:1 chroma_radius:18 chroma_power:1 alpha_radius:36 alpha_power:1 w:1280 chroma_w:640 h:720 chroma_h:360
+[Parsed_setsar_3 @ 0x5647405fb840] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_4 @ 0x5647405fc600] w:640 h:352 fmt:yuv420p sar:0/1 -> w:1309 h:720 fmt:yuva420p sar:0/1 flags:0x2
+[Parsed_setsar_5 @ 0x5647405fd240] w:1309 h:720 sar:0/1 dar:1309/720 -> sar:1/1 dar:1309/720
+[Parsed_overlay_6 @ 0x5647405fdfc0] main w:1280 h:720 fmt:yuv420p overlay w:1309 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x5647405fdfc0] [framesync @ 0x5647405fe0e8] Selected 1/90000 time base
+[Parsed_overlay_6 @ 0x5647405fdfc0] [framesync @ 0x5647405fe0e8] Sync level 2
+[Parsed_scale_7 @ 0x5647405fef00] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_8 @ 0x5647405ff980] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_resampler_0 @ 0x56474060cbc0] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[libx264 @ 0x56473f7ef540] using SAR=1/1
+[libx264 @ 0x56473f7ef540] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x56473f7ef540] profile High, level 3.1
+[libx264 @ 0x56473f7ef540] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/WhatsApp_Video_2022-04-03_at_12.00.03.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 29.90 fps, 2526k tbn, 29.90 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+Past duration 0.812492 too large
+Past duration 0.749992 too large
+Past duration 0.628899 too large
+Past duration 0.800774 too large
+Past duration 0.753899 too large
+Past duration 0.718742 too large
+Past duration 0.832024 too large
+Past duration 0.898430 too large
+Past duration 0.914055 too large
+Past duration 0.660149 too large
+Past duration 0.726555 too large
+Past duration 0.718742 too large
+Past duration 0.691399 too large
+Past duration 0.781242 too large
+Past duration 0.777336 too large
+Past duration 0.812492 too large
+Past duration 0.960930 too large
+Past duration 0.914055 too large
+Past duration 0.890617 too large
+Past duration 0.789055 too large
+Past duration 0.730461 too large
+Past duration 0.812492 too large
+Past duration 0.867180 too large
+Past duration 0.781242 too large
+Past duration 0.820305 too large
+Past duration 0.980461 too large
+Past duration 0.835930 too large
+Past duration 0.894524 too large
+Past duration 0.968742 too large
+Past duration 0.929680 too large
+Past duration 0.777336 too large
+Past duration 0.999992 too large
+Past duration 0.933586 too large
+Past duration 0.988274 too large
+Past duration 0.960930 too large
+Past duration 0.906242 too large
+Past duration 0.996086 too large
+Past duration 0.906242 too large
+Past duration 0.921867 too large
+    Last message repeated 1 times
+Past duration 0.972649 too large
+Past duration 0.999992 too large
+Past duration 0.628899 too large
+Past duration 0.726555 too large
+Past duration 0.667961 too large
+Past duration 0.675774 too large
+Past duration 0.644524 too large
+Past duration 0.636711 too large
+Past duration 0.660149 too large
+Past duration 0.800774 too large
+Past duration 0.792961 too large
+Past duration 0.800774 too large
+Past duration 0.929680 too large
+Past duration 0.847649 too large
+Past duration 0.828117 too large
+Past duration 0.640617 too large
+Past duration 0.898430 too large
+Past duration 0.820305 too large
+Past duration 0.660149 too large
+Past duration 0.722649 too large
+Past duration 0.761711 too large
+Past duration 0.937492 too large
+Past duration 0.742180 too large
+Past duration 0.933586 too large
+Past duration 0.832024 too large
+Past duration 0.917961 too large
+Past duration 0.886711 too large
+    Last message repeated 1 times
+Past duration 0.617180 too large
+Past duration 0.812492 too large
+Past duration 0.980461 too large
+Past duration 0.710930 too large
+Past duration 0.859367 too large
+Past duration 0.949211 too large
+Past duration 0.792961 too large
+Past duration 0.820305 too large
+Past duration 0.882805 too large
+Past duration 0.871086 too large
+Past duration 0.914055 too large
+Past duration 0.730461 too large
+Past duration 0.749992 too large
+Past duration 0.890617 too large
+Past duration 0.949211 too large
+Past duration 0.789055 too large
+Past duration 0.890617 too large
+Past duration 0.730461 too large
+*** dropping frame 306 from stream 0 at ts 306
+Past duration 0.667961 too large
+Past duration 0.609367 too large
+Past duration 0.636711 too large
+Past duration 0.710930 too large
+Past duration 0.703117 too large
+Past duration 0.738274 too large
+Past duration 0.703117 too large
+Past duration 0.742180 too large
+Past duration 0.687492 too large
+Past duration 0.628899 too large
+Past duration 0.757805 too large
+Past duration 0.773430 too large
+Past duration 0.656242 too large
+Past duration 0.761711 too large
+Past duration 0.800774 too large
+Past duration 0.660149 too large
+Past duration 0.707024 too large
+Past duration 0.820305 too large
+Past duration 0.773430 too large
+Past duration 0.812492 too large
+Past duration 0.749992 too large
+Past duration 0.847649 too large
+Past duration 0.890617 too large
+Past duration 0.843742 too large
+Past duration 0.757805 too large
+Past duration 0.796867 too large
+Past duration 0.832024 too large
+Past duration 0.789055 too large
+Past duration 0.808586 too large
+Past duration 0.894524 too large
+Past duration 0.757805 too large
+Past duration 0.781242 too large
+Past duration 0.863274 too large
+Past duration 0.843742 too large
+Past duration 0.867180 too large
+Past duration 0.804680 too large
+Past duration 0.863274 too large
+Past duration 0.824211 too large
+    Last message repeated 1 times
+Past duration 0.882805 too large
+Past duration 0.855461 too large
+Past duration 0.777336 too large
+Past duration 0.824211 too large
+Past duration 0.789055 too large
+Past duration 0.851555 too large
+Past duration 0.824211 too large
+    Last message repeated 1 times
+Past duration 0.878899 too large
+Past duration 0.667961 too large
+Past duration 0.914055 too large
+Past duration 0.667961 too large
+Past duration 0.960930 too large
+Past duration 0.847649 too large
+[Parsed_overlay_6 @ 0x5647405fdfc0] [framesync @ 0x5647405fe0e8] Sync level 1
+[Parsed_overlay_6 @ 0x5647405fdfc0] [framesync @ 0x5647405fe0e8] Sync level 0
+[Parsed_concat_9 @ 0x564740600880] EOF on in0:v0, 1 streams left in segment.
+[Parsed_concat_9 @ 0x564740600880] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_9 @ 0x564740600880] Segment finished at pts=14087261
+Past duration 0.847649 too large
+Past duration 0.652336 too large
+[Parsed_concat_9 @ 0x564740600880] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_9 @ 0x564740600880] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_9 @ 0x564740600880] Segment finished at pts=16105948
+No more output streams to write to, finishing.
+frame=  470 fps= 70 q=-1.0 Lsize=   12916kB time=00:00:16.12 bitrate=6561.3kbits/s dup=0 drop=1 speed=2.41x    
+[AVIOContext @ 0x56473f722340] Statistics: 0 seeks, 14 writeouts
+video:12654kB audio:241kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.170946%
+Input file #0 (/var/www/html/project/media/video/original/WhatsApp_Video_2022-04-03_at_12.00.03.mp4):
+  Input stream #0:0 (video): 421 packets read (3610320 bytes); 421 frames decoded; 
+  Input stream #0:1 (audio): 664 packets read (276225 bytes); 664 frames decoded (679936 samples); 
+  Total: 1085 packets (3886545 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #1:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #1:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/WhatsApp_Video_2022-04-03_at_12.00.03.mp4):
+  Output stream #0:0 (video): 470 frames encoded; 470 packets muxed (12957189 bytes); 
+  Output stream #0:1 (audio): 762 frames encoded (779316 samples); 763 packets muxed (246385 bytes); 
+  Total: 1233 packets (13203574 bytes) muxed
+[AVIOContext @ 0x56473f7d5000] Statistics: 2 seeks, 54 writeouts
+[libx264 @ 0x56473f7ef540] frame I:3     Avg QP:13.27  size: 92024
+[libx264 @ 0x56473f7ef540] frame P:191   Avg QP:18.33  size: 43510
+[libx264 @ 0x56473f7ef540] frame B:276   Avg QP:22.08  size: 15834
+[libx264 @ 0x56473f7ef540] consecutive B-frames: 19.6%  5.5%  2.6% 72.3%
+[libx264 @ 0x56473f7ef540] mb I  I16..4: 34.6%  8.2% 57.3%
+[libx264 @ 0x56473f7ef540] mb P  I16..4:  1.0%  2.8%  1.3%  P16..4: 39.2% 18.2% 16.2%  0.0%  0.0%    skip:21.3%
+[libx264 @ 0x56473f7ef540] mb B  I16..4:  0.3%  0.1%  0.0%  B16..8: 22.6%  9.8%  2.4%  direct:25.1%  skip:39.7%  L0:27.3% L1:39.7% BI:33.0%
+[libx264 @ 0x56473f7ef540] 8x8 transform intra:42.4% inter:42.3%
+[libx264 @ 0x56473f7ef540] coded y,uvDC,uvAC intra: 70.4% 71.0% 27.1% inter: 37.8% 14.0% 0.3%
+[libx264 @ 0x56473f7ef540] i16 v,h,dc,p: 53% 27% 17%  4%
+[libx264 @ 0x56473f7ef540] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu:  9% 50% 17%  3%  3%  2%  6%  2%  7%
+[libx264 @ 0x56473f7ef540] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 25% 12%  5%  9%  8%  9%  6%  9%
+[libx264 @ 0x56473f7ef540] i8c dc,h,v,p: 43% 37% 11%  9%
+[libx264 @ 0x56473f7ef540] Weighted P-Frames: Y:7.9% UV:0.0%
+[libx264 @ 0x56473f7ef540] kb/s:6442.36
+[aac @ 0x56473f754840] Qavg: 5930.252
+[AVIOContext @ 0x56473f72b300] Statistics: 3901327 bytes read, 0 seeks
+[AVIOContext @ 0x56473f7b7040] Statistics: 1530915 bytes read, 42 seeks

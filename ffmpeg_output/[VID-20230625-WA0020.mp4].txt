@@ -1,0 +1,475 @@
+[h264 @ 0x5584c4787280] Reinit context to 368x656, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/VID-20230625-WA0020.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:01:45.26, start: 0.000000, bitrate: 1629 kb/s
+    Stream #0:0(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt470bg/bt470bg/smpte170m, left), 368x656, 1369 kb/s, 29.74 fps, 29.97 tbr, 90k tbn, 180k tbc (default)
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 256 kb/s (default)
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo_vertical.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x5584c47e8a80] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_1 @ 0x5584c47fc800] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x5584c48b56c0] w:-1 h:720 flags:'bilinear' interl:0
+[Parsed_scale_7 @ 0x5584c4819280] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_9 @ 0x5584c47fbf80] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> split
+  Stream #0:1 (aac) -> concat:in0:a0
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x5584c4872ac0] Reinit context to 368x656, pix_fmt: yuv420p
+[h264 @ 0x5584c4c51640] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_1 @ 0x5584c5678a00] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x5584c5683d00] w:-1 h:720 flags:'bilinear' interl:0
+[Parsed_scale_7 @ 0x5584c5686500] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_9 @ 0x5584c5687c80] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x5584c568c540] w:368 h:656 pixfmt:yuv420p tb:1/90000 fr:30000/1001 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x5584c5687580] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x5584c5682a80] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_1 @ 0x5584c568ce00] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[graph_0_in_2_0 @ 0x5584c56892c0] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_concat_12 @ 0x5584c568a5c0] auto-inserting filter 'auto_resampler_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_12'
+[Parsed_scale_1 @ 0x5584c5678a00] w:368 h:656 fmt:yuv420p sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_boxblur_2 @ 0x5584c483cb00] luma_radius:36 luma_power:1 chroma_radius:18 chroma_power:1 alpha_radius:36 alpha_power:1 w:1280 chroma_w:640 h:720 chroma_h:360
+[Parsed_setsar_3 @ 0x5584c5682d40] w:1280 h:720 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_4 @ 0x5584c5683d00] w:368 h:656 fmt:yuv420p sar:0/1 -> w:404 h:720 fmt:yuva420p sar:0/1 flags:0x2
+[Parsed_setsar_5 @ 0x5584c5683b40] w:404 h:720 sar:0/1 dar:101/180 -> sar:1/1 dar:101/180
+[Parsed_overlay_6 @ 0x5584c5685000] main w:1280 h:720 fmt:yuv420p overlay w:404 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x5584c5685000] [framesync @ 0x5584c5685528] Selected 1/90000 time base
+[Parsed_overlay_6 @ 0x5584c5685000] [framesync @ 0x5584c5685528] Sync level 2
+[Parsed_scale_7 @ 0x5584c5686500] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_8 @ 0x5584c5687080] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_11 @ 0x5584c5689480] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_11 @ 0x5584c5689480] [framesync @ 0x5584c56895a8] Selected 1/90000 time base
+[Parsed_overlay_11 @ 0x5584c5689480] [framesync @ 0x5584c56895a8] Sync level 2
+[Parsed_scale_9 @ 0x5584c5687c80] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_10 @ 0x5584c5688780] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_resampler_0 @ 0x5584c56953c0] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[libx264 @ 0x5584c48b4f80] using SAR=1/1
+[libx264 @ 0x5584c48b4f80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x5584c48b4f80] profile High, level 3.1
+[libx264 @ 0x5584c48b4f80] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/VID-20230625-WA0020.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 30k tbn, 29.97 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+Past duration 0.600700 too large
+Past duration 0.602043 too large
+Past duration 0.603386 too large
+Past duration 0.604729 too large
+Past duration 0.606071 too large
+Past duration 0.607384 too large
+Past duration 0.608391 too large
+Past duration 0.609734 too large
+Past duration 0.611076 too large
+Past duration 0.612694 too large
+Past duration 0.614037 too large
+Past duration 0.615044 too large
+Past duration 0.616386 too large
+Past duration 0.618065 too large
+Past duration 0.619041 too large
+Past duration 0.620689 too large
+Past duration 0.621696 too large
+Past duration 0.623039 too large
+Past duration 0.624352 too large
+Past duration 0.625694 too large
+Past duration 0.627037 too large
+Past duration 0.628380 too large
+Past duration 0.629692 too large
+Past duration 0.631340 too large
+Past duration 0.632683 too large
+Past duration 0.633354 too large
+Past duration 0.635033 too large
+Past duration 0.636345 too large
+Past duration 0.637688 too large
+Past duration 0.639030 too large
+Past duration 0.640373 too large
+Past duration 0.641685 too large
+Past duration 0.853813 too large
+Past duration 0.855125 too large
+Past duration 0.856133 too large
+Past duration 0.857475 too large
+Past duration 0.600395 too large
+Past duration 0.601707 too large
+Past duration 0.603050 too large
+Past duration 0.604393 too large
+Past duration 0.606071 too large
+Past duration 0.606712 too large
+Past duration 0.608391 too large
+Past duration 0.609734 too large
+Past duration 0.611076 too large
+Past duration 0.612358 too large
+Past duration 0.613701 too large
+Past duration 0.615379 too large
+Past duration 0.616722 too large
+Past duration 0.618065 too large
+Past duration 0.619377 too large
+Past duration 0.620689 too large
+Past duration 0.622368 too large
+Past duration 0.623039 too large
+Past duration 0.624687 too large
+Past duration 0.626030 too large
+Past duration 0.627373 too large
+Past duration 0.628716 too large
+Past duration 0.630028 too large
+Past duration 0.631676 too large
+Past duration 0.633018 too large
+Past duration 0.634361 too large
+Past duration 0.635368 too large
+Past duration 0.636681 too large
+Past duration 0.638023 too large
+Past duration 0.639366 too large
+Past duration 0.641014 too large
+Past duration 0.642357 too large
+Past duration 0.643669 too large
+Past duration 0.644676 too large
+Past duration 0.646019 too large
+Past duration 0.647697 too large
+Past duration 0.648674 too large
+Past duration 0.650017 too large
+Past duration 0.651329 too large
+Past duration 0.652672 too large
+Past duration 0.654015 too large
+Past duration 0.655663 too large
+Past duration 0.657005 too large
+Past duration 0.658348 too large
+Past duration 0.659355 too large
+Past duration 0.660637 too large
+Past duration 0.661980 too large
+Past duration 0.663322 too large
+Past duration 0.665001 too large
+Past duration 0.666344 too large
+Past duration 0.667320 too large
+Past duration 0.668663 too large
+Past duration 0.670311 too large
+Past duration 0.671013 too large
+Past duration 0.672630 too large
+Past duration 0.674309 too large
+Past duration 0.675652 too large
+Past duration 0.676323 too large
+Past duration 0.678001 too large
+Past duration 0.679314 too large
+Past duration 0.680656 too large
+Past duration 0.681969 too large
+Past duration 0.683311 too large
+Past duration 0.684288 too large
+Past duration 0.685966 too large
+Past duration 0.687309 too large
+Past duration 0.688316 too large
+Past duration 0.689629 too large
+Past duration 0.691277 too large
+Past duration 0.692619 too large
+Past duration 0.693962 too large
+Past duration 0.695305 too large
+Past duration 0.696617 too large
+Past duration 0.698296 too large
+Past duration 0.699608 too large
+Past duration 0.700310 too large
+Past duration 0.701958 too large
+Past duration 0.703270 too large
+Past duration 0.704613 too large
+Past duration 0.705956 too large
+Past duration 0.707298 too large
+Past duration 0.708977 too large
+Past duration 0.710258 too large
+Past duration 0.711601 too large
+Past duration 0.712608 too large
+Past duration 0.713951 too large
+Past duration 0.715263 too large
+Past duration 0.716606 too large
+Past duration 0.718285 too large
+Past duration 0.719627 too large
+Past duration 0.720940 too large
+Past duration 0.722252 too large
+Past duration 0.723595 too large
+Past duration 0.725273 too large
+Past duration 0.726616 too large
+Past duration 0.727592 too large
+Past duration 0.728935 too large
+Past duration 0.730247 too large
+Past duration 0.731590 too large
+Past duration 0.732933 too large
+Past duration 0.734581 too large
+Past duration 0.735924 too large
+Past duration 0.737267 too large
+Past duration 0.738579 too large
+Past duration 0.739922 too large
+Past duration 0.740898 too large
+Past duration 0.742241 too large
+Past duration 0.743919 too large
+Past duration 0.745262 too large
+Past duration 0.746574 too large
+Past duration 0.747917 too large
+Past duration 0.749229 too large
+Past duration 0.750908 too large
+Past duration 0.752251 too large
+Past duration 0.753563 too large
+Past duration 0.754570 too large
+Past duration 0.755913 too large
+Past duration 0.757256 too large
+Past duration 0.758568 too large
+Past duration 0.760216 too large
+Past duration 0.761559 too large
+Past duration 0.762901 too large
+Past duration 0.764244 too large
+Past duration 0.765556 too large
+Past duration 0.767204 too large
+Past duration 0.767906 too large
+Past duration 0.769218 too large
+Past duration 0.770897 too large
+Past duration 0.772209 too large
+Past duration 0.773552 too large
+Past duration 0.774895 too large
+Past duration 0.776237 too large
+Past duration 0.777885 too large
+Past duration 0.779198 too large
+Past duration 0.780205 too large
+Past duration 0.781548 too large
+Past duration 0.782524 too large
+Past duration 0.783867 too large
+Past duration 0.784874 too large
+Past duration 0.785515 too large
+Past duration 0.786522 too large
+Past duration 0.787865 too large
+Past duration 0.789207 too large
+Past duration 0.790184 too large
+Past duration 0.791862 too large
+Past duration 0.792870 too large
+Past duration 0.794212 too large
+Past duration 0.795525 too large
+Past duration 0.797173 too large
+Past duration 0.798515 too large
+Past duration 0.799858 too large
+Past duration 0.800865 too large
+Past duration 0.802513 too large
+Past duration 0.803856 too large
+Past duration 0.804863 too large
+Past duration 0.805504 too large
+Past duration 0.806511 too large
+Past duration 0.807518 too large
+Past duration 0.808495 too large
+Past duration 0.809196 too large
+Past duration 0.810844 too large
+Past duration 0.812187 too large
+Past duration 0.813499 too large
+Past duration 0.814842 too large
+Past duration 0.815849 too large
+Past duration 0.817528 too large
+Past duration 0.818840 too large
+Past duration 0.819847 too large
+Past duration 0.821159 too large
+Past duration 0.822502 too large
+Past duration 0.823845 too large
+Past duration 0.825493 too large
+Past duration 0.826836 too large
+Past duration 0.828178 too large
+Past duration 0.829491 too large
+Past duration 0.830833 too large
+Past duration 0.832481 too large
+Past duration 0.833153 too large
+Past duration 0.834831 too large
+Past duration 0.836174 too large
+Past duration 0.837486 too large
+Past duration 0.838799 too large
+Past duration 0.840141 too large
+Past duration 0.841148 too large
+Past duration 0.842827 too large
+Past duration 0.844139 too large
+Past duration 0.845146 too large
+Past duration 0.846489 too large
+Past duration 0.847832 too large
+Past duration 0.849449 too large
+Past duration 0.850792 too large
+Past duration 0.852135 too large
+Past duration 0.853142 too large
+Past duration 0.854118 too large
+Past duration 0.855461 too large
+Past duration 0.856133 too large
+Past duration 0.857140 too large
+Past duration 0.858147 too large
+Past duration 0.859459 too large
+Past duration 0.860802 too large
+Past duration 0.862450 too large
+Past duration 0.863792 too large
+Past duration 0.865135 too large
+Past duration 0.866142 too large
+Past duration 0.867790 too large
+Past duration 0.869102 too large
+Past duration 0.870110 too large
+Past duration 0.871452 too large
+Past duration 0.872795 too large
+Past duration 0.874107 too large
+Past duration 0.875450 too large
+Past duration 0.877129 too large
+Past duration 0.878441 too large
+Past duration 0.879784 too large
+Past duration 0.880760 too large
+Past duration 0.882103 too large
+Past duration 0.883446 too large
+Past duration 0.884789 too large
+Past duration 0.886436 too large
+Past duration 0.887108 too large
+Past duration 0.888786 too large
+Past duration 0.890099 too large
+Past duration 0.891777 too large
+Past duration 0.893089 too large
+Past duration 0.894096 too large
+Past duration 0.895439 too large
+Past duration 0.896782 too large
+Past duration 0.898094 too large
+Past duration 0.899437 too large
+Past duration 0.901085 too large
+Past duration 0.902428 too large
+Past duration 0.903770 too large
+Past duration 0.905083 too large
+Past duration 0.906425 too large
+Past duration 0.908073 too large
+Past duration 0.908775 too large
+Past duration 0.910393 too large
+Past duration 0.911736 too large
+Past duration 0.913078 too large
+Past duration 0.914421 too large
+Past duration 0.915764 too large
+Past duration 0.917381 too large
+Past duration 0.918083 too large
+Past duration 0.919731 too large
+Past duration 0.921074 too large
+Past duration 0.922050 too large
+Past duration 0.923393 too large
+Past duration 0.925072 too large
+Past duration 0.926414 too large
+Past duration 0.927757 too large
+Past duration 0.929039 too large
+Past duration 0.930382 too large
+Past duration 0.932060 too large
+Past duration 0.933403 too large
+Past duration 0.934746 too large
+Past duration 0.935722 too large
+Past duration 0.937065 too large
+Past duration 0.938408 too large
+Past duration 0.939720 too large
+Past duration 0.941368 too large
+Past duration 0.942711 too large
+Past duration 0.944054 too large
+Past duration 0.945396 too large
+Past duration 0.946373 too large
+Past duration 0.948021 too large
+Past duration 0.949059 too large
+Past duration 0.950371 too large
+Past duration 0.951714 too large
+Past duration 0.953026 too large
+Past duration 0.954369 too large
+Past duration 0.956047 too large
+Past duration 0.957390 too large
+Past duration 0.958702 too large
+Past duration 0.960014 too large
+Past duration 0.961357 too large
+Past duration 0.962364 too large
+Past duration 0.963707 too large
+Past duration 0.965355 too large
+Past duration 0.966698 too large
+Past duration 0.968010 too large
+Past duration 0.969353 too large
+Past duration 0.970695 too large
+Past duration 0.971672 too large
+Past duration 0.973351 too large
+Past duration 0.974358 too large
+Past duration 0.975700 too large
+Past duration 0.977013 too large
+Past duration 0.978355 too large
+Past duration 0.980003 too large
+Past duration 0.981346 too large
+Past duration 0.982689 too large
+Past duration 0.984001 too large
+Past duration 0.985008 too large
+Past duration 0.986687 too large
+Past duration 0.987694 too large
+Past duration 0.989006 too large
+Past duration 0.990318 too large
+Past duration 0.991661 too large
+Past duration 0.993004 too large
+Past duration 0.994682 too large
+Past duration 0.995323 too large
+Past duration 0.997002 too large
+Past duration 0.998650 too large
+Past duration 0.999321 too large
+[Parsed_overlay_6 @ 0x5584c5685000] [framesync @ 0x5584c5685528] Sync level 1
+[Parsed_overlay_6 @ 0x5584c5685000] [framesync @ 0x5584c5685528] Sync level 0
+[Parsed_overlay_11 @ 0x5584c5689480] [framesync @ 0x5584c56895a8] Sync level 0
+[Parsed_concat_12 @ 0x5584c568a5c0] EOF on in0:v0, 1 streams left in segment.
+[Parsed_concat_12 @ 0x5584c568a5c0] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_12 @ 0x5584c568a5c0] Segment finished at pts=105261897
+[Parsed_concat_12 @ 0x5584c568a5c0] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_12 @ 0x5584c568a5c0] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_12 @ 0x5584c568a5c0] Segment finished at pts=107280584
+No more output streams to write to, finishing.
+frame= 3180 fps= 39 q=-1.0 Lsize=   87838kB time=00:01:47.28 bitrate=6707.1kbits/s speed= 1.3x    
+[AVIOContext @ 0x5584c4785500] Statistics: 0 seeks, 161 writeouts
+video:86031kB audio:1690kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.132900%
+Input file #0 (/var/www/html/project/media/video/original/VID-20230625-WA0020.mp4):
+  Input stream #0:0 (video): 3130 packets read (18014762 bytes); 3130 frames decoded; 
+  Input stream #0:1 (audio): 4931 packets read (3366339 bytes); 4931 frames decoded (5049344 samples); 
+  Total: 8061 packets (21381101 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo_vertical.png):
+  Input stream #1:0 (video): 1 packets read (93903 bytes); 1 frames decoded; 
+  Total: 1 packets (93903 bytes) demuxed
+Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/VID-20230625-WA0020.mp4):
+  Output stream #0:0 (video): 3180 frames encoded; 3180 packets muxed (88095757 bytes); 
+  Output stream #0:1 (audio): 5029 frames encoded (5149547 samples); 5030 packets muxed (1730668 bytes); 
+  Total: 8210 packets (89826425 bytes) muxed
+[AVIOContext @ 0x5584c47fb4c0] Statistics: 2 seeks, 346 writeouts
+[libx264 @ 0x5584c48b4f80] frame I:15    Avg QP:15.39  size: 85242
+[libx264 @ 0x5584c48b4f80] frame P:907   Avg QP:18.67  size: 45507
+[libx264 @ 0x5584c48b4f80] frame B:2258  Avg QP:20.61  size: 20169
+[libx264 @ 0x5584c48b4f80] consecutive B-frames:  3.6%  4.0%  3.8% 88.7%
+[libx264 @ 0x5584c48b4f80] mb I  I16..4: 26.6% 40.0% 33.4%
+[libx264 @ 0x5584c48b4f80] mb P  I16..4: 14.6% 21.8%  3.8%  P16..4: 21.0% 12.4% 10.3%  0.0%  0.0%    skip:16.0%
+[libx264 @ 0x5584c48b4f80] mb B  I16..4:  4.6%  5.3%  0.8%  B16..8: 20.6% 10.4%  3.5%  direct:12.4%  skip:42.5%  L0:37.8% L1:40.4% BI:21.7%
+[libx264 @ 0x5584c48b4f80] 8x8 transform intra:51.9% inter:25.3%
+[libx264 @ 0x5584c48b4f80] coded y,uvDC,uvAC intra: 35.6% 53.0% 9.2% inter: 20.9% 20.0% 0.9%
+[libx264 @ 0x5584c48b4f80] i16 v,h,dc,p: 13% 52%  9% 26%
+[libx264 @ 0x5584c48b4f80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 10% 56% 14%  3%  3%  2%  6%  2%  3%
+[libx264 @ 0x5584c48b4f80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 27% 15%  5%  8%  6%  9%  5%  9%
+[libx264 @ 0x5584c48b4f80] i8c dc,h,v,p: 37% 42%  8% 13%
+[libx264 @ 0x5584c48b4f80] Weighted P-Frames: Y:2.0% UV:0.4%
+[libx264 @ 0x5584c48b4f80] kb/s:6571.78
+[aac @ 0x5584c4872640] Qavg: 753.622
+[AVIOContext @ 0x5584c478e4c0] Statistics: 169348195 bytes read, 4998 seeks
+[AVIOContext @ 0x5584c4799540] Statistics: 93903 bytes read, 0 seeks
+[AVIOContext @ 0x5584c48b8680] Statistics: 1530915 bytes read, 42 seeks

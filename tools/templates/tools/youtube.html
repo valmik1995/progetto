@@ -1,0 +1,107 @@
+{% extends 'tools/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block tools_content %}
+<div class="row">
+    <div class="col-md-12 mb-5">
+        <h1 class="display-2 text-center">YTV Downloader</h1>
+    </div>
+</div>
+
+{% if not title %}
+<div class="row">
+    <div class="col-md-6 ml-auto mr-auto">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Download" class="btn btn-info btn-block">
+        </form>
+    </div>
+</div>
+{% endif %}
+
+{% if title %}
+<div class="row">
+    <div class="col-md-12 ml-auto mr-auto mt-5">
+        <h1 class="h3 text-center">{{ title }}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 ml-auto mr-auto mt-5 pt-5">
+        <img class="img-responsive" style="width: 300px" src="{{ thumbnail }}">
+    </div>
+
+    <div class="col-md-7 ml-auto mr-auto mt-5 pt-5">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: aquamarine;">
+                <p class="lead">Duration <i class="fa fa-clock-o"></i>: {{ duration }}</p>
+            </li>
+            <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: darkslateblue;">
+                <p class="lead">Views <i class="fa fa-eye"></i>: {{ track }}</p>
+            </li>
+            <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: darkslateblue;">
+                <p class="lead">Likes <i class="fa fa-thumbs-up"></i>: {{ likes }} Dislikes <i
+                        class="fa fa-thumbs-up"></i>: {{ dislikes }}</p>
+            </li>
+            <li class="list-group-item border-0 pl-2 pr-2 pb-0 text-center" style="background-color: darkslateblue;">
+                <button class="btn btn-info mt-3" data-toggle="collapse" data-target="#description">Description</button>
+            </li>
+        </ul>
+        <div id="description" class="collapse">{{ description }}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h5 class="h5 text-center pt-5">Premi <strong>ALT</strong> insieme <strong> Download</strong> per scaricare
+            automaticamente</h5>
+	    <table class="table mt-5">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Resolution</th>
+                    <th scope="col">File Size</th>
+                    <th scope="col">Extension</th>
+                    <th scope="col">Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stream in videos %}
+                <tr>
+                    <td>{{ stream.resolution }}</td>
+                    <td>{{ stream.filesize }}</td>
+                    <td>{{ stream.ext }}</td>
+                    <td><a href="{{ stream.url }}" style="text-decoration: none;"
+                            download="{{ title }}.{{ extension }}" target="_blank">Download <i
+                                class=" fa fa-download"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+        <p class="h3 text-center mt-5 mb-5">Audio</p>
+        <table class="table mt-5 mb-5">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Resolution</th>
+                    <th scope="col">File Size</th>
+                    <th scope="col">Extension</th>
+                    <th scope="col">Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stream in audios %}
+                <tr>
+                    <td>{{ stream.abr }}</td>
+                    <td>{{ stream.filesize }}</td>
+                    <td>{{ stream.ext }}</td>
+                    <td><a href="{{ stream.url }}" style="text-decoration: none;"
+                            download="{{ title }}.{{ ext }}" target="_blank">Download <i
+                                class=" fa fa-download"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

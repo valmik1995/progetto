@@ -1,0 +1,83 @@
+{% extends 'watermarks/base.html' %}
+{% load widget_tweaks %}
+
+{% block watermarks_content %}
+{% include "watermarks/sidebar.html" %}
+<div class="col-lg-9">
+  <div class="wm-surface p-3 p-md-4">
+    <h4 class="mb-1">Thumbnail Generator</h4>
+    <p id="progress-title" class="text-muted mb-3"></p>
+
+    <form action="{% url 'watermarks:thumbails' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class="font-weight-bold">Seleziona immagine</label>
+        {{ form.image_file|add_class:"form-control-file" }}
+        <small id="file-name" class="form-text text-muted"></small>
+      </div>
+      <button class="btn btn-dark" type="submit">Genera thumbnail</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+var file = document.getElementById('{{form.image_file.id_for_label}}');
+if (file) {
+  file.onchange = function() {
+    if (file.files.length > 0) {
+      document.getElementById('file-name').innerHTML = file.files.length + ' file selezionati';
+    }
+  };
+}
+</script>
+
+{% if task_id %}
+<script>
+var taskUrl = "{% url 'watermarks:task' task_id=task_id %}";
+var dots = 1;
+var progressTitle = document.getElementById('progress-title');
+updateProgressTitle();
+var timer = setInterval(function() {
+  updateProgressTitle();
+  axios.get(taskUrl)
+    .then(function(response){
+      var taskStatus = response.data.task_status;
+      if (taskStatus === 'SUCCESS') {
+        clearTimer('Controlla i download per i risultati');
+        var url = window.location.protocol + '//' + window.location.host + response.data.results.archive_path;
+        var a = document.createElement("a");
+        a.target = '_BLANK';
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = url;
+        a.download = 'results.zip';
+        a.click();
+        document.body.removeChild(a);
+      } else if (taskStatus === 'FAILURE') {
+        clearTimer('Errore durante elaborazione');
+      }
+    })
+    .catch(function(err){
+      console.log('err', err);
+      clearTimer('Errore durante elaborazione');
+    });
+}, 800);
+
+function updateProgressTitle() {
+  dots++;
+  if (dots > 3) {
+    dots = 1;
+  }
+  progressTitle.innerHTML = 'processing images ';
+  for (var i = 0; i < dots; i++) {
+    progressTitle.innerHTML += '.';
+  }
+}
+function clearTimer(message) {
+  clearInterval(timer);
+  progressTitle.innerHTML = message;
+}
+</script>
+{% endif %}
+{% endblock %}

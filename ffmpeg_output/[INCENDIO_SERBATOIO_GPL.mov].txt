@@ -1,0 +1,151 @@
+Guessed Channel Layout for Input Stream #0.0 : stereo
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/INCENDIO_SERBATOIO_GPL.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2022-01-13T20:08:25.000000Z
+    com.apple.quicktime.keywords: 13-01-22,rosso
+    com.apple.quicktime.description: This video is about INCENDIO SERBATOIO GPL
+    com.apple.quicktime.author: Marco Ferrigno
+    com.apple.quicktime.displayname: INCENDIO SERBATOIO GPL
+    com.apple.quicktime.title: INCENDIO SERBATOIO GPL
+  Duration: 00:00:38.63, start: 0.000000, bitrate: 57636 kb/s
+    Stream #0:0(und): Audio: pcm_s24le (lpcm / 0x6D63706C), 48000 Hz, stereo, s32 (24 bit), 2304 kb/s (default)
+    Metadata:
+      creation_time   : 2022-01-13T20:08:25.000000Z
+      handler_name    : Core Media Audio
+    Stream #0:1(und): Video: prores (Standard), 1 reference frame (apcn / 0x6E637061), yuv422p10le(tv, bt709, progressive), 960x720, 55196 kb/s, SAR 4:3 DAR 16:9, 30 fps, 30 tbr, 3k tbn, 3k tbc (default)
+    Metadata:
+      creation_time   : 2022-01-13T20:08:25.000000Z
+      handler_name    : Core Media Video
+      encoder         : Apple ProRes 422
+      timecode        : 00:00:00:00
+    Stream #0:2(und): Data: none (tmcd / 0x64636D74) (default)
+    Metadata:
+      creation_time   : 2022-01-13T20:08:25.000000Z
+      handler_name    : Core Media Time Code
+      timecode        : 00:00:00:00
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x55c191b3f600] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_0 @ 0x55c191b3d780] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55c191c26b00] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55c191c27b00] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (pcm_s24le) -> concat:in0:a0
+  Stream #0:1 (prores) -> scale
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x55c191c4f180] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x55c1925f17c0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55c191c62e40] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55c1925fae00] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:1 @ 0x55c1925ff580] w:960 h:720 pixfmt:yuv422p10le tb:1/3000 fr:30/1 sar:4/3 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x55c1926005c0] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x55c192601640] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_0 @ 0x55c192602600] tb:1/48000 samplefmt:s32 samplerate:48000 chlayout:0x3
+[graph_0_in_2_0 @ 0x55c192603700] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_concat_7 @ 0x55c1925fd5c0] auto-inserting filter 'auto_resampler_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_7'
+[format_out_0_1 @ 0x55c1925f7240] auto-inserting filter 'auto_resampler_1' between the filter 'Parsed_concat_7' and the filter 'format_out_0_1'
+[Parsed_scale_0 @ 0x55c1925f17c0] w:960 h:720 fmt:yuv422p10le sar:4/3 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_1 @ 0x55c191c62fc0] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x55c191c62e40] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x55c1925fa380] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x55c1925fc480] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x55c1925fc480] [framesync @ 0x55c1925fc5e8] Selected 1/3000 time base
+[Parsed_overlay_6 @ 0x55c1925fc480] [framesync @ 0x55c1925fc5e8] Sync level 2
+[Parsed_scale_4 @ 0x55c1925fae00] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_5 @ 0x55c1925fb900] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_resampler_0 @ 0x55c19260bc00] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:s32 r:48000Hz
+[auto_resampler_1 @ 0x55c192608f40] ch:2 chl:stereo fmt:s32 r:48000Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[libx264 @ 0x55c191b5c8c0] using SAR=1/1
+[libx264 @ 0x55c191b5c8c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55c191b5c8c0] profile High, level 3.1
+[libx264 @ 0x55c191b5c8c0] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/INCENDIO_SERBATOIO_GPL.mp4':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    com.apple.quicktime.title: INCENDIO SERBATOIO GPL
+    com.apple.quicktime.keywords: 13-01-22,rosso
+    com.apple.quicktime.description: This video is about INCENDIO SERBATOIO GPL
+    com.apple.quicktime.author: Marco Ferrigno
+    com.apple.quicktime.displayname: INCENDIO SERBATOIO GPL
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+[Parsed_concat_7 @ 0x55c1925fd5c0] EOF on in0:a0, 1 streams left in segment.
+[Parsed_overlay_6 @ 0x55c1925fc480] [framesync @ 0x55c1925fc5e8] Sync level 0
+[Parsed_concat_7 @ 0x55c1925fd5c0] EOF on in0:v0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x55c1925fd5c0] Segment finished at pts=38633333
+[Parsed_concat_7 @ 0x55c1925fd5c0] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x55c1925fd5c0] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x55c1925fd5c0] Segment finished at pts=40652020
+No more output streams to write to, finishing.
+frame= 1209 fps=167 q=-1.0 Lsize=   23110kB time=00:00:40.66 bitrate=4656.0kbits/s speed=5.62x    
+[AVIOContext @ 0x55c191abb440] Statistics: 0 seeks, 15 writeouts
+video:22437kB audio:629kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.190557%
+Input file #0 (/var/www/html/project/media/video/original/INCENDIO_SERBATOIO_GPL.mov):
+  Input stream #0:0 (audio): 1853 packets read (11126400 bytes); 1853 frames decoded (1854400 samples); 
+  Input stream #0:1 (video): 1159 packets read (266550800 bytes); 1159 frames decoded; 
+  Input stream #0:2 (data): 0 packets read (0 bytes); 
+  Total: 3012 packets (277677200 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/INCENDIO_SERBATOIO_GPL.mp4):
+  Output stream #0:0 (video): 1209 frames encoded; 1209 packets muxed (22975492 bytes); 
+  Output stream #0:1 (audio): 1906 frames encoded (1951297 samples); 1907 packets muxed (644239 bytes); 
+  Total: 3116 packets (23619731 bytes) muxed
+[AVIOContext @ 0x55c191c2a880] Statistics: 2 seeks, 94 writeouts
+[libx264 @ 0x55c191b5c8c0] frame I:8     Avg QP:16.51  size: 65132
+[libx264 @ 0x55c191b5c8c0] frame P:442   Avg QP:18.91  size: 27091
+[libx264 @ 0x55c191b5c8c0] frame B:759   Avg QP:20.80  size: 13807
+[libx264 @ 0x55c191b5c8c0] consecutive B-frames: 12.3%  9.8%  6.5% 71.5%
+[libx264 @ 0x55c191b5c8c0] mb I  I16..4: 17.6% 39.3% 43.1%
+[libx264 @ 0x55c191b5c8c0] mb P  I16..4: 13.1% 38.3%  7.0%  P16..4: 14.8%  9.3%  4.8%  0.0%  0.0%    skip:12.7%
+[libx264 @ 0x55c191b5c8c0] mb B  I16..4:  4.5% 13.4%  1.7%  B16..8: 23.8% 11.6%  1.7%  direct:14.0%  skip:29.3%  L0:44.4% L1:42.2% BI:13.5%
+[libx264 @ 0x55c191b5c8c0] 8x8 transform intra:66.0% inter:48.9%
+[libx264 @ 0x55c191b5c8c0] coded y,uvDC,uvAC intra: 51.4% 67.1% 25.6% inter: 17.1% 38.2% 1.5%
+[libx264 @ 0x55c191b5c8c0] i16 v,h,dc,p: 60% 23%  9%  8%
+[libx264 @ 0x55c191b5c8c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 34% 14%  3%  4%  4%  5%  3%  5%
+[libx264 @ 0x55c191b5c8c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 26% 10%  5%  8%  7%  8%  5%  6%
+[libx264 @ 0x55c191b5c8c0] i8c dc,h,v,p: 39% 27% 21% 12%
+[libx264 @ 0x55c191b5c8c0] Weighted P-Frames: Y:12.0% UV:8.8%
+[libx264 @ 0x55c191b5c8c0] kb/s:4523.34
+[aac @ 0x55c191b4fe80] Qavg: 1296.857
+[AVIOContext @ 0x55c191ac43c0] Statistics: 306350308 bytes read, 2337 seeks
+[AVIOContext @ 0x55c191b40e80] Statistics: 111578 bytes read, 0 seeks
+[AVIOContext @ 0x55c191b3bd00] Statistics: 1530915 bytes read, 42 seeks

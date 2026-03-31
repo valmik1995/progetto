@@ -1,0 +1,75 @@
+{% extends 'foto/base.html' %}
+{% load thumbnail %}
+{% load crispy_forms_tags %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+{% block title %}Add Galleria{% endblock %}
+{% block foto_content %}
+<!-- Bootstrap DateTimePicker -->
+<script src="/static/js/foto/tagsinput.js"></script>
+<div class="container">
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <a href="{% url 'foto:gallery' %}" class="btn btn-dark my-3">Go Back</a>
+            <div class="card">
+                <form id="post-form" method="post" class="notizia-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6 mb-0">
+                            {{ form.title|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                            {{ form.media }}
+                            {{ form.date|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 mb-0">
+                        {{ form.category|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-12 mb-0">
+                        {{ form.description|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-12 mb-0">
+
+                        <label>Gruppi Visualizzatori</label>                      
+                        {% for p in form.gruppo %}
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="{{ p.data.name }}" value="{{ p.data.value }}" id="{{ p.id_for_label }}" {% if p.data.value in form.gruppo.value %}checked{% endif %}>
+                            <label class="custom-control-label" for="{{ p.id_for_label }}" >
+                                {{ p.choice_label }}
+                            </label>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    <div class="form-group col-md-12 mb-0">
+                        <label>Tags</label>
+                        <input type="text" name="tags" data-role="tagsinput" class="form-control" id="tags" name="tags"
+                            value="{% for tag in object.tags.all %}{{ tag }},{% endfor %}">
+                    </div>
+
+                    <div class="form-group col-md-12 mb-0">
+                        {{ form.image|as_crispy_field }}
+
+                        <div style="text-align: center;">
+                            {% thumbnail form.image.value.path "300" crop="60% top" as im %}
+                            <img src="{{ im.url }}"> {% empty %}
+                            <p>No image</p>
+                            {% endthumbnail %}
+                        </div>
+
+                    </div>
+                    <div class="form-group col-md-12 mb-5">
+                        <button type="submit" class="btn btn-primary">Aggiorna</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block index_active %}active{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Caricamento Multiplo!</h1>
+<progress id="progress-bar" value="0" max="100" style="display:none; margin-bottom: 1em;"></progress>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <ul>
+        {{form.as_ul}}
+      </ul>
+      <input type="submit" value="Submit photo" class="btn btn-primary">
+</form>
+
+{% endblock %}

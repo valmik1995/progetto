@@ -1,0 +1,121 @@
+ffmpeg version 4.2.7-0ubuntu0.1 Copyright (c) 2000-2022 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+Routing option strict to both codec and muxer layer
+[h264 @ 0x55d90a33ff40] Reinit context to 352x640, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/WhatsApp_Video_2023-03-14_at_14.51.10.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2023-03-17T20:09:24.000000Z
+    com.apple.quicktime.creationdate: 2023-03-17T13:12:04+01:00
+  Duration: 00:00:14.67, start: 0.000000, bitrate: 2275 kb/s
+    Stream #0:0(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, unknown/bt470bg/unknown, progressive, left), 352x640, 1993 kb/s, 30 fps, 30.01 tbr, 90k tbn, 180k tbc (default)
+    Metadata:
+      creation_time   : 2023-03-17T20:09:24.000000Z
+      handler_name    : Core Media Video
+      encoder         : 'avc1'
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 96 kb/s (default)
+    Metadata:
+      creation_time   : 2023-03-17T20:09:24.000000Z
+      handler_name    : Core Media Audio
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo_vertical.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[Parsed_scale_1 @ 0x55d90a35a440] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55d90a3a22c0] w:-1 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_6 @ 0x55d90a43cd40] w:1920 h:1080 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (h264) -> split (graph 0)
+  Stream #1:0 (png) -> scale (graph 0)
+  overlay (graph 0) -> Stream #0:0 (libx264)
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[h264 @ 0x55d90a3a4640] Reinit context to 352x640, pix_fmt: yuv420p
+[graph_1_in_0_1 @ 0x55d90a7fa8c0] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[Parsed_scale_1 @ 0x55d90a933380] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55d90a44e3c0] w:-1 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_6 @ 0x55d90a9175c0] w:1920 h:1080 flags:'bilinear' interl:0
+[graph 0 input from stream 0:0 @ 0x55d90a442d00] w:352 h:640 pixfmt:yuv420p tb:1/90000 fr:90000/2999 sar:0/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x55d90a393100] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[Parsed_scale_1 @ 0x55d90a933380] w:352 h:640 fmt:yuv420p sar:0/1 -> w:1920 h:1080 fmt:yuv420p sar:0/1 flags:0x2
+[Parsed_boxblur_2 @ 0x55d90a442780] luma_radius:54 luma_power:1 chroma_radius:27 chroma_power:1 alpha_radius:54 alpha_power:1 w:1920 chroma_w:960 h:1080 chroma_h:540
+[Parsed_setsar_3 @ 0x55d90a43e580] w:1920 h:1080 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_4 @ 0x55d90a44e3c0] w:352 h:640 fmt:yuv420p sar:0/1 -> w:594 h:1080 fmt:yuva420p sar:0/1 flags:0x2
+[Parsed_setsar_5 @ 0x55d90a44e600] w:594 h:1080 sar:0/1 dar:11/20 -> sar:1/1 dar:11/20
+[Parsed_overlay_8 @ 0x55d90a3faa00] main w:1920 h:1080 fmt:yuv420p overlay w:594 h:1080 fmt:yuva420p
+[Parsed_overlay_8 @ 0x55d90a3faa00] [framesync @ 0x55d90a44bb28] Selected 1/90000 time base
+[Parsed_overlay_8 @ 0x55d90a3faa00] [framesync @ 0x55d90a44bb28] Sync level 2
+[Parsed_scale_6 @ 0x55d90a9175c0] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1920 h:1080 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_7 @ 0x55d90a44b3c0] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_9 @ 0x55d90a44ec00] main w:1920 h:1080 fmt:yuv420p overlay w:1920 h:1080 fmt:yuva420p
+[Parsed_overlay_9 @ 0x55d90a44ec00] [framesync @ 0x55d90a44dd28] Selected 1/90000 time base
+[Parsed_overlay_9 @ 0x55d90a44ec00] [framesync @ 0x55d90a44dd28] Sync level 2
+[libx264 @ 0x55d90a351b40] using SAR=1/1
+[libx264 @ 0x55d90a351b40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55d90a351b40] profile High, level 4.0
+[libx264 @ 0x55d90a351b40] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=24 lookahead_threads=8 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/WhatsApp_Video_2023-03-14_at_14.51.10.mp4':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    com.apple.quicktime.creationdate: 2023-03-17T13:12:04+01:00
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 30.01 fps, 90k tbn, 30.01 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      creation_time   : 2023-03-17T20:09:24.000000Z
+      handler_name    : Core Media Audio
+      encoder         : Lavc58.54.100 aac
+[Parsed_overlay_8 @ 0x55d90a3faa00] [framesync @ 0x55d90a44bb28] Sync level 1
+[Parsed_overlay_8 @ 0x55d90a3faa00] [framesync @ 0x55d90a44bb28] Sync level 0
+[Parsed_overlay_9 @ 0x55d90a44ec00] [framesync @ 0x55d90a44dd28] Sync level 0
+No more output streams to write to, finishing.
+frame=  440 fps= 19 q=-1.0 Lsize=    8253kB time=00:00:14.67 bitrate=4606.4kbits/s speed=0.618x    
+[AVIOContext @ 0x55d90a33e280] Statistics: 0 seeks, 45 writeouts
+video:8007kB audio:230kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.198091%
+Input file #0 (/var/www/html/project/media/video/original/WhatsApp_Video_2023-03-14_at_14.51.10.mov):
+  Input stream #0:0 (video): 480 packets read (3987472 bytes); 440 frames decoded; 
+  Input stream #0:1 (audio): 688 packets read (176128 bytes); 688 frames decoded (703978 samples); 
+  Total: 1168 packets (4163600 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo_vertical.png):
+  Input stream #1:0 (video): 1 packets read (93903 bytes); 1 frames decoded; 
+  Total: 1 packets (93903 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/WhatsApp_Video_2023-03-14_at_14.51.10.mp4):
+  Output stream #0:0 (video): 440 frames encoded; 440 packets muxed (8198762 bytes); 
+  Output stream #0:1 (audio): 688 frames encoded (703978 samples); 689 packets muxed (235758 bytes); 
+  Total: 1129 packets (8434520 bytes) muxed
+[AVIOContext @ 0x55d90a3948c0] Statistics: 2 seeks, 36 writeouts
+[libx264 @ 0x55d90a351b40] frame I:2     Avg QP:15.02  size: 59513
+[libx264 @ 0x55d90a351b40] frame P:206   Avg QP:15.50  size: 26685
+[libx264 @ 0x55d90a351b40] frame B:232   Avg QP:16.92  size: 11129
+[libx264 @ 0x55d90a351b40] consecutive B-frames: 23.0% 14.5% 17.0% 45.5%
+[libx264 @ 0x55d90a351b40] mb I  I16..4: 49.2% 35.4% 15.4%
+[libx264 @ 0x55d90a351b40] mb P  I16..4: 34.7% 14.4%  1.5%  P16..4: 15.8%  7.8%  3.2%  0.0%  0.0%    skip:22.6%
+[libx264 @ 0x55d90a351b40] mb B  I16..4:  5.9%  1.6%  0.1%  B16..8: 20.4%  6.6%  0.5%  direct: 9.0%  skip:55.9%  L0:44.3% L1:47.2% BI: 8.5%
+[libx264 @ 0x55d90a351b40] 8x8 transform intra:27.6% inter:23.9%
+[libx264 @ 0x55d90a351b40] coded y,uvDC,uvAC intra: 14.8% 24.1% 4.4% inter: 6.2% 15.9% 0.5%
+[libx264 @ 0x55d90a351b40] i16 v,h,dc,p: 51% 28%  6% 15%
+[libx264 @ 0x55d90a351b40] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 38% 21%  4%  5%  4%  7%  3%  3%
+[libx264 @ 0x55d90a351b40] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 22% 20%  5%  7%  6%  6%  4%  4%
+[libx264 @ 0x55d90a351b40] i8c dc,h,v,p: 65% 18% 11%  6%
+[libx264 @ 0x55d90a351b40] Weighted P-Frames: Y:5.3% UV:1.0%
+[libx264 @ 0x55d90a351b40] kb/s:4473.17
+[aac @ 0x55d90a350500] Qavg: 245.391
+[AVIOContext @ 0x55d90a347240] Statistics: 29717314 bytes read, 898 seeks
+[AVIOContext @ 0x55d90a44ccc0] Statistics: 93903 bytes read, 0 seeks

@@ -1,0 +1,16 @@
+--2025-12-25 16:05:53--  https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey
+Resolving packagecloud.io (packagecloud.io)... 52.9.143.153, 52.52.3.216, 2600:1f1c:2e5:6901:cce5:86ba:9947:324a, ...
+Connecting to packagecloud.io (packagecloud.io)|52.9.143.153|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://d3fo0g5hm7lbuv.cloudfront.net/828/1033/gpg/rabbitmq-rabbitmq-server-F6609E60DC62814E.pub.gpg?Expires=1766676054&Signature=gho5khe5gjCk6v1iGLe-Gch1dhv6bRz5boVvO-tE9SNLL-V3gj~IytWOsgQ7mOFaVxj5nGT5kCwPHIa-cdeNguswq4OE0aSLFVCj0S8aPA3BUuEnkqDvUVU05LISZNQAhQFcc1sd5ukNbd3ROQAs6CzdCtzy0BmihLD~nHTuVZiH0TFvH7FU2qopmuOulZuCKVyVJKz5Sh2dpZD4h8-TWD5aKbz~4-JHjWnZ0e4RNkASlX23PsI5WPN8dL6rXBix52X69B8gHevelZQ4io~l-rerarmiQw0vX8H5RE-3PI-6QNH5Cb2wMco7suU333wO0qrkOImEzM0Hog9b4KL8Nw__&Key-Pair-Id=K1ZMSF1EKC3AZL [following]
+--2025-12-25 16:05:54--  https://d3fo0g5hm7lbuv.cloudfront.net/828/1033/gpg/rabbitmq-rabbitmq-server-F6609E60DC62814E.pub.gpg?Expires=1766676054&Signature=gho5khe5gjCk6v1iGLe-Gch1dhv6bRz5boVvO-tE9SNLL-V3gj~IytWOsgQ7mOFaVxj5nGT5kCwPHIa-cdeNguswq4OE0aSLFVCj0S8aPA3BUuEnkqDvUVU05LISZNQAhQFcc1sd5ukNbd3ROQAs6CzdCtzy0BmihLD~nHTuVZiH0TFvH7FU2qopmuOulZuCKVyVJKz5Sh2dpZD4h8-TWD5aKbz~4-JHjWnZ0e4RNkASlX23PsI5WPN8dL6rXBix52X69B8gHevelZQ4io~l-rerarmiQw0vX8H5RE-3PI-6QNH5Cb2wMco7suU333wO0qrkOImEzM0Hog9b4KL8Nw__&Key-Pair-Id=K1ZMSF1EKC3AZL
+Resolving d3fo0g5hm7lbuv.cloudfront.net (d3fo0g5hm7lbuv.cloudfront.net)... 18.172.111.5, 18.172.111.6, 18.172.111.29, ...
+Connecting to d3fo0g5hm7lbuv.cloudfront.net (d3fo0g5hm7lbuv.cloudfront.net)|18.172.111.5|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3954 (3.9K) [text/plain]
+Saving to: ‘STDOUT’
+
+-                                            0%[                                                                                        ]       0  --.-KB/s               -                                          100%[=======================================================================================>]   3.86K  --.-KB/s    in 0s      
+
+2025-12-25 16:05:54 (598 MB/s) - written to stdout [3954/3954]
+

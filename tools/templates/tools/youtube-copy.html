@@ -1,0 +1,79 @@
+{% extends 'tools/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block tools_content %}
+<div class="row">
+    <div class="col-md-12 mb-5">
+                <h1>Scarica video su Youtube</h1>
+
+                <p>{{msg}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 ml-auto mr-auto">
+        {% if task_id %}
+        <div class="progress progress-striped active" style="height:44px;">
+            <div id="progress-bar" class="bar" style="height:44px;background-color:green"></div>
+        </div>
+        <div id="process-raw-data"><progress id="progress-bar" value="0" max="100"
+                style="display:none; margin-bottom: 1em;"></progress></div>
+        {% else %}
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+
+            <label for="link">Enter URL: </label>
+            <input type="text" id="link" name="link"><br><br>
+            <input type="submit" value="Download">
+        </form>
+    </div>
+    {% endif %}
+</div>
+
+{% if task_id %}
+<script type="text/javascript">
+    var taskid = "{{task_id}}";
+    var frm = $('#process-raw-data');
+    var pgrbar = $('#progress-bar');
+
+    function float2int(value) {
+        return value | 0;
+    }
+
+    get_task_info(taskid);
+
+    function get_task_info(tid) {
+        $.ajax({
+            type: 'get',
+            url: '{% url 'tools:get_task_info' %}',
+            data: {
+                'task_id': tid
+            },
+            success: function (data) {
+                frm.html('');
+                if (data.state == 'PENDING') {
+                    frm.html('Attendere Prego ...');
+                } else if (data.state == 'PROGRESS') {
+                    pgrbar.css('display', 'inline');
+                    pgrbar.val(data.result.percent);
+                    frm.html('preparazione ' + data.result.current + '% out of 100%');
+                } else if (data.state == 'SUCCESS') {
+                    pgrbar.css('display', 'none');
+                    frm.html('Link completato!');
+                    window.location = '/tools/download_list/';
+                }
+                if (data.state != 'SUCCESS') {
+                    setTimeout(function () {
+                        get_task_info(tid)
+                    }, 500);
+                }
+            },
+            error: function (data) {
+                frm.html("error!");
+            }
+        });
+    }
+</script>
+{% endif %}
+
+
+{% endblock %}

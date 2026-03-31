@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+{% load leaflet_tags %}
+{% leaflet_js %}
+{% leaflet_css %}
+
+
+<style>
+    .leaflet-container { height: 100%; height:600px }
+</style>
+
+    <h1>Mappa CoEm</h1>
+    {% leaflet_map "main" callback="main_map_init" %}
+
+    <script type="text/javascript">
+        function onEachFeature(feature, layer) {
+            var props = feature.properties;
+            var popupContent = "<h4>" + props.first_name + " " + props.last_name + "</h4>" +
+                props.phone_number;
+			layer.bindPopup(popupContent);
+		}
+
+        function main_map_init (map, options) {
+            var dataurl = '{% url "accounts:data_geojson_coem" %}';
+            // Download GeoJSON via Ajax
+            $.getJSON(dataurl, function (data) {
+                // Add GeoJSON layer
+                L.geoJson(data, {
+        			onEachFeature: onEachFeature
+        		}).addTo(map);
+            });
+        }
+    </script>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,16 @@
+{% extends 'foto/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+{% block title %}Delete Images{% endblock %}
+{% block foto_content %}
+
+<form action="{% url 'foto:delete' object.id %}" method="post">
+    {% csrf_token %}
+    <button onclick="return confirm('Are you sure?');">Delete</button>
+</form>
+
+
+<!-- <p>Published: {{ object.created_date|date }}</p>
+<p>Date: {{ now|date }} {{ now|time }}</p> -->
+
+{% endblock %}

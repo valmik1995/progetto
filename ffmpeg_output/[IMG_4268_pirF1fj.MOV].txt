@@ -1,0 +1,94 @@
+-vsync is deprecated. Use -fps_mode
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/IMG_4268_pirF1fj.MOV':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2026-03-28T05:06:44.000000Z
+    com.apple.quicktime.location.accuracy.horizontal: 11.816836
+    com.apple.quicktime.full-frame-rate-playback-intent: 0
+    com.apple.quicktime.location.ISO6709: +44.0516+012.5948+007.723/
+    com.apple.quicktime.make: Apple
+    com.apple.quicktime.model: iPhone 15 Pro Max
+    com.apple.quicktime.software: 26.3.1
+    com.apple.quicktime.creationdate: 2026-03-28T06:06:44+0100
+  Duration: 00:00:02.89, start: 0.000000, bitrate: 53093 kb/s
+  Stream #0:0[0x1](und): Video: hevc (Main 10), 1 reference frame (hvc1 / 0x31637668), yuv420p10le(tv, bt2020nc/bt2020/arib-std-b67, left), 3840x2160, 52818 kb/s, 59.97 fps, 59.94 tbr, 600 tbn (default)
+    Metadata:
+      creation_time   : 2026-03-28T05:06:44.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+      encoder         : HEVC
+    Side data:
+      DOVI configuration record: version: 1.0, profile: 8, level: 9, rpu flag: 1, el flag: 0, bl flag: 1, compatibility id: 4
+      displaymatrix: rotation of -90.00 degrees
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 159 kb/s (default)
+    Metadata:
+      creation_time   : 2026-03-28T05:06:44.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #0:2[0x3](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2026-03-28T05:06:44.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:3[0x4](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2026-03-28T05:06:44.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:4[0x5](und): Data: none (mebx / 0x7862656D), 69 kb/s (default)
+    Metadata:
+      creation_time   : 2026-03-28T05:06:44.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:5[0x6](und): Data: none (mebx / 0x7862656D), 5 kb/s (default)
+    Metadata:
+      creation_time   : 2026-03-28T05:06:44.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:6[0x7](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2026-03-28T05:06:44.000000Z
+      handler_name    : Core Media Metadata
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo_vertical.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, 1 reference frame, rgba(pc, gbr/unknown/unknown), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 fps, 25 tbr, 25 tbn
+[h264 @ 0x568b2c924b40] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+  Stream #2:0[0x1](ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #2:1[0x2](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+[out#0/mp4 @ 0x568b2ec9d4c0] No explicit maps, mapping streams automatically...
+[vost#0:0/libx264 @ 0x568b2ec9dec0] Created video stream from input stream 0:0
+[aost#0:1/aac @ 0x568b2eca0880] Created audio stream from input stream 0:1
+[fc#0 @ 0x568b2c593540] Filter concat has an unconnected output
+Error : Invalid argument
+[AVIOContext @ 0x568b2ed6c640] Statistics: 0 bytes written, 0 seeks, 0 writeouts
+[vist#0:0/hevc @ 0x568b2c5d6240] Decoder thread received EOF packet
+[vist#0:0/hevc @ 0x568b2c5d6240] Decoder returned EOF, finishing
+[vist#0:0/hevc @ 0x568b2c5d6240] Terminating decoder thread
+[aist#0:1/aac @ 0x568b2c63ad00] Decoder thread received EOF packet
+[aist#0:1/aac @ 0x568b2c63ad00] Decoder returned EOF, finishing
+[aist#0:1/aac @ 0x568b2c63ad00] Terminating decoder thread
+[AVIOContext @ 0x568b2c602500] Statistics: 3504187 bytes read, 2 seeks
+[vist#1:0/png @ 0x568b2c925d00] Decoder thread received EOF packet
+[vist#1:0/png @ 0x568b2c925d00] Decoder returned EOF, finishing
+[vist#1:0/png @ 0x568b2c925d00] Terminating decoder thread
+[AVIOContext @ 0x568b2c5e36c0] Statistics: 93903 bytes read, 0 seeks
+[aist#2:0/aac @ 0x568b2c5f3ec0] Decoder thread received EOF packet
+[aist#2:0/aac @ 0x568b2c5f3ec0] Decoder returned EOF, finishing
+[aist#2:0/aac @ 0x568b2c5f3ec0] Terminating decoder thread
+[vist#2:1/h264 @ 0x568b2c64b5c0] Decoder thread received EOF packet
+[vist#2:1/h264 @ 0x568b2c64b5c0] Decoder returned EOF, finishing
+[vist#2:1/h264 @ 0x568b2c64b5c0] Terminating decoder thread
+[AVIOContext @ 0x568b2c6378c0] Statistics: 65536 bytes read, 0 seeks

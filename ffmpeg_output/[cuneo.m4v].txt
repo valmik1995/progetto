@@ -1,0 +1,141 @@
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x55a8a767d580] stream 0, timescale not set
+[h264 @ 0x55a8a7680b80] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/cuneo.m4v':
+  Metadata:
+    major_brand     : M4V 
+    minor_version   : 1
+    compatible_brands: M4V M4A isommp42
+    creation_time   : 2023-08-18T18:10:34.000000Z
+    title           : cuneo
+    keywords        : 24-02-22
+    artist          : CoEmPiemonte
+  Duration: 00:00:42.73, start: 0.000000, bitrate: 7094 kb/s
+    Stream #0:0(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 119 kb/s (default)
+    Metadata:
+      creation_time   : 2023-08-18T18:10:34.000000Z
+      handler_name    : Core Media Audio
+    Stream #0:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720, 6946 kb/s, SAR 1:1 DAR 16:9, 30 fps, 30 tbr, 30k tbn, 60k tbc (default)
+    Metadata:
+      creation_time   : 2023-08-18T18:10:34.000000Z
+      handler_name    : Core Media Video
+    Stream #0:2: Video: mjpeg (Progressive), 1 reference frame, yuvj420p(pc, bt470bg/unknown/unknown, center), 1280x720 [SAR 72:72 DAR 16:9], 90k tbr, 90k tbn, 90k tbc (attached pic)
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[h264 @ 0x55a8a76e4140] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #2, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+    Stream #2:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+    Stream #2:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+[Parsed_scale_0 @ 0x55a8a76af400] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55a8a773ebc0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55a8a770edc0] w:1280 h:720 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:0 (aac) -> concat:in0:a0
+  Stream #0:1 (h264) -> scale
+  Stream #1:0 (png) -> scale
+  Stream #2:0 (aac) -> concat:in1:a0
+  Stream #2:1 (h264) -> scale
+  concat:out:v0 -> Stream #0:0 (libx264)
+  concat:out:a0 -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x55a8a76963c0] Reinit context to 1280x720, pix_fmt: yuv420p
+[h264 @ 0x55a8a7b5f4c0] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x55a8a8a62cc0] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55a8a8a62e40] w:1280 h:720 flags:'bilinear' interl:0
+[Parsed_scale_4 @ 0x55a8a8a6c840] w:1280 h:720 flags:'bilinear' interl:0
+[graph 0 input from stream 0:1 @ 0x55a8a8a70f80] w:1280 h:720 pixfmt:yuv420p tb:1/30000 fr:30/1 sar:1/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x55a8a8a72000] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[graph 0 input from stream 2:1 @ 0x55a8a8a73080] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1 sws_param:flags=2
+[graph_0_in_0_0 @ 0x55a8a8a74040] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[graph_0_in_2_0 @ 0x55a8a8a75180] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:0x3
+[Parsed_concat_7 @ 0x55a8a8a6f000] auto-inserting filter 'auto_resampler_0' between the filter 'graph_0_in_2_0' and the filter 'Parsed_concat_7'
+[Parsed_scale_0 @ 0x55a8a8a62cc0] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_1 @ 0x55a8a8a6af40] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x55a8a8a62e40] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1280 h:720 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x55a8a8a6bc40] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_6 @ 0x55a8a8a6dec0] main w:1280 h:720 fmt:yuv420p overlay w:1280 h:720 fmt:yuva420p
+[Parsed_overlay_6 @ 0x55a8a8a6dec0] [framesync @ 0x55a8a8a6dfe8] Selected 1/30000 time base
+[Parsed_overlay_6 @ 0x55a8a8a6dec0] [framesync @ 0x55a8a8a6dfe8] Sync level 2
+[Parsed_scale_4 @ 0x55a8a8a6c840] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1280 h:720 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_5 @ 0x55a8a8a6d300] w:1280 h:720 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_resampler_0 @ 0x55a8a8a7c180] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[libx264 @ 0x55a8a76f9800] using SAR=1/1
+[libx264 @ 0x55a8a76f9800] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55a8a76f9800] profile High, level 3.1
+[libx264 @ 0x55a8a76f9800] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=22 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/cuneo.mp4':
+  Metadata:
+    major_brand     : M4V 
+    minor_version   : 1
+    compatible_brands: M4V M4A isommp42
+    artist          : CoEmPiemonte
+    title           : cuneo
+    keywords        : 24-02-22
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.54.100 aac
+[Parsed_concat_7 @ 0x55a8a8a6f000] EOF on in0:a0, 1 streams left in segment.
+[Parsed_overlay_6 @ 0x55a8a8a6dec0] [framesync @ 0x55a8a8a6dfe8] Sync level 0
+[Parsed_concat_7 @ 0x55a8a8a6f000] EOF on in0:v0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x55a8a8a6f000] Segment finished at pts=42750666
+[Parsed_concat_7 @ 0x55a8a8a6f000] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_7 @ 0x55a8a8a6f000] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_7 @ 0x55a8a8a6f000] Segment finished at pts=44769353
+No more output streams to write to, finishing.
+frame= 1332 fps= 78 q=-1.0 Lsize=   22248kB time=00:00:44.77 bitrate=4070.2kbits/s speed=2.63x    
+[AVIOContext @ 0x55a8a767d440] Statistics: 0 seeks, 34 writeouts
+video:21503kB audio:697kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.217017%
+Input file #0 (/var/www/html/project/media/video/original/cuneo.m4v):
+  Input stream #0:0 (audio): 2006 packets read (636584 bytes); 2004 frames decoded (2052032 samples); 
+  Input stream #0:1 (video): 1282 packets read (37107454 bytes); 1282 frames decoded; 
+  Input stream #0:2 (video): 1 packets read (123646 bytes); 
+  Total: 3289 packets (37867684 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Input file #2 (/var/www/html/project/static/images/templates/Codino.mp4):
+  Input stream #2:0 (audio): 89 packets read (26579 bytes); 87 frames decoded (89024 samples); 
+  Input stream #2:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 
+  Total: 139 packets (229944 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/cuneo.mp4):
+  Output stream #0:0 (video): 1332 frames encoded; 1332 packets muxed (22018796 bytes); 
+  Output stream #0:1 (audio): 2099 frames encoded (2148929 samples); 2100 packets muxed (714034 bytes); 
+  Total: 3432 packets (22732830 bytes) muxed
+[AVIOContext @ 0x55a8a773d340] Statistics: 2 seeks, 90 writeouts
+[libx264 @ 0x55a8a76f9800] frame I:8     Avg QP:14.27  size: 68525
+[libx264 @ 0x55a8a76f9800] frame P:622   Avg QP:18.57  size: 25171
+[libx264 @ 0x55a8a76f9800] frame B:702   Avg QP:21.36  size:  8282
+[libx264 @ 0x55a8a76f9800] consecutive B-frames: 15.2% 40.5%  9.5% 34.8%
+[libx264 @ 0x55a8a76f9800] mb I  I16..4: 19.9% 19.9% 60.2%
+[libx264 @ 0x55a8a76f9800] mb P  I16..4:  7.8% 16.1%  9.7%  P16..4: 25.1% 17.7% 11.2%  0.0%  0.0%    skip:12.5%
+[libx264 @ 0x55a8a76f9800] mb B  I16..4:  2.0%  3.1%  1.0%  B16..8: 25.8% 11.7%  1.6%  direct: 7.3%  skip:47.6%  L0:40.2% L1:43.6% BI:16.2%
+[libx264 @ 0x55a8a76f9800] 8x8 transform intra:47.6% inter:24.9%
+[libx264 @ 0x55a8a76f9800] coded y,uvDC,uvAC intra: 52.6% 42.3% 12.4% inter: 15.4% 12.2% 0.5%
+[libx264 @ 0x55a8a76f9800] i16 v,h,dc,p: 52% 27% 13%  8%
+[libx264 @ 0x55a8a76f9800] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 28% 18%  4%  5%  4%  5%  4%  4%
+[libx264 @ 0x55a8a76f9800] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 22% 13%  6%  9%  7%  8%  5%  5%
+[libx264 @ 0x55a8a76f9800] i8c dc,h,v,p: 56% 20% 18%  6%
+[libx264 @ 0x55a8a76f9800] Weighted P-Frames: Y:1.6% UV:0.2%
+[libx264 @ 0x55a8a76f9800] kb/s:3937.66
+[aac @ 0x55a8a786b640] Qavg: 2574.872
+[AVIOContext @ 0x55a8a7686380] Statistics: 90226697 bytes read, 2531 seeks
+[AVIOContext @ 0x55a8a77160c0] Statistics: 111578 bytes read, 0 seeks
+[AVIOContext @ 0x55a8a7712040] Statistics: 1530915 bytes read, 42 seeks

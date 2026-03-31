@@ -1,0 +1,52 @@
+{% extends 'video/base.html' %} 
+{% block video_active %}active{% endblock %} 
+{% block video_content %}
+<div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+  <div>
+    <h3 class="mb-1">Archivio video</h3>
+    <p class="text-muted mb-0">Gestisci i file processati e scarica i watermark.</p>
+  </div>
+  <a href="{% url 'video:video-create' %}" class="btn btn-dark">Nuovo caricamento</a>
+</div>
+
+{% if object_list %}
+<div class="table-responsive">
+  <table class="table table-hover align-middle mb-0">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        {% if user.is_authenticated %}
+        <th scope="col">Creato</th>
+        {% endif %}
+        <th scope="col">Titolo</th>
+        <th scope="col" class="text-right">Azioni</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for instance in object_list %}
+      <tr>
+        <th scope="row">#{{ instance.id }}</th>
+        {% if user.is_authenticated %}
+        <td class="text-muted">{{ instance.created_date }}</td>
+        {% endif %}
+        <td class="font-weight-bold">{{ instance.title }}</td>
+        <td class="text-right">
+          <a href="{{ instance.get_absolute_url }}" class="btn btn-sm btn-outline-primary" title="Visualizza"><i class="far fa-eye"></i></a>
+          <a href="{% url 'video:update' instance.id %}" class="btn btn-sm btn-outline-success" title="Modifica"><i class="far fa-edit"></i></a>
+          <a href="{% url 'video:delete' instance.id %}" class="btn btn-sm btn-outline-danger" title="Elimina"><i class="far fa-trash-alt"></i></a>
+          {% if instance.video_watermarks %}
+          <a href="{{ instance.video_watermarks.url }}" class="btn btn-sm btn-info" download="" title="Download"><i class="fas fa-download"></i></a>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-light border mb-0">
+  Nessun video presente. Inizia con un nuovo caricamento.
+</div>
+{% endif %}
+
+{% endblock %}

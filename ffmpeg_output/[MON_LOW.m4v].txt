@@ -1,0 +1,117 @@
+ffmpeg version 4.2.7-0ubuntu0.1 Copyright (c) 2000-2022 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+  libpostproc    55.  5.100 / 55.  5.100
+Routing option strict to both codec and muxer layer
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x55847fe18200] stream 0, timescale not set
+[h264 @ 0x55847fe1b980] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/MON_LOW.m4v':
+  Metadata:
+    major_brand     : M4V 
+    minor_version   : 1
+    compatible_brands: M4V M4A isommp42
+    creation_time   : 2023-09-25T14:06:31.000000Z
+    title           : MON LOW
+    keywords        : 24-02-22
+    artist          : CoEmPiemonte
+  Duration: 00:01:17.43, start: 0.000000, bitrate: 7153 kb/s
+    Stream #0:0(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 129 kb/s (default)
+    Metadata:
+      creation_time   : 2023-09-25T14:06:31.000000Z
+      handler_name    : Core Media Audio
+    Stream #0:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720, 6994 kb/s, SAR 1:1 DAR 16:9, 30 fps, 30 tbr, 30k tbn, 60k tbc (default)
+    Metadata:
+      creation_time   : 2023-09-25T14:06:31.000000Z
+      handler_name    : Core Media Video
+    Stream #0:2: Video: mjpeg (Progressive), 1 reference frame, yuvj420p(pc, bt470bg/unknown/unknown, center), 1280x720 [SAR 72:72 DAR 16:9], 90k tbr, 90k tbn, 90k tbc (attached pic)
+Input #1, png_pipe, from '/var/www/html/project/static/images/templates/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+[Parsed_scale_0 @ 0x55847fe401c0] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x55847fe7b400] w:1920 h:1080 flags:'bilinear' interl:0
+Stream mapping:
+  Stream #0:1 (h264) -> scale (graph 0)
+  Stream #1:0 (png) -> scale (graph 0)
+  overlay (graph 0) -> Stream #0:0 (libx264)
+  Stream #0:0 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[graph_1_in_0_0 @ 0x55847fe8a480] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:0x3
+[h264 @ 0x55847fe72f40] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x558480822680] w:1920 h:1080 flags:'bilinear' interl:0
+[Parsed_scale_2 @ 0x558480822b40] w:1920 h:1080 flags:'bilinear' interl:0
+[graph 0 input from stream 0:1 @ 0x558480825940] w:1280 h:720 pixfmt:yuv420p tb:1/30000 fr:30/1 sar:1/1 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0x558480826980] w:1920 h:1080 pixfmt:rgba tb:1/25 fr:25/1 sar:2835/2835 sws_param:flags=2
+[Parsed_scale_0 @ 0x558480822680] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x2
+[Parsed_setsar_1 @ 0x55848081fe00] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x558480822b40] w:1920 h:1080 fmt:rgba sar:2835/2835 -> w:1920 h:1080 fmt:yuva420p sar:1/1 flags:0x2
+[Parsed_setsar_3 @ 0x5584808243c0] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_overlay_4 @ 0x558480824b40] main w:1920 h:1080 fmt:yuv420p overlay w:1920 h:1080 fmt:yuva420p
+[Parsed_overlay_4 @ 0x558480824b40] [framesync @ 0x558480824c68] Selected 1/30000 time base
+[Parsed_overlay_4 @ 0x558480824b40] [framesync @ 0x558480824c68] Sync level 2
+[libx264 @ 0x55847fe3b340] using SAR=1/1
+[libx264 @ 0x55847fe3b340] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55847fe3b340] profile High, level 4.0
+[libx264 @ 0x55847fe3b340] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=24 lookahead_threads=8 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/MON_LOW.mp4':
+  Metadata:
+    major_brand     : M4V 
+    minor_version   : 1
+    compatible_brands: M4V M4A isommp42
+    artist          : CoEmPiemonte
+    title           : MON LOW
+    keywords        : 24-02-22
+    encoder         : Lavf58.29.100
+    Stream #0:0: Video: h264 (libx264), 1 reference frame (avc1 / 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      encoder         : Lavc58.54.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s (default)
+    Metadata:
+      creation_time   : 2023-09-25T14:06:31.000000Z
+      handler_name    : Core Media Audio
+      encoder         : Lavc58.54.100 aac
+[Parsed_overlay_4 @ 0x558480824b40] [framesync @ 0x558480824c68] Sync level 0
+No more output streams to write to, finishing.
+frame= 2323 fps= 40 q=-1.0 Lsize=   86225kB time=00:01:17.44 bitrate=9121.3kbits/s speed=1.32x    
+[AVIOContext @ 0x55847fe180c0] Statistics: 0 seeks, 113 writeouts
+video:84916kB audio:1225kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.097902%
+Input file #0 (/var/www/html/project/media/video/original/MON_LOW.m4v):
+  Input stream #0:0 (audio): 3632 packets read (1255207 bytes); 3630 frames decoded (3717056 samples); 
+  Input stream #0:1 (video): 2323 packets read (67696343 bytes); 2323 frames decoded; 
+  Input stream #0:2 (video): 1 packets read (236123 bytes); 
+  Total: 5956 packets (69187673 bytes) demuxed
+Input file #1 (/var/www/html/project/static/images/templates/logo.png):
+  Input stream #1:0 (video): 1 packets read (111578 bytes); 1 frames decoded; 
+  Total: 1 packets (111578 bytes) demuxed
+Output file #0 (/var/www/html/project/media/video/watermarks/MON_LOW.mp4):
+  Output stream #0:0 (video): 2323 frames encoded; 2323 packets muxed (86954000 bytes); 
+  Output stream #0:1 (audio): 3630 frames encoded (3717056 samples); 3631 packets muxed (1253926 bytes); 
+  Total: 5954 packets (88207926 bytes) muxed
+[AVIOContext @ 0x55847fe78e40] Statistics: 2 seeks, 340 writeouts
+[libx264 @ 0x55847fe3b340] frame I:18    Avg QP:16.20  size:214950
+[libx264 @ 0x55847fe3b340] frame P:693   Avg QP:19.36  size: 74780
+[libx264 @ 0x55847fe3b340] frame B:1612  Avg QP:21.28  size: 19393
+[libx264 @ 0x55847fe3b340] consecutive B-frames:  3.1% 11.8%  4.0% 81.1%
+[libx264 @ 0x55847fe3b340] mb I  I16..4: 13.4% 24.3% 62.4%
+[libx264 @ 0x55847fe3b340] mb P  I16..4: 10.9% 16.5%  3.9%  P16..4: 32.6% 19.0% 12.1%  0.0%  0.0%    skip: 5.1%
+[libx264 @ 0x55847fe3b340] mb B  I16..4:  2.5%  2.3%  0.4%  B16..8: 25.8% 10.1%  1.2%  direct:13.7%  skip:44.0%  L0:34.7% L1:46.1% BI:19.2%
+[libx264 @ 0x55847fe3b340] 8x8 transform intra:48.6% inter:39.7%
+[libx264 @ 0x55847fe3b340] coded y,uvDC,uvAC intra: 48.9% 49.1% 14.1% inter: 18.8% 19.4% 0.7%
+[libx264 @ 0x55847fe3b340] i16 v,h,dc,p: 50% 28% 16%  6%
+[libx264 @ 0x55847fe3b340] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 25% 19%  3%  4%  4%  4%  4%  4%
+[libx264 @ 0x55847fe3b340] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 24% 11%  5%  7%  6%  6%  5%  6%
+[libx264 @ 0x55847fe3b340] i8c dc,h,v,p: 51% 22% 24%  4%
+[libx264 @ 0x55847fe3b340] Weighted P-Frames: Y:10.1% UV:1.4%
+[libx264 @ 0x55847fe3b340] kb/s:8983.55
+[aac @ 0x55847fe2a780] Qavg: 408.350
+[AVIOContext @ 0x55847fe21000] Statistics: 168169281 bytes read, 4636 seeks
+[AVIOContext @ 0x55847fe795c0] Statistics: 111578 bytes read, 0 seeks

@@ -1,0 +1,36 @@
+{% extends 'watermarks/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block watermarks_content %}
+{% include "watermarks/sidebar.html" %}
+<div class="col-lg-9">
+  <div class="wm-surface p-3 p-md-4 mb-4">
+    <h4 class="mb-1">{{ object.title }}</h4>
+    <p class="text-muted mb-0">{{ object.text }}</p>
+  </div>
+
+  <div class="wm-surface p-3 p-md-4">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h5 class="mb-0">Immagini collegate</h5>
+      <span class="text-muted small">{{ object.images_set.all|length }} elementi</span>
+    </div>
+    <div class="row text-center text-lg-left">
+      {% for images in object.images_set.all %}
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{{ images.image.url }}" class="d-block mb-4 h-100" download>
+          <img class="img-fluid rounded border" src="{{ images.image.url }}" alt="">
+        </a>
+      </div>
+      {% empty %}
+      <div class="col-12">
+        <div class="alert alert-light border mb-0">Nessuna immagine associata.</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

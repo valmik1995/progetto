@@ -1,0 +1,70 @@
+{% extends 'watermarks/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Upload Watermarks{% endblock %}
+
+{% block javascript %}
+{# JQUERY FILE UPLOAD SCRIPTS #}
+<script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+<script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+<script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+{# PHOTOS PAGE SCRIPTS #}
+<script src="{% static 'js/watermarks/uploads.js' %}"></script>
+<script src="{% static 'js/watermarks/main.js' %}"></script>
+{% endblock %}
+
+{% block photos_content %}
+<div style="margin-bottom: 20px;">
+  <button type="button" class="btn btn-primary js-upload-photos">
+    <span class="glyphicon glyphicon-cloud-upload"></span> Uploads Photo
+  </button>
+  <input id="fileupload" type="file" name="file" multiple style="display: none;" data-url="{% url 'watermarks:basic_upload' %}" data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+</div>
+
+<!-- Gallery -->
+<div class="container" id="gallery">
+
+  <h1 class="font-weight-light text-left text-lg-left mt-4 mb-0">Galleria</h1>
+
+  <hr class="mt-2 mb-5">
+
+  <div class="row text-left text-lg-left" id="master">
+
+    {% for photo in photos %}
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="/{{ photo.file.url }}" class="d-block mb-4 h-100" download>
+        <img class="img-fluid img-thumbnail" src="/{{ photo.file.url }}" alt="">
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+<!-- /.container -->
+
+<!-- Watermark -->
+<div class="container" id="watermark">
+
+  <h1 class="font-weight-light text-left text-lg-left mt-4 mb-0">Galleria Watermarks</h1>
+
+  <hr class="mt-2 mb-5">
+
+  <div class="row text-left text-lg-left" id="master">
+
+    {% for photo in photos %}
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="/{{ photo.file_watermark.url }}" class="d-block mb-4 h-100" download>
+        <img class="img-fluid img-thumbnail" src="/{{ photo.file_watermark.url }}" alt="">
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+
+
+{% endblock %}

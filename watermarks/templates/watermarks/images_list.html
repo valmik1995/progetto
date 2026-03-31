@@ -1,0 +1,43 @@
+{% extends 'watermarks/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block watermarks_content %}
+{% include "watermarks/sidebar.html" %}
+<div class="col-lg-9">
+  <div class="wm-surface p-3 p-md-4">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h4 class="mb-0">Lista immagini</h4>
+      <span class="text-muted small">{{ object_list|length }} elementi</span>
+    </div>
+    {% if object_list %}
+    <div class="table-responsive">
+      <table class="table table-hover mb-0">
+        <thead class="thead-light">
+          <tr>
+            <th>ID</th>
+            <th>Immagine</th>
+            <th>Notizia</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for images in object_list %}
+          <tr>
+            <td>#{{ images.id }}</td>
+            <td>{{ images.image }}</td>
+            <td>{{ images.note_id }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="alert alert-light border mb-0">Nessuna immagine disponibile.</div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
+

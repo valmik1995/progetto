@@ -1,0 +1,35 @@
+# Core Framework & API
+Django>=4.2.0,<5.1
+djangorestframework>=3.14.0
+
+# Task Queue (Aggiornate per Python 3.12)
+celery>=5.3.6
+redis>=5.0.1
+django-celery-results>=2.5.1
+kombu>=5.3.5
+billiard>=4.2.0
+amqp>=5.2.0
+
+# Database & Storage
+psycopg2-binary>=2.9.9
+Pillow>=10.2.0
+django-imagekit>=5.0
+django-import-export>=3.3.0
+
+# Forms & UI
+django-crispy-forms>=2.1
+crispy-bootstrap4>=2024.1
+django-bootstrap-datepicker-plus>=5.0.0
+django-leaflet>=0.29.0
+django-geojson>=4.0.0
+
+# Search & Utils
+django-elasticsearch-dsl>=8.0
+elasticsearch>=8.0.0
+python-dotenv>=1.0.1
+python-magic>=0.4.27
+pytube>=15.0.0
+gunicorn>=21.2.0
+
+# Dependencies rimosse perché integrate in Python 3.12:
+# backports.zoneinfo, six, future (spesso non più necessari)

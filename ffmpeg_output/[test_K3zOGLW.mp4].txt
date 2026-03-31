@@ -1,0 +1,22 @@
+[h264 @ 0x55ba61227b80] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/adminuser/project/media/video/original/test_K3zOGLW.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2022-01-05T11:28:25.000000Z
+  Duration: 00:00:25.96, start: 0.000000, bitrate: 4177 kb/s
+    Stream #0:0(ita): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 98 kb/s (default)
+    Metadata:
+      creation_time   : 2022-01-05T11:28:25.000000Z
+      handler_name    : Core Media Audio
+    Stream #0:1(und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 4036 kb/s, 25 fps, 25 tbr, 25k tbn, 50k tbc (default)
+    Metadata:
+      creation_time   : 2022-01-05T11:28:25.000000Z
+      handler_name    : Core Media Video
+Input #1, png_pipe, from '/home/adminuser/project/media/watermarks/logo.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, 1 reference frame, rgba(pc), 1920x1080 [SAR 2835:2835 DAR 16:9], 25 tbr, 25 tbn, 25 tbc
+/home/adminuser/project/media/watermarks/CODINO_CON_SUONO.mp4: No such file or directory
+[AVIOContext @ 0x55ba6122d3c0] Statistics: 144690 bytes read, 1 seeks
+[AVIOContext @ 0x55ba61228e40] Statistics: 111578 bytes read, 0 seeks

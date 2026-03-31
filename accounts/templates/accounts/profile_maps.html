@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+{% load geojson_tags %}
+{% load static %}
+
+{% block extra_assets %}
+{% leaflet_js %}
+{% leaflet_css %}
+{% endblock %}
+
+{% block content %}
+
+<h1>My favorite place</h1>
+<style>
+    .leaflet-container { height: 100%; }
+  </style>
+    
+{%for place in places %}
+
+</script>
+
+
+place name: {{place.name}} <br>
+
+<small>{{place.distance}}--- far from me</small> <br>
+{% endfor %}
+
+<style>
+    #gis{
+        width:76%;
+        height:550px;
+    }
+</style>
+
+   <script src="{% static 'js/leaflet.ajax.js' %}"></script>
+
+<h1>Weather Stations</h1>
+
+
+
+    <script type="text/javascript"> 
+        function place_pos(map, options){ 
+            var states = [{
+                "type": "Feature",
+                "properties": {"party": "Republican"},
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[
+                        [-104.05, 48.99],
+                        [-97.22,  48.98],
+                        [-96.58,  45.94],
+                        [-104.03, 45.94],
+                        [-104.05, 48.99]
+                    ]]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {"party": "Democrat"},
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[
+                        [-109.05, 41.00],
+                        [-102.06, 40.99],
+                        [-102.03, 36.99],
+                        [-109.04, 36.99],
+                        [-109.05, 41.00]
+                    ]]
+                }
+            }];
+            
+            L.geoJSON(states, {
+                style: function(feature) {
+                    switch (feature.properties.party) {
+                        case 'Republican': return {color: "#ff0000"};
+                        case 'Democrat':   return {color: "#0000ff"};
+                    }
+                }
+            }).addTo(map);
+        } 
+        </script>
+        {% leaflet_map "gis" callback="window.place_pos" %}
+        
+<div id="test"></div>
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim(); // Does this cookie string begin with the name we want ?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const
+        csrftoken = getCookie('csrftoken');
+
+    $.ajax({
+        url: "{% url 'places' %}",
+        type: "POST",
+        data: {
+            myData: "Here's my posted data!"
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        },
+        success: function (data) {
+            console.log(data);
+            $('#test').text(JSON.stringify(data));
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
+
+    var layer = L.geoJson();
+    map.addLayer(layer);
+    $.getJSON("{% url 'data' %}", function (data) {
+        layer.addData(data);
+    });
+
+ 
+</script>
+<script>
+    var dataurl = '{% url "data" %}';
+
+    window.addEventListener("map:init", function (event) {
+      var map = event.detail.map;
+      // Download GeoJSON data with Ajax
+      fetch(dataurl)
+        .then(function(resp) {
+          return resp.json();
+        })
+        .then(function(data) {
+          L.geoJson(data, {
+            onEachFeature: function onEachFeature(feature, layer) {
+              var props = feature.properties;
+              var content = `<img width="300" src="${props.picture_url}"/><h3>${props.title}</h3><p>${props.description}</p>`;
+              layer.bindPopup(content);
+          }}).addTo(map);
+        });
+    });
+  </script>
+  {% leaflet_map "main" %}
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+<h1 class="page-header">
+    Tools
+    <small>/ {% block title %}tools{% endblock %}</small>
+</h1>
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Menu</h3>
+            </div>
+            <div class="list-group">
+                <a href="{% url 'tools:create' %}"
+                    class="list-group-item{% if request.path == '/tools/qrcode/' %} active{% endif %}">
+                    Crea QrCode
+                </a>
+                <a href="{% url 'tools:list' %}"
+                    class="list-group-item{% if request.path == '/tools/list/' %} active{% endif %}">
+                    Lista QrCode
+                </a>
+		<a href="{% url 'tools:detail-download' %}"
+                    class="list-group-item{% if request.path == '/tools/download/' %} active{% endif %}">
+                    Download YouTube
+                </a>
+                <!--
+		<a href="{% url 'tools:detail-download-copy' %}" class="list-group-item{% if request.path == '/tools/download_copy/' %} active{% endif %}">
+                Download Video YouTube
+                </a>
+		-->
+	    </div>
+
+        </div>
+
+    </div>
+    <div class="col-md-9">
+        {% block tools_content %} 
+    
+        {% endblock %}
+    </div>
+</div>
+    <script src="{% static 'js/tools/bootstrap.js' %}"></script>
+    <script src="{% static 'js/tools/popper.js' %}"></script>
+    <script src="{% static 'js/tools/main.js' %}"></script>
+{% endblock %}

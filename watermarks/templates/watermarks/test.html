@@ -1,0 +1,52 @@
+{% extends 'watermarks/base.html' %}
+{% block title %}Celery Test{% endblock %}
+{% block test_active %}active{% endblock %}
+
+{% block watermarks_content %}
+{% include "watermarks/sidebar.html" %}
+<div class="col-lg-9">
+  <div class="wm-surface p-3 p-md-4">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+      <h4 class="mb-0">Celery Test</h4>
+      <a href="{% url 'watermarks:start_test' %}" role="button" class="btn btn-dark">Start</a>
+    </div>
+
+    <h6 class="text-muted">JSON status</h6>
+    <label>Data:</label><br>
+    <input id="data-field" class="form-control mb-2" value="{{ data }}">
+    <label>State:</label><br>
+    <input id="state-field" class="form-control mb-2" value="{{ state }}">
+    <h6 class="text-muted mt-3">Django-Celery-Result</h6>
+    <label>Status:</label><br>
+    <input id="status-field" class="form-control mb-2" value="{{ status }}">
+    <label>Job ID:</label><br>
+    <input id="job-field" class="form-control" value="{{ task_id }}">
+  </div>
+</div>
+
+<script type="text/javascript">
+var poll_xhr;
+var checkStatus = "{{ check_status|yesno:'true,false' }}" === "true";
+
+update = function(){
+    var task_id = "{{ task_id }}";
+    var state   = "{{ state }}";
+    poll_xhr = $.ajax({
+        url: 'update_status/?task_id={{ task_id }}',
+        type: 'GET',
+        success: function(result){
+            console.log(result);
+            $('#data-field').val(result.iter);
+            $('#state-field').val(result.state);
+            $('#status-field').val(result.status);
+        }
+    });
+}
+
+if (checkStatus){
+  setInterval(function(){update();}, 200);
+}else{
+  clearInterval(function(){update();});
+}
+</script>
+{% endblock %}

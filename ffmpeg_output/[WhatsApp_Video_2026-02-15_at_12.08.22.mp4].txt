@@ -1,0 +1,145 @@
+-vsync is deprecated. Use -fps_mode
+Passing a number to -vsync is deprecated, use a string argument as described in the manual.
+[h264 @ 0x63a89205cd80] Reinit context to 848x480, pix_fmt: yuv420p
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/media/video/original/WhatsApp_Video_2026-02-15_at_12.08.22.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:01:30.28, start: 0.000000, bitrate: 1594 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 848x480, 1464 kb/s, 30 fps, 30 tbr, 90k tbn (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      vendor_id       : [0][0][0][0]
+[h264 @ 0x63a89216ebc0] Reinit context to 1280x720, pix_fmt: yuv420p
+Input #1, mov,mp4,m4a,3gp,3g2,mj2, from '/var/www/html/project/static/images/templates/Codino.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 1
+    compatible_brands: isommp41mp42
+    creation_time   : 2021-07-11T07:02:58.000000Z
+  Duration: 00:00:02.00, start: 0.000000, bitrate: 1007 kb/s
+  Stream #1:0[0x1](ita): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 102 kb/s (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #1:1[0x2](und): Video: h264 (High), 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1280x720 [SAR 1:1 DAR 16:9], 813 kb/s, 25 fps, 25 tbr, 25k tbn (default)
+    Metadata:
+      creation_time   : 2021-07-11T07:02:58.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+[out#0/mp4 @ 0x63a893dfabc0] Adding streams from explicit maps...
+[out#0/mp4 @ 0x63a893dfabc0] Creating output stream from an explicitly mapped complex filtergraph 0, output [v]
+[vost#0:0/libx264 @ 0x63a893dfb5c0] Created video stream from complex filtergraph 0:[concat]
+[vost#0:0/libx264 @ 0x63a893dfb5c0] 
+[out#0/mp4 @ 0x63a893dfabc0] Creating output stream from an explicitly mapped complex filtergraph 0, output [a]
+[aost#0:1/aac @ 0x63a893dfd040] Created audio stream from complex filtergraph 0:[concat]
+[aost#0:1/aac @ 0x63a893dfd040] 
+Stream mapping:
+  Stream #0:0 (h264) -> scale:default
+  Stream #0:1 (aac) -> concat
+  Stream #1:0 (aac) -> concat
+  Stream #1:1 (h264) -> scale:default
+  concat -> Stream #0:0 (libx264)
+  concat -> Stream #0:1 (aac)
+Press [q] to stop, [?] for help
+[h264 @ 0x63a892164140] Reinit context to 848x480, pix_fmt: yuv420p
+[h264 @ 0x63a892face00] Reinit context to 1280x720, pix_fmt: yuv420p
+[Parsed_scale_0 @ 0x63a892177640] w:1920 h:1080 flags:'' interl:0
+[Parsed_scale_2 @ 0x63a893ee4f40] w:1920 h:1080 flags:'' interl:0
+[graph 0 input from stream 0:0 @ 0x63a8921778c0] w:848 h:480 pixfmt:yuv420p tb:1/90000 fr:30/1 sar:0/1
+[graph 0 input from stream 1:1 @ 0x63a892177d40] w:1280 h:720 pixfmt:yuv420p tb:1/25000 fr:25/1 sar:1/1
+[graph_0_in_0_1 @ 0x63a893ef2d40] tb:1/48000 samplefmt:fltp samplerate:48000 chlayout:stereo
+[graph_0_in_1_0 @ 0x63a892177c00] tb:1/44100 samplefmt:fltp samplerate:44100 chlayout:stereo
+[Parsed_concat_4 @ 0x63a893ef2340] auto-inserting filter 'auto_aresample_0' between the filter 'graph_0_in_1_0' and the filter 'Parsed_concat_4'
+[Parsed_scale_0 @ 0x63a892177640] w:848 h:480 fmt:yuv420p sar:0/1 -> w:1920 h:1080 fmt:yuv420p sar:0/1 flags:0x00000004
+[Parsed_setsar_1 @ 0x63a8920459c0] w:1920 h:1080 sar:0/1 dar:16/9 -> sar:1/1 dar:16/9
+[Parsed_scale_2 @ 0x63a893ee4f40] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x00000004
+[Parsed_setsar_3 @ 0x63a893ef2080] w:1920 h:1080 sar:1/1 dar:16/9 -> sar:1/1 dar:16/9
+[auto_aresample_0 @ 0x63a893ef6ac0] ch:2 chl:stereo fmt:fltp r:44100Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+[Parsed_concat_4 @ 0x63a893ef2340] Video inputs have different frame rates, output will be VFR
+[Parsed_scale_0 @ 0x63a892177640] w:848 h:480 fmt:yuv420p sar:0/1 -> w:1920 h:1080 fmt:yuv420p sar:0/1 flags:0x00000004
+    Last message repeated 2 times
+[Parsed_scale_2 @ 0x63a893ee4f40] w:1280 h:720 fmt:yuv420p sar:1/1 -> w:1920 h:1080 fmt:yuv420p sar:1/1 flags:0x00000004
+    Last message repeated 2 times
+[libx264 @ 0x63a893dfb980] using SAR=1/1
+[libx264 @ 0x63a893dfb980] MB rate (8160000000) > level limit (16711680)
+[libx264 @ 0x63a893dfb980] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x63a893dfb980] profile High, level 6.2, 4:2:0, 8-bit
+[libx264 @ 0x63a893dfb980] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=24 lookahead_threads=8 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/var/www/html/project/media/video/watermarks/WhatsApp_Video_2026-02-15_at_12.08.22.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(tv, bt709, progressive, left), 1920x1080 (0x0) [SAR 1:1 DAR 16:9], q=2-31, 1000k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, delay 1024, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a89205c1c0] EOF while reading input
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a89205c1c0] Terminating demuxer thread
+[vist#0:0/h264 @ 0x63a8920c8a40] Decoder thread received EOF packet
+[vist#0:0/h264 @ 0x63a8920c8a40] Decoder returned EOF, finishing
+[vist#0:0/h264 @ 0x63a8920c8a40] Terminating decoder thread
+[Parsed_concat_4 @ 0x63a893ef2340] EOF on in0:v0, 1 streams left in segment.
+[aist#0:1/aac @ 0x63a8920cd880] Decoder thread received EOF packet
+[aist#0:1/aac @ 0x63a8920cd880] Decoder returned EOF, finishing
+[aist#0:1/aac @ 0x63a8920cd880] Terminating decoder thread
+[Parsed_concat_4 @ 0x63a893ef2340] EOF on in0:a0, 0 streams left in segment.
+[Parsed_concat_4 @ 0x63a893ef2340] Segment finished at pts=90282666
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a8920cab00] EOF while reading input
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a8920cab00] Terminating demuxer thread
+[aist#1:0/aac @ 0x63a89216e440] Decoder thread received EOF packet
+[aist#1:0/aac @ 0x63a89216e440] Decoder returned EOF, finishing
+[aist#1:0/aac @ 0x63a89216e440] Terminating decoder thread
+[vist#1:1/h264 @ 0x63a89209db00] Decoder thread received EOF packet
+[vist#1:1/h264 @ 0x63a89209db00] Decoder returned EOF, finishing
+[vist#1:1/h264 @ 0x63a89209db00] Terminating decoder thread
+[Parsed_concat_4 @ 0x63a893ef2340] EOF on in1:v0, 1 streams left in segment.
+[Parsed_concat_4 @ 0x63a893ef2340] EOF on in1:a0, 0 streams left in segment.
+[Parsed_concat_4 @ 0x63a893ef2340] Segment finished at pts=92301353
+No more output streams to write to, finishing.
+[out#0/mp4 @ 0x63a893dfabc0] All streams finished
+[out#0/mp4 @ 0x63a893dfabc0] Terminating muxer thread
+[AVIOContext @ 0x63a893ec8340] Statistics: 94577323 bytes written, 2 seeks, 364 writeouts
+[out#0/mp4 @ 0x63a893dfabc0] Output file #0 (/var/www/html/project/media/video/watermarks/WhatsApp_Video_2026-02-15_at_12.08.22.mp4):
+[out#0/mp4 @ 0x63a893dfabc0]   Output stream #0:0 (video): 2757 frames encoded; 2757 packets muxed (92986767 bytes); 
+[out#0/mp4 @ 0x63a893dfabc0]   Output stream #0:1 (audio): 4327 frames encoded (4430465 samples); 4328 packets muxed (1474656 bytes); 
+[out#0/mp4 @ 0x63a893dfabc0]   Total: 7085 packets (94461423 bytes) muxed
+[out#0/mp4 @ 0x63a893dfabc0] video:90807kB audio:1440kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.122691%
+frame= 2757 fps= 92 q=-1.0 Lsize=   92361kB time=00:01:32.28 bitrate=8198.4kbits/s speed=3.08x    
+[AVIOContext @ 0x63a892053ac0] Statistics: 12427 bytes written, 0 seeks, 61 writeouts
+[libx264 @ 0x63a893dfb980] frame I:14    Avg QP:15.31  size:116109
+[libx264 @ 0x63a893dfb980] frame P:1011  Avg QP:18.97  size: 59455
+[libx264 @ 0x63a893dfb980] frame B:1732  Avg QP:21.41  size: 18044
+[libx264 @ 0x63a893dfb980] consecutive B-frames: 11.3% 10.2% 13.9% 64.6%
+[libx264 @ 0x63a893dfb980] mb I  I16..4: 20.8% 34.2% 45.0%
+[libx264 @ 0x63a893dfb980] mb P  I16..4: 10.6% 26.8%  6.9%  P16..4: 21.2% 16.7% 10.2%  0.0%  0.0%    skip: 7.6%
+[libx264 @ 0x63a893dfb980] mb B  I16..4:  1.7%  2.6%  0.2%  B16..8: 32.0% 12.6%  1.2%  direct:12.6%  skip:37.1%  L0:41.6% L1:44.5% BI:13.9%
+[libx264 @ 0x63a893dfb980] 8x8 transform intra:59.6% inter:44.6%
+[libx264 @ 0x63a893dfb980] coded y,uvDC,uvAC intra: 57.1% 49.9% 10.3% inter: 15.7% 19.5% 0.5%
+[libx264 @ 0x63a893dfb980] i16 v,h,dc,p: 50% 28% 11% 11%
+[libx264 @ 0x63a893dfb980] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 27% 13%  4%  6%  5%  6%  5%  5%
+[libx264 @ 0x63a893dfb980] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 24% 10%  5%  9%  8%  9%  6%  5%
+[libx264 @ 0x63a893dfb980] i8c dc,h,v,p: 49% 21% 22%  8%
+[libx264 @ 0x63a893dfb980] Weighted P-Frames: Y:1.2% UV:0.6%
+[libx264 @ 0x63a893dfb980] kb/s:8060.98
+[aac @ 0x63a893dfd400] Qavg: 967.211
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a89205c1c0] Input file #0 (/var/www/html/project/media/video/original/WhatsApp_Video_2026-02-15_at_12.08.22.mp4):
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a89205c1c0]   Input stream #0:0 (video): 2707 packets read (16514123 bytes); 2707 frames decoded; 0 decode errors; 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a89205c1c0]   Input stream #0:1 (audio): 4232 packets read (1444547 bytes); 4232 frames decoded; 0 decode errors (4333568 samples); 
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a89205c1c0]   Total: 6939 packets (17958670 bytes) demuxed
+[AVIOContext @ 0x63a89205c580] Statistics: 120950670 bytes read, 3275 seeks
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a8920cab00] Input file #1 (/var/www/html/project/static/images/templates/Codino.mp4):
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a8920cab00]   Input stream #1:0 (audio): 89 packets read (26579 bytes); 87 frames decoded; 0 decode errors (89024 samples); 
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a8920cab00]   Input stream #1:1 (video): 50 packets read (203365 bytes); 50 frames decoded; 0 decode errors; 
+[in#1/mov,mp4,m4a,3gp,3g2,mj2 @ 0x63a8920cab00]   Total: 139 packets (229944 bytes) demuxed
+[AVIOContext @ 0x63a8922435c0] Statistics: 1629219 bytes read, 37 seeks

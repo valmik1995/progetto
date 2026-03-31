@@ -1,0 +1,62 @@
+{% extends 'watermarks/base.html' %}
+{% block uploads_active %}active{% endblock %}
+{% load static %}
+
+{% block title %}Multiple Images{% endblock %}
+
+{% block watermarks_content %}
+{% include "watermarks/sidebar.html" %}
+<div class="col-lg-9">
+  <div class="wm-surface p-3 p-md-4">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h4 class="mb-0">Nuova notizia</h4>
+      <span class="text-muted small">Caricamento multiplo immagini</span>
+    </div>
+
+<form id="post-form" action="{% url 'watermarks:add_notizia' %}" method="post" class="notizia-form" enctype="multipart/form-data">{% csrf_token %}
+  <div class="form-group">
+    <label for="notizia-title">Title</label>
+    <input type="text" name="title" class="form-control" id="notizia-title" placeholder="Enter Title" required>
+  </div>
+  <div class="form-group">
+    <label for="notizia-description">Description</label>
+    <textarea type="text" name="text" class="form-control" id="notizia-description" placeholder="Description here"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="notizia-image">Images</label>
+    <input type="file" name="images" class="form-control-file" id="notizia-image" multiple>
+  </div>
+  <input type="submit" value="Submit form" class="btn btn-primary">
+</form>
+<div id="output">
+  <h1></h1>
+</div>
+
+</div>
+</div>
+
+<script>
+  $('#post-form').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "{% url 'watermarks:ajax_posting' %}",
+      /* django ajax posting url */
+      data: {
+        first_name: $('#first_name').val(),
+        last_name: $('#last_name').val(),
+
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        dataType: "json",
+      },
+      success: function(data) {
+        $('#output h1').html(data.msg) /* response message */
+      },
+      failure: function() {}
+
+    });
+
+  });
+</script>
+{% endblock %}
+

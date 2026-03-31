@@ -1,0 +1,68 @@
+{% extends 'video/base.html' %}
+{% load crispy_forms_tags %}
+{% block video_active %}active{% endblock %}
+{% block video_content %}
+<style>
+  .video-upload-title { font-weight: 700; letter-spacing: -0.02em; }
+  .video-panel {
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    border-radius: 14px;
+    background: #fff;
+  }
+  .video-option-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: .75rem .9rem;
+    height: 100%;
+  }
+</style>
+
+<div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+  <div>
+    <h3 class="mb-1 video-upload-title">Upload video con filigrana</h3>
+    <p class="text-muted mb-0">Carica il file e scegli orientamento, logo e codino.</p>
+  </div>
+</div>
+
+<form action="." method="post" enctype="multipart/form-data" class="video-panel p-3 p-md-4">
+    {% csrf_token %}
+
+    <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+            {{ form.title|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+            {{ form.formato|as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="video-option-box">
+            <label class="font-weight-bold d-block">{{ form.posizione.label }}</label>
+            {{ form.posizione }}
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="video-option-box">
+            <label class="font-weight-bold d-block">{{ form.logo.label }}</label>
+            {{ form.logo }}
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="video-option-box">
+            <label class="font-weight-bold d-block">{{ form.codino.label }}</label>
+            {{ form.codino }}
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        {{ form.video|as_crispy_field }}
+    </div>
+
+    <button type="submit" class="btn btn-dark px-4">Avvia elaborazione</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% if is_paginated %}
+<hr>
+<!--Pagination-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% comment %} PREVIOUS {% endcomment %}
+        {% if page_obj.has_previous %}
+        {% if 'category' in request.GET %}
+        <li class="page-item">
+            <a class="page-link" href="?category={{ request.GET.category }}&page={{ page_obj.previous_page_number }}">Previous</a>
+        </li>
+	{% elif not search_term %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link"
+                href="{% url 'social:twitter_search' %}?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.previous_page_number }}"
+                tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+
+        {% endif %}
+        {% comment %} END PREVIOUS {% endcomment %}
+
+        {% if page_obj.number|add:'-4' > 1 %}
+        {% if 'category' in request.GET %}
+	<li class="page-item"><a class="page-link" href="?category={{ request.GET.category }}&page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+	{% elif not search_term %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link"
+                href="?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.number|add:'-5' }}">&hellip;</a>
+        </li>
+        {% endif %}
+
+
+
+        {% endif %}
+
+        {% for i in page_obj.paginator.page_range %}
+        {% if page_obj.number == i %}
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(current)</span>
+            </span>
+        </li>
+        {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+        {% if 'category' in request.GET %}
+        <li class="page-item"><a class="page-link" href="?category={{ request.GET.category }}&page={{ i }}">{{ i }}</a></li>
+	{% elif not search_term %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link"
+                href="?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+
+
+        {% endif %}
+        {% endfor %}
+
+        {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+        {% if 'category' in request.GET %}
+	<li class="page-item"><a class="page-link" href="?category={{ request.GET.category }}&page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+	{% elif not search_term %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link"
+                href="?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+        {% endif %}
+
+
+
+        {% endif %}
+
+
+        {% comment %} NEXT {% endcomment %}
+        {% if page_obj.has_next %}
+        {% if 'category' in request.GET %}
+        <li class="page-item">
+            <a class="page-link" href="?category={{ request.GET.category }}&page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+        {% elif not search_term %}
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+	{% else %}
+        <li class="page-item">
+            <a class="page-link"
+                href="{% url 'social:twitter_search' %}?q={{ request.GET.q }}&r={{ request.GET.r }}&page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+        {% endif %}
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+        </li>
+        {% endif %}
+        {% comment %} END NEXT {% endcomment %}
+    </ul>
+</nav>
+<!--end of Pagination-->
+{% endif %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+{% load geojson_tags %}
+{% load leaflet_tags %}
+{% leaflet_js %}
+{% leaflet_css %}
+<style>
+    .leaflet-container {
+        /* all maps */
+        width: 100%%;
+        height: 400px;
+    }
+
+    #specialbigmap {
+        height: 800px;
+    }
+
+    /* Resize the "display_raw" textbox */
+    .django-leaflet-raw-textarea {
+        width: 100%;
+    }
+</style>
+<div class="container">
+    <div class="col-md-8" style="float:none; margin:auto">
+        <div class="row">
+            <div class="col-md-4">
+                {%if object.profile_pic %}
+                <img class="img-thumbnail" src="{{ object.profile_pic.url }}">
+                {% else %}
+                <img class="img-thumbnail" src="{% static 'images/templates/user.jpg' %}">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <p class="text-secondary">Nome: <strong>{{ object.first_name }}</strong></p>
+                <p class="text-secondary">Cognome: <strong>{{ object.last_name }}</strong></p>
+                <p class="text-secondary">Email: <strong>{{ object.email }}</strong></p>
+                <p class="text-secondary">Indirizzo: <strong>{{ object.address }}</strong></p>
+                <p class="text-secondary">Assegnazione: <strong>{{ object.comando }}</strong></p>
+                <p class="text-secondary">Telefono: <strong>{{ object.phone_number }}</strong></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div id="map" style="width:100%; height:400px"></div>
+                <script type="text/javascript">
+                        // Creating map options
+                        var mapOptions = {
+                            center: {{object.lat_lng}},
+                            zoom: 14
+                        }
+                        // Creating a map object
+                        var map = new L.map('map', mapOptions);
+                        
+                        // Creating a Layer object
+                        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+                        
+                        // Adding layer to the map
+                        map.addLayer(layer);
+
+                        L.marker({{object.lat_lng}}).addTo(map);
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
